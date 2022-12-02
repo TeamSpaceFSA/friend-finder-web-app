@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth, db, googleProvider } from "../FirebaseConfig"
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 const SignUp = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
+    
+    const [ user, loading ] = useAuthState(auth)
+    useEffect(() => {
+        if (user) {
+            navigate("/home")};
+    }, [user])
+
     const regSignUp = async () => {
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
@@ -22,7 +30,7 @@ const SignUp = () => {
             navigate("/setupprofile")
         } catch (err) {
             console.log(err)
-            alert("Unable to sign up. Please try again. ")
+            alert("Unable to sign up. Please try again.")
         }
     }
     const googleSignIn = async () => {
@@ -61,11 +69,11 @@ const SignUp = () => {
                 <input type="text"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
-                    <button onClick={()=>regSignUp}>Sign Up</button>
+                    <button onClick={regSignUp}>Sign Up</button>
             </div>
             <h1>Or</h1>
-            <button onClick={googleSignIn}>Google Sign In</button>
-
+            <button onClick={googleSignIn}>Sign Up with Google</button>
+            <h2>Already have an account? <Link to="/signin">Sign In</Link> </h2>
         </div>
     )
 }
