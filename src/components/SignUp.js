@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { auth, db, googleProvider } from "../FirebaseConfig"
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 const SignUp = () => {
+
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -65,7 +67,7 @@ const SignUp = () => {
             </div>
             <h1>Or</h1>
             <button onClick={googleSignIn}>Google Sign In</button>
-
+            <h3>Already have an account? <Link to="/signin">Sign in!</Link></h3>
         </div>
     )
 }
