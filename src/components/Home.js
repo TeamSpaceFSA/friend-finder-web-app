@@ -11,7 +11,6 @@ const Home = () => {
             <HomeMap />
             <Navbar/>
             Welcome!
-            <button onClick={()=>logout}>Logout</button>
         </div>
     )
 }
