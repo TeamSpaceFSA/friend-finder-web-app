@@ -64,7 +64,7 @@ const SignUp = () => {
                     <button onClick={regSignUp}>Sign Up</button>
             </div>
             <h1>Or</h1>
-            <button onClick={googleSignIn}>Google Sign Up</button>
+            <button onClick={googleSignIn}>Sign Up with Google</button>
             <h2>Already have an account? <Link to="/signin">Sign In</Link> </h2>
         </div>
     )

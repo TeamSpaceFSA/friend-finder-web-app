@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db, googleProvider } from "../FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth"
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 
 const SignIn = () => {
@@ -61,6 +61,9 @@ const SignIn = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
                 <button onClick={logIn}>Sign In</button>
+            </div>
+            <div>
+                <Link to="/resetpassword">Forgot password?</Link>
             </div>
             <div>
                 <button onClick={googleSignIn}>Google Sign In</button>
