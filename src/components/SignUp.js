@@ -22,7 +22,7 @@ const SignUp = () => {
             navigate("/setupprofile")
         } catch (err) {
             console.log(err)
-            alert("Unable to sign up. Please try again. ")
+            alert("Unable to sign up. Please try again.")
         }
     }
     const googleSignIn = async () => {
@@ -61,7 +61,7 @@ const SignUp = () => {
                 <input type="text"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
-                    <button onClick={()=>regSignUp}>Sign Up</button>
+                    <button onClick={regSignUp}>Sign Up</button>
             </div>
             <h1>Or</h1>
             <button onClick={googleSignIn}>Google Sign In</button>
