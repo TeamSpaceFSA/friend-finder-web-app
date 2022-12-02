@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth, db, googleProvider } from "../FirebaseConfig"
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate, Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 const SignUp = () => {
 
     const [username, setUsername] = useState('')
@@ -11,6 +11,13 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
+    
+    const [ user, loading ] = useAuthState(auth)
+    useEffect(() => {
+        if (user) {
+            navigate("/home")};
+    }, [user])
+
     const regSignUp = async () => {
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
@@ -66,8 +73,8 @@ const SignUp = () => {
                     <button onClick={regSignUp}>Sign Up</button>
             </div>
             <h1>Or</h1>
-            <button onClick={googleSignIn}>Google Sign In</button>
-            <h3>Already have an account? <Link to="/signin">Sign in!</Link></h3>
+            <button onClick={googleSignIn}>Sign Up with Google</button>
+            <h2>Already have an account? <Link to="/signin">Sign In</Link> </h2>
         </div>
     )
 }
