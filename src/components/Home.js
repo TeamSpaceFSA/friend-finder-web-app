@@ -10,7 +10,7 @@ const Home = () => {
      }
     return(
         <div>Welcome!
-            <button onClick={()=>logout}>Logout</button>
+            <button onClick={logout}>Logout</button>
         </div>
     )
 }
