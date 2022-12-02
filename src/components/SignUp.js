@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth, db, googleProvider } from "../FirebaseConfig"
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 const SignUp = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const navigate = useNavigate()
+    
+    const [ user, loading ] = useAuthState(auth)
+    useEffect(() => {
+        if (user) {
+            navigate("/home")};
+    }, [user])
+
     const regSignUp = async () => {
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
