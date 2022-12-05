@@ -4,6 +4,9 @@ import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 const SignUp = () => {
 
     const [username, setUsername] = useState('')
@@ -31,7 +34,16 @@ const SignUp = () => {
             navigate("/setupprofile")
         } catch (err) {
             console.log(err)
-            alert("Unable to sign up. Please try again.")
+            toast.error('Unable to sign up. Please try again', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
     const googleSignIn = async () => {
