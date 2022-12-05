@@ -11,7 +11,6 @@ function App() {
   const [user] = useAuthState(auth)
   return (
     <>
-    <Router>
       {user ? (
         <Routes>
           <Route path="/" element={<SignUp />} />
@@ -32,7 +31,6 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       )}
-    </Router>
     <ToastContainer position="top-right"
 autoClose={5000}
 hideProgressBar={false}
