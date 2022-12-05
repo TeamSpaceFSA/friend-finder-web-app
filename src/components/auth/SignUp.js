@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { auth, db, googleProvider } from "../../app/FirebaseConfig"
-import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
+import { collection, query, getDocs, where, addDoc, setDoc, doc } from "firebase/firestore";
 import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -25,7 +25,7 @@ const SignUp = () => {
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
             const user = res.user
-            await addDoc(collection(db, "users"), {
+            await setDoc(doc(db, "users", user.uid), {
                 uid: user.uid,
                 username,
                 email,
@@ -53,7 +53,7 @@ const SignUp = () => {
             const q = query(collection(db, "users"), where("uid", "==", user.uid))
             const docs = await getDocs(q)
             if (docs.docs.length === 0) {
-                await addDoc(collection(db, "users"), {
+                await setDoc(doc(db, "users", user.uid), {
                     uid: user.uid,
                     username: user.displayName,
                     email: user.email,
