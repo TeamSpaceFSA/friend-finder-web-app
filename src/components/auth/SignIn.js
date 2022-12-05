@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, db, googleProvider } from "../FirebaseConfig";
+import { auth, db, googleProvider } from "../../app/FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth"
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
+import { collection, query, getDocs, where, addDoc, setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -47,7 +47,7 @@ const SignIn = () => {
             const q = query(collection(db, "users"), where("uid", "==", user.uid))
             const docs = await getDocs(q)
             if (docs.docs.length === 0) {
-                await addDoc(collection(db, "users"), {
+                await setDoc(doc(db, "users"), {
                     uid: user.uid,
                     username: user.displayName,
                     email: user.email,

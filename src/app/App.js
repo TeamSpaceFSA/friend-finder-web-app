@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { Home, ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About } from './components/index'
+import { Home, ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About } from '../components/index'
 import { auth } from './FirebaseConfig'
 import { useAuthState } from "react-firebase-hooks/auth"
 import { ToastContainer } from 'react-toastify'

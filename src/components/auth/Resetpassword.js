@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../FirebaseConfig";
+import { auth } from "../../app/FirebaseConfig";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
