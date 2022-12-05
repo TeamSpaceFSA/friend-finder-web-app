@@ -5,15 +5,16 @@ import App from './app/App';
 import reportWebVitals from './app/reportWebVitals';
 import store from './app/store.js'
 import { Provider } from 'react-redux';
-
-//Don't need browser router here because we wrap it in src/app/App.js
+import { BrowserRouter as Router } from "react-router-dom"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
   </React.StrictMode>
 );
 
