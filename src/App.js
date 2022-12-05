@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Home, ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About } from './components/index'
 import { auth } from './FirebaseConfig'
 import { useAuthState } from "react-firebase-hooks/auth"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [user] = useAuthState(auth)
   return (
+    <>
     <Router>
       {user ? (
         <Routes>
@@ -30,6 +33,17 @@ function App() {
         </Routes>
       )}
     </Router>
+    <ToastContainer position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"/>
+    </>
   );
 }
 

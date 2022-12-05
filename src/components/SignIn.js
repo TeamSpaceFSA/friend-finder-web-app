@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, db, googleProvider } from "../FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth"
-import { signInWithEmailAndPassword, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
     const [email, setEmail] = useState('')
@@ -25,7 +27,16 @@ const SignIn = () => {
             console.log(auth.currentUser)
         } catch (err) {
             console.log(err)
-            alert("Incorrect Email and/or Password. Please try again")
+            toast.error('Incorrect Email and/or Password. Please try again', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     }
 

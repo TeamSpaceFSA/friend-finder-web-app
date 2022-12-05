@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../FirebaseConfig";
-
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Resetpassword = () => {
     const [email, setEmail] = useState('')
@@ -14,7 +15,16 @@ const Resetpassword = () => {
         try {
             await sendPasswordResetEmail(auth, email)
             setEmail("")
-            alert("Password reset link sent")
+            toast.info('Password reset link sent', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         } catch (err) {
             console.log(err)
         }
