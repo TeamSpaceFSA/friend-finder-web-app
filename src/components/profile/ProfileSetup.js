@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { auth, db } from "../../app/FirebaseConfig";
-import { collection, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";
 
@@ -12,6 +12,8 @@ const ProfileSetup = () => {
   const [age, setAge] = useState("");
   const [bio, setBio] = useState("");
   const [activities, setActivities] = useState([]);
+  const [email, setEmail] = useState(user.email)
+
 
   const navigate = useNavigate();
 
@@ -20,12 +22,16 @@ const ProfileSetup = () => {
       e.preventDefault();
       // const q =
       // const docs = await getDocs(q)
-      await setDoc(collection(db, "users", user.uid), {
+      console.log(user.uid)
+      console.log(user)
+      await updateDoc(doc(db, "users", user.uid), {
         photo: image,
         username: username,
         age: age,
         bio: bio,
         activities: activities,
+        uid: user.uid,
+        email: email
       });
       navigate("/home");
     } catch (err) {
@@ -75,15 +81,23 @@ const ProfileSetup = () => {
 
   return (
     <div>
+      <form>
       <h1>Create Profile</h1>
       <h1>Already have a photo? Upload file below</h1>
       <h2>Image file:</h2>
-      <input />
+      <input type="text" value={image}
+                    onChange={(e) => setImage(e.target.value)} />
       <h1>Username:</h1>
-      <input />
+      <input type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)} />
+      <h1>Email:</h1>
+      <input type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
       <h1>Age Range:</h1>
       <div className="age-menu">
-        <select className="age-searchBar" onChange={handleAge} name="ages">
+        <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
           {ageRange.map((age) => (
             <option key={age.key} className="ageOption">
               {age.value}
@@ -92,9 +106,10 @@ const ProfileSetup = () => {
         </select>
       </div>
       <h1>Bio:</h1>
-      <input />
+      <input type="text"
+                    value={bio}
+                    onChange={(e) => setBio(e.target.value)} />
       <h1>Favorite Activities:</h1>
-      <div>
         <Multiselect
           isObject={false}
           onRemove={(event) => {
@@ -102,15 +117,15 @@ const ProfileSetup = () => {
           }}
           onSelect={(event) => {
             console.log(event);
+            setActivities(event)
           }}
-          onKeyPressFn={handleCategories}
-          options={categories.map((category) => [category.value])}
+          options={categories.map((category) => category.value)}
         //option to add pre-selected activities
         //   selectedValues={["arcade"]}
           showCheckbox
         />
-      </div>
-      <button onClick={() => submit}>Create Profile</button>
+      <button onClick={submit}>Create Profile</button>
+      </form>
     </div>
   );
 };
