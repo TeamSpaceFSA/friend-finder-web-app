@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth, db } from "../../FirebaseConfig";
+import { auth, db } from "../../app/FirebaseConfig";
 import { collection, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";

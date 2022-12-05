@@ -1,33 +1,40 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth, db, googleProvider } from "../../FirebaseConfig";
-import { useAuthState } from "react-firebase-hooks/auth"
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { auth, db, googleProvider } from "../../app/FirebaseConfig"
 import { collection, query, getDocs, where, addDoc } from "firebase/firestore";
+import { signInWithPopup, createUserWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-const SignIn = () => {
+const SignUp = () => {
+
+    const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const [user, loading] = useAuthState(auth)
 
     const navigate = useNavigate()
+    
+    const [ user, loading ] = useAuthState(auth)
     useEffect(() => {
-        if (loading) {
-            return;
-        }
         if (user) {
             navigate("/home")};
-    }, [user, loading])
+    }, [user])
 
-    const logIn = async () => {
+    const regSignUp = async () => {
         try {
-            await signInWithEmailAndPassword(auth, email, password)
-            console.log(auth.currentUser)
+            const res = await createUserWithEmailAndPassword(auth, email, password)
+            const user = res.user
+            await addDoc(collection(db, "users"), {
+                uid: user.uid,
+                username,
+                email,
+                password
+            })
+            navigate("/setupprofile")
         } catch (err) {
             console.log(err)
-            toast.error('Incorrect Email and/or Password. Please try again', {
+            toast.error('Unable to sign up. Please try again', {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -39,7 +46,6 @@ const SignIn = () => {
                 });
         }
     }
-
     const googleSignIn = async () => {
         try {
             const res = await signInWithPopup(auth, googleProvider)
@@ -62,7 +68,12 @@ const SignIn = () => {
     }
     return (
         <div>
+            <h1>Friend Finder App</h1>
             <div>
+                <h1>Username:</h1>
+                <input type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)} />
                 <h1>Email:</h1>
                 <input type="text"
                     value={email}
@@ -71,17 +82,13 @@ const SignIn = () => {
                 <input type="text"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)} />
-                <button onClick={logIn}>Sign In</button>
+                    <button onClick={regSignUp}>Sign Up</button>
             </div>
-            <div>
-                <Link to="/resetpassword">Forgot password?</Link>
-            </div>
-            <div>
-                <button onClick={googleSignIn}>Google Sign In</button>
-            </div>
-            <h1>Don't have an account?<Link to="/">Sign Up</Link> </h1>
+            <h1>Or</h1>
+            <button onClick={googleSignIn}>Sign Up with Google</button>
+            <h2>Already have an account? <Link to="/signin">Sign In</Link> </h2>
         </div>
     )
 }
 
-export default SignIn
+export default SignUp
