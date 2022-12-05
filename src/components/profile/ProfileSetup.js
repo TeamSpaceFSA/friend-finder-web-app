@@ -7,7 +7,7 @@ import Multiselect from "multiselect-react-dropdown";
 const ProfileSetup = () => {
   const user = auth.currentUser;
 
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState("https://static.vecteezy.com/system/resources/previews/002/318/271/original/user-profile-icon-free-vector.jpg");
   const [username, setUsername] = useState("");
   const [age, setAge] = useState("");
   const [bio, setBio] = useState("");
@@ -20,8 +20,6 @@ const ProfileSetup = () => {
   const submit = async (e) => {
     try {
       e.preventDefault();
-      // const q =
-      // const docs = await getDocs(q)
       console.log(user.uid)
       console.log(user)
       await updateDoc(doc(db, "users", user.uid), {

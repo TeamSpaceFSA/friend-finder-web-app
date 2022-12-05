@@ -47,7 +47,7 @@ const SignIn = () => {
             const q = query(collection(db, "users"), where("uid", "==", user.uid))
             const docs = await getDocs(q)
             if (docs.docs.length === 0) {
-                await setDoc(doc(db, "users"), {
+                await setDoc(doc(db, "users", user.uid), {
                     uid: user.uid,
                     username: user.displayName,
                     email: user.email,
