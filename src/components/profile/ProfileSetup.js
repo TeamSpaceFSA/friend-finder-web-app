@@ -69,14 +69,6 @@ const ProfileSetup = () => {
     { key: "21", value: "other" },
   ];
 
-  const handleAge = async (evt) => {
-    evt.preventDefault();
-  };
-
-  const handleCategories = async (evt) => {
-    evt.preventDefault();
-  };
-
   return (
     <div>
       <form>
