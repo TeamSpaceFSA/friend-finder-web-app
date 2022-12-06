@@ -7,7 +7,7 @@ const Navbar = () => {
             <Link to="/home"><div>Map</div></Link>
             <div>My Event List</div>
             <div>Create Event</div>
-            <div>My Profile</div>
+            <Link to="/profile"><div>My Profile</div></Link>
            <Link to="/settings"><div>Settings</div></Link>
         </div>
     )
