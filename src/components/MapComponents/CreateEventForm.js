@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../app/FirebaseConfig"
-import { doc, setDoc } from "firebase/firestore"
+import { doc, setDoc, collection, addDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";
+import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
+import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
+import "@reach/combobox/styles.css";
 
 
 
@@ -11,7 +14,7 @@ import Multiselect from "multiselect-react-dropdown";
 const CreateEventForm = () => {
     const [ user ] = useAuthState(auth)
     const navigate = useNavigate()
-    
+    const [ selected, setSelected] = useState(null);
 
     const [ name, setName ] = useState("") //name of event
     const [ description, setDescription ] = useState("") //description of event
@@ -59,7 +62,7 @@ const CreateEventForm = () => {
     const submit = async (e) => {
         try{
             e.preventDefault();
-            await setDoc(doc(db, "events"), {
+            await addDoc(collection(db, "events"), {
                 name: name,
                 category: activities,
                 description: description,
@@ -67,8 +70,8 @@ const CreateEventForm = () => {
                 startTime: startTime,
                 endTime: endTime,
                 age: age,
-                location: location,
-                creator: user
+                location: selected,
+                user: user.uid
             });
             navigate("/home");
         } catch (err) {
@@ -130,11 +133,7 @@ const CreateEventForm = () => {
                         showCheckbox
                     />
                 <h1>Location:</h1> {/* How to input selected location as a prop? */}
-                <input type="text" value={location}
-                    onChange={(e) => setLocation(e.target.value)} />
-                <h1>Creator:</h1> {/* How to input user's username as a prop?*/}
-                <input type="text" value={creator}
-                    onChange={(e) => setCreator(e.target.value)} />
+                <PlacesAutocomplete setSelected={setSelected} />
                 <button onClick={submit}>Create Event</button>
             </form>
         </div>
@@ -142,5 +141,48 @@ const CreateEventForm = () => {
     )
 
 };
+
+
+const PlacesAutocomplete = ({ setSelected }) => {
+    const {
+      ready,
+      value,
+      setValue,
+      suggestions: { status, data },
+      clearSuggestions,
+    } = usePlacesAutocomplete();
+    
+    //This handles the event of clicking on the address.
+    //Somehow, we want to handle clicking the address, and then popping up the create event form.
+    //From there, once the create event form is submitted, we want the event to show up.
+    const handleSelect = async (address) => {
+      setValue(address, false);
+      clearSuggestions();
+  
+      const results = await getGeocode({ address });
+      const { lat, lng } = await getLatLng(results[0]);
+      setSelected({ lat, lng });
+    };
+  
+    return (
+      <Combobox onSelect={handleSelect}>
+        <ComboboxInput
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          disabled={!ready}
+          className="combobox-input"
+          placeholder="Search an address"
+        />
+        <ComboboxPopover>
+          <ComboboxList>
+            {status === "OK" &&
+              data.map(({ place_id, description }) => (
+                <ComboboxOption key={place_id} value={description} />
+              ))}
+          </ComboboxList>
+        </ComboboxPopover>
+      </Combobox>
+    );
+  };
 
 export default CreateEventForm;
