@@ -13,3 +13,5 @@ export { default as About } from './support/About'
 export { default as Profile } from './profile/Profile'
 export { default as EditProfile } from './profile/EditProfile'
 export { default as CreateEventMap } from './MapComponents/CreateEventMap'
+export { default as FriendsList } from './profile/FriendsList'
+

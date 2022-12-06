@@ -44,7 +44,7 @@ const Profile = () => {
        {activities ? activities.map((activity)=>(
         <p key={activity}>{activity}</p>
        )): <p>No activities yet</p>}
-
+       <Link to="friendslist"><button>Friends List</button></Link>
       </> 
     )
         
