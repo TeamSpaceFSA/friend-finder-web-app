@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { auth, db } from "../../app/FirebaseConfig";
-import { doc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Multiselect from "multiselect-react-dropdown";
 
@@ -68,14 +68,6 @@ const ProfileSetup = () => {
     { key: "20", value: "arcade" },
     { key: "21", value: "other" },
   ];
-
-  const handleAge = async (evt) => {
-    evt.preventDefault();
-  };
-
-  const handleCategories = async (evt) => {
-    evt.preventDefault();
-  };
 
   return (
     <div>
