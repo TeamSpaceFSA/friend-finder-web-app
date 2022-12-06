@@ -27,9 +27,8 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/profile/editprofile" element={<EditProfile/>}/>
-          <Route path="/createEventMap" element={<CreateEventMap />}/>
           <Route path="/profile/friendslist" element={<FriendsList/>}/>
-
+          <Route path="/createEventMap" element={<CreateEventMap />}/>
           <Route path="*" element={<Error />} />
         </Routes>) : (
         <Routes>

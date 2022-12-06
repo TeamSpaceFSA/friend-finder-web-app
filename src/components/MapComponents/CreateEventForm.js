@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../app/FirebaseConfig"
-import { doc, setDoc, updateDoc } from "firebase/firestore"
+import { doc, setDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom";
+import Multiselect from "multiselect-react-dropdown";
 
 
 
@@ -59,8 +60,17 @@ const CreateEventForm = () => {
         try{
             e.preventDefault();
             await setDoc(doc(db, "events"), {
-
-            })
+                name: name,
+                category: activities,
+                description: description,
+                headcount: headcount,
+                startTime: startTime,
+                endTime: endTime,
+                age: age,
+                location: location,
+                creator: user
+            });
+            navigate("/home");
         } catch (err) {
             console.log(err)
         }
@@ -131,4 +141,6 @@ const CreateEventForm = () => {
         </>
     )
 
-}
+};
+
+export default CreateEventForm;
