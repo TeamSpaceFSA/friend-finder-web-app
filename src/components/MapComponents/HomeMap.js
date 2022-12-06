@@ -42,6 +42,7 @@ const HomeMap = () => {
 
   //This handles our click event to track the location of where we've placed a marker onto the map.
   const onMapClick = useCallback((e) => {
+    navigate("/createEventForm")
     setMarkers((current) => [
       ...current,
       {
@@ -52,9 +53,9 @@ const HomeMap = () => {
     ]);
   }, []);
 
-  const switchMapView = (e) => {
-    navigate("/createEventMap")
-  }
+  // const switchMapView = (e) => {
+  //   navigate("/createEventMap")
+  // }
 
   if (!isLoaded) return (<div>Loading...</div>)
   return (
@@ -63,7 +64,7 @@ const HomeMap = () => {
       <div className="places-container">
         <PlacesAutocomplete setSelected={setSelected} />
       </div>
-      <button onClick={switchMapView}>Create Event </button>
+      {/* <button onClick={switchMapView}>Create Event </button> */}
       <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} mapContainerClassName="map-container" onClick={onMapClick}>
         {/* <MarkerF position={{lat: 40.7580, lng: -73.9855}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
             {selected && <MarkerF position={selected}  icon="https://i.imgur.com/OX3qSvl.png" />} */}
