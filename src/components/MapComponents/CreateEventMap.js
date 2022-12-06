@@ -4,12 +4,13 @@ import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocom
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import { useNavigate } from "react-router-dom";
+import { CreateEventForm } from '../index.js'
 
 
 
 const CreateEventMap = () => {
     const libraries = ["places"]
-    
+    const navigate = useNavigate()
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyBGp2IIHledlGmrdnK8M7x7QMn3GE6uiIg",
         libraries: libraries,
@@ -21,7 +22,8 @@ const CreateEventMap = () => {
 
     //This handles our click event to track the location of where we've placed a marker onto the map.
     const onMapClick = useCallback((e) => {
-        setMarkers((current) => [
+      navigate("/createEventForm")
+      setMarkers((current) => [
           ...current,
           {
             lat: e.latLng.lat(),
