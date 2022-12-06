@@ -41,9 +41,9 @@ const Profile = () => {
        <p>Age: {age}</p>
        <p>About me:{bio}</p>
        <p>My interests:</p>
-       {activities.map((activity)=>(
+       {activities ? activities.map((activity)=>(
         <p key={activity}>{activity}</p>
-       ))}
+       )): <p>No activities yet</p>}
 
       </> 
     )
