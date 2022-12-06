@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import { ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About, Profile, EditProfile, CreateEventMap, FriendsList, HomeMap, CreateEventForm } from '../components/index'
+import { ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About, Profile, EditProfile, CreateEventMap, FriendsList, HomeMap, CreateEventForm, EventList } from '../components/index'
 import { auth } from './FirebaseConfig'
 import { useAuthState } from "react-firebase-hooks/auth"
 import { ToastContainer } from 'react-toastify'
@@ -25,7 +25,9 @@ function AppRoutes() {
           <Route path="/profile/editprofile" element={<EditProfile/>}/>
           <Route path="/profile/friendslist" element={<FriendsList/>}/>
           <Route path="/profile/createEventMap" element={<CreateEventMap/>}/>
-          <Route path="/profile/createEventForm" element={<CreateEventForm/>}/>         
+          <Route path="/profile/createEventForm" element={<CreateEventForm/>}/>   
+          <Route path="/profile/eventList" element={<EventList/>}/>         
+      
           <Route path="*" element={<Error />} />
         </Routes>
         ) : (

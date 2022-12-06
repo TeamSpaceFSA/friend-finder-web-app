@@ -34,8 +34,8 @@ const Footer = () => {
         <footer>
           <section>
             <Link to={"/home"}><img src="https://cdn0.iconfinder.com/data/icons/real-estate-and-homes-2/85/map_location_pin_marker-1024.png" alt=""/></Link>
-            <Link><img src="https://cdn0.iconfinder.com/data/icons/business-line-33/32/calendar-1024.png" alt=""/></Link>
-            <Link><img src="https://cdn0.iconfinder.com/data/icons/mobile-basic-vol-1/32/Circle_Plus-1024.png" alt="" /></Link>
+            <Link to={"/profile/eventList"}><img src="https://cdn0.iconfinder.com/data/icons/business-line-33/32/calendar-1024.png" alt=""/></Link>
+            <Link to={"/profile/createEventForm"}><img src="https://cdn0.iconfinder.com/data/icons/mobile-basic-vol-1/32/Circle_Plus-1024.png" alt="" /></Link>
             <Link to={"/profile"}><img src="https://cdn1.iconfinder.com/data/icons/ui-essential-17/32/UI_Essential_Outline_1_essential-app-ui-avatar-profile-user-account-1024.png" alt="" /></Link>
             <div className="nav-container" ref={menuRef}>
               <div
