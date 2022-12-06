@@ -41,17 +41,17 @@ const HomeMap = () => {
   const [markers, setMarkers] = useState([]);
 
   //This handles our click event to track the location of where we've placed a marker onto the map.
-  const onMapClick = useCallback((e) => {
-    navigate("/createEventForm")
-    setMarkers((current) => [
-      ...current,
-      {
-        lat: e.latLng.lat(),
-        lng: e.latLng.lng(),
-        time: new Date(),
-      },
-    ]);
-  }, []);
+  // const onMapClick = useCallback((e) => {
+  //   // navigate("/createEventForm")
+  //   setMarkers((current) => [
+  //     ...current,
+  //     {
+  //       lat: e.latLng.lat(),
+  //       lng: e.latLng.lng(),
+  //       time: new Date(),
+  //     },
+  //   ]);
+  // }, []);
 
   // const switchMapView = (e) => {
   //   navigate("/createEventMap")
@@ -65,7 +65,7 @@ const HomeMap = () => {
         <PlacesAutocomplete setSelected={setSelected} />
       </div>
       {/* <button onClick={switchMapView}>Create Event </button> */}
-      <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} mapContainerClassName="map-container" onClick={onMapClick}>
+      <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} mapContainerClassName="map-container">
         {/* <MarkerF position={{lat: 40.7580, lng: -73.9855}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
             {selected && <MarkerF position={selected}  icon="https://i.imgur.com/OX3qSvl.png" />} */}
         {markers.map(marker => <MarkerF key={marker.time.toISOString()} position={{ lat: marker.lat, lng: marker.lng }} icon="https://i.imgur.com/OX3qSvl.png" />)}
