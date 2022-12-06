@@ -7,9 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const HomeMap = () => {
+const CreateEventMap = () => {
     const libraries = ["places"]
-    const navigate = useNavigate()
     
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyBGp2IIHledlGmrdnK8M7x7QMn3GE6uiIg",
@@ -32,9 +31,7 @@ const HomeMap = () => {
         ]);
       }, []);
 
-    const switchMapView = (e) => {
-      navigate("/createEventMap")
-    }
+
 
     if (!isLoaded) return (<div>Loading...</div>)
 
@@ -44,7 +41,6 @@ const HomeMap = () => {
         <div className="places-container">
         <PlacesAutocomplete setSelected={setSelected} />
         </div>
-        <button onClick={switchMapView}>Create Event </button>
         <GoogleMap zoom={10} center={{lat: 40.7580, lng: -73.9855}} mapContainerClassName="map-container" onClick={onMapClick}>
             <MarkerF position={{lat: 40.7580, lng: -73.9855}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
             {selected && <MarkerF position={selected}  icon="https://i.imgur.com/OX3qSvl.png" />}
@@ -104,4 +100,4 @@ const PlacesAutocomplete = ({ setSelected }) => {
 
 
 
-export default HomeMap
+export default CreateEventMap
