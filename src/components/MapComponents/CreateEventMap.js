@@ -5,6 +5,7 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import "@reach/combobox/styles.css";
 import { useNavigate } from "react-router-dom";
 import { CreateEventForm } from '../index.js'
+import { setDoc } from "firebase/firestore";
 
 
 
@@ -23,6 +24,7 @@ const CreateEventMap = () => {
     //This handles our click event to track the location of where we've placed a marker onto the map.
     const onMapClick = useCallback((e) => {
       navigate("/createEventForm")
+      
       setMarkers((current) => [
           ...current,
           {

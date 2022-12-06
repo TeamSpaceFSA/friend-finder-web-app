@@ -1,20 +1,25 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import { useNavigate } from "react-router-dom";
+import { current } from "@reduxjs/toolkit";
+import { db } from "../../app/FirebaseConfig"
+import { onSnapshot, query, collection, doc, getDocs} from "firebase/firestore";
 
 
 
 const HomeMap = () => {
     const libraries = ["places"]
     const navigate = useNavigate()
+    const [ events, setEvents ] = useState([])
     
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: "AIzaSyBGp2IIHledlGmrdnK8M7x7QMn3GE6uiIg",
         libraries: libraries,
     })
+
 
     
     const [ selected, setSelected] = useState(null);
@@ -46,9 +51,10 @@ const HomeMap = () => {
         </div>
         <button onClick={switchMapView}>Create Event </button>
         <GoogleMap zoom={10} center={{lat: 40.7580, lng: -73.9855}} mapContainerClassName="map-container" onClick={onMapClick}>
-            <MarkerF position={{lat: 40.7580, lng: -73.9855}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
-            {selected && <MarkerF position={selected}  icon="https://i.imgur.com/OX3qSvl.png" />}
+            {/* <MarkerF position={{lat: 40.7580, lng: -73.9855}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
+            {selected && <MarkerF position={selected}  icon="https://i.imgur.com/OX3qSvl.png" />} */}
             {markers.map(marker => <MarkerF key={marker.time.toISOString()} position={{lat: marker.lat, lng: marker.lng}}  icon="https://i.imgur.com/OX3qSvl.png"/>)}
+            {events.map(event => <MarkerF key={event.name} position={{lat: event.location.lat, lng: event.location.lng}}  icon="https://i.imgur.com/OX3qSvl.png"/>)}
         </GoogleMap>
         </>
     )
