@@ -12,5 +12,11 @@ export { default as Suggestions } from './support/Suggestions'
 export { default as About } from './support/About'
 export { default as Profile } from './profile/Profile'
 export { default as EditProfile } from './profile/EditProfile'
+<<<<<<< HEAD
 export { default as FriendsList } from './profile/FriendsList'
 export { default as CreateEventMap } from './MapComponents/CreateEventMap'
+=======
+export { default as CreateEventMap } from './MapComponents/CreateEventMap'
+export { default as FriendsList } from './profile/FriendsList'
+
+>>>>>>> ebbabcdaf386f51dfdf3689027fc55dadda53f11
