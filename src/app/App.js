@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import { Home, ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About, Profile, EditProfile, CreateEventMap, FriendsList } from '../components/index'
+import { Home, ProfileSetup, SignIn, SignUp, Error, Resetpassword, Settings, Help, Suggestions, About, Profile, EditProfile, CreateEventMap, FriendsList, CreateEventForm } from '../components/index'
 
 
 import { auth } from './FirebaseConfig'
@@ -29,6 +29,7 @@ function App() {
           <Route path="/profile/editprofile" element={<EditProfile/>}/>
           <Route path="/profile/friendslist" element={<FriendsList/>}/>
           <Route path="/createEventMap" element={<CreateEventMap />}/>
+          <Route path="/createEventForm" element={<CreateEventForm />}/>
           <Route path="*" element={<Error />} />
         </Routes>) : (
         <Routes>
