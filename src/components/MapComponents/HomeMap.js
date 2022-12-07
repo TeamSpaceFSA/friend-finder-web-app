@@ -18,6 +18,7 @@ const HomeMap = () => {
     libraries: libraries,
   })
 
+  //Fetching all event data
   const fetchEvents = async () => {
     try {
       const q = query(collection(db, "events"))
@@ -33,6 +34,12 @@ const HomeMap = () => {
     }
   }
 
+  const viewSingleEvent = (e, selectedMarker) => {
+    // e.preventDefault()
+    navigate("/singleEventView", {singleEvent: e.currentTarget})
+    
+  }
+
 
   useEffect(() => {
     fetchEvents()
@@ -43,7 +50,7 @@ const HomeMap = () => {
   const [ selectedMarker, setSelectedMarker ] = useState("")
 
 
-  console.log("This is selectedMarker data", selectedMarker)
+  
 
   if (!isLoaded) return (<div>Loading...</div>)
   return (
@@ -60,10 +67,9 @@ const HomeMap = () => {
             <>
             <h1>{selectedMarker.name}</h1>
             <p>{selectedMarker.description}</p>
-            <button>Event Details</button>
+            <button onClick={(e) => viewSingleEvent(e.currentTarget)}>Event Details</button>
             </>
           </InfoWindowF>}
-          {console.log("This is selectedMarker", selectedMarker)}
       </GoogleMap>
     </>
   )
