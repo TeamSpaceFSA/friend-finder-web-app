@@ -6,7 +6,7 @@ const Toggle = ({ label }) => {
     <div className="container">
       {label}{" "}
       <div className="toggle-switch">
-        <input type="checkbox" className="checkbox" name={label} id={label} />
+        <input type="checkbox" className="checkbox" id={label} />
         <label className="label" htmlFor={label}>
           <span className="inner" />
           <span className="switch" />

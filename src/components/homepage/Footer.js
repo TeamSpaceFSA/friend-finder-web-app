@@ -3,8 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, db } from "../../app/FirebaseConfig"
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { signOut } from "firebase/auth";
-
 import Toggle from "../toggle/Toggle";
+
 
 const Footer = () => {
   const user = auth.currentUser;
