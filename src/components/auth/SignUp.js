@@ -27,7 +27,6 @@ const SignUp = () => {
             const user = res.user
             await setDoc(doc(db, "users", user.uid), {
                 uid: user.uid,
-                username,
                 email,
                 password
             })
@@ -70,10 +69,6 @@ const SignUp = () => {
         <div>
             <h1>Friend Finder App</h1>
             <div>
-                <h1>Username:</h1>
-                <input type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)} />
                 <h1>Email:</h1>
                 <input type="text"
                     value={email}
