@@ -34,10 +34,10 @@ const HomeMap = () => {
     }
   }
 
-  const viewSingleEvent = (e, selectedMarker) => {
+  const viewSingleEvent = () => {
     // e.preventDefault()
-    navigate("/singleEventView", {singleEvent: e.currentTarget})
-    
+    navigate("/singleEventView", {singleEvent: selectedMarker})
+    console.log("Here is the selectedMarker", selectedMarker)
   }
 
 
@@ -67,7 +67,8 @@ const HomeMap = () => {
             <>
             <h1>{selectedMarker.name}</h1>
             <p>{selectedMarker.description}</p>
-            <button onClick={(e) => viewSingleEvent(e.currentTarget)}>Event Details</button>
+            <button onClick={() => viewSingleEvent(selectedMarker)}>Event Details</button>
+            
             </>
           </InfoWindowF>}
       </GoogleMap>
