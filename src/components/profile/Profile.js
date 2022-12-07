@@ -23,7 +23,6 @@ const Profile = () => {
         setBio(data.bio)
         setAge(data.age)
         setActivities(data.activities)
-        console.log(data)
     }catch(err){
         console.log(err)
     }
