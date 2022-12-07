@@ -7,9 +7,7 @@ import Multiselect from "multiselect-react-dropdown";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-
-
-
+import { NumberPicker } from "react-widgets";
 
 const CreateEventForm = () => {
     const [ user ] = useAuthState(auth)
@@ -100,8 +98,7 @@ const CreateEventForm = () => {
                 <input type="text" value={description}
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
-                <input type="text" value={headcount}
-                    onChange={(e) => setHeadcount(e.target.value)} />
+                    <NumberPicker value={headcount} onChange={headcount => setHeadcount(headcount)} />
                 <h1>Start Time:</h1>
                 <input type="text" value={startTime}
                     onChange={(e) => setStartTime(e.target.value)} />
