@@ -12,6 +12,8 @@ import { NumberPicker } from "react-widgets";
 const CreateEventForm = () => {
     const [ user ] = useAuthState(auth)
     const navigate = useNavigate()
+
+    //This state is needed for our address search bar functionality to handle the selected address.
     const [ selected, setSelected] = useState(null);
 
     const [ name, setName ] = useState("") //name of event
@@ -57,6 +59,8 @@ const CreateEventForm = () => {
         { key: "21", value: "other" },
       ];
 
+    //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
+    //the bottom of the CreateEventForm.
     const submit = async (e) => {
         try{
             e.preventDefault();
@@ -76,13 +80,6 @@ const CreateEventForm = () => {
             console.log(err)
         }
     }
-
-    //click the marker
-    //create event form pops up with location already filled in (here is where event is created)
-    //fill out the form and click submit
-    //send a update request with new information
-
-
 
 
     return(
@@ -130,7 +127,7 @@ const CreateEventForm = () => {
                         //   selectedValues={["arcade"]}
                         showCheckbox
                     />
-                <h1>Location:</h1> {/* How to input selected location as a prop? */}
+                <h1>Location:</h1>
                 <PlacesAutocomplete setSelected={setSelected} />
                 <button onClick={submit}>Create Event</button>
             </form>
@@ -140,7 +137,8 @@ const CreateEventForm = () => {
 
 };
 
-
+//This creates the autocomplete-address-search-bar that we can use to set locations for the event.
+//This is implemented on line 129.
 const PlacesAutocomplete = ({ setSelected }) => {
     const {
       ready,
@@ -151,8 +149,6 @@ const PlacesAutocomplete = ({ setSelected }) => {
     } = usePlacesAutocomplete();
     
     //This handles the event of clicking on the address.
-    //Somehow, we want to handle clicking the address, and then popping up the create event form.
-    //From there, once the create event form is submitted, we want the event to show up.
     const handleSelect = async (address) => {
       setValue(address, false);
       clearSuggestions();
