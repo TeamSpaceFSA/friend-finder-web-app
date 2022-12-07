@@ -95,7 +95,7 @@ const CreateEventForm = () => {
                 <input type="text" value={description}
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
-                    <NumberPicker value={headcount} onChange={headcount => setHeadcount(headcount)} />
+                    <NumberPicker min={1} value={headcount} onChange={headcount => setHeadcount(headcount)} />
                 <h1>Start Time:</h1>
                 <input type="text" value={startTime}
                     onChange={(e) => setStartTime(e.target.value)} />
@@ -103,6 +103,7 @@ const CreateEventForm = () => {
                 <input type="text" value={endTime}
                     onChange={(e) => setEndTime(e.target.value)} />
                 <h1>Age Range:</h1>
+                {/* ??ADD BOOLEAN/CHECKBOX FOR OVER/UNDER 21 YO */}
                     <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
                             {ageRange.map((age) => (

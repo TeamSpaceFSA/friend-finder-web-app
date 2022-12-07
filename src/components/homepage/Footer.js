@@ -4,6 +4,7 @@ import { auth, db } from "../../app/FirebaseConfig"
 import { query, collection, getDocs, where } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 
+import Toggle from "../toggle/Toggle";
 
 const Footer = () => {
   const user = auth.currentUser;
@@ -74,11 +75,11 @@ useEffect(() => {
                 <h3>
                   New Friend Finder
                   <br />
-                  <span>@
-                  {name}</span>
+                  <span>@{name}</span>
                 </h3>
                 <ul>
-                  <DropdownItem text={"Notifications"} />
+                  {/* <DropdownItem text={"Notifications"} /> */}
+                  <li><Toggle label="Notifications"/></li>
                   <DropdownItem text={"Chat Log"} />
                   <Link to="/about">
                     <DropdownItem text={"About Us"} />
