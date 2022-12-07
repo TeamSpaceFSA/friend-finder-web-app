@@ -48,7 +48,7 @@ const HomeMap = () => {
   if (!isLoaded) return (<div>Loading...</div>)
   return (
     <>
-      <div>Here is the map!</div>
+      <div>Available Events</div>
       <div className="places-container">
         <PlacesAutocomplete setSelected={setSelected} />
       </div>
