@@ -72,11 +72,6 @@ const HomeMap = () => {
             <button onClick={(e) => viewSingleEvent(e.currentTarget)}>Event Details</button>
             </>
           </InfoWindowF>}
-
-            <button>Event Details</button>
-            </>
-          </InfoWindowF>}
-
       </GoogleMap>
     </>
   )
