@@ -17,6 +17,7 @@ import {
   CreateEventForm,
   EventList,
   Footer,
+  SingleEventView
 } from "../components/index";
 import { auth } from "./FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -41,6 +42,7 @@ function AppRoutes() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/editprofile" element={<EditProfile />} />
             <Route path="/profile/friendslist" element={<FriendsList />} />
+            <Route path="/singleEventView" element={<SingleEventView />} />
             <Route
               path="/profile/createEventMap"
               element={<CreateEventMap />}

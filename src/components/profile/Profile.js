@@ -13,19 +13,18 @@ const Profile = () => {
   const [activities, setActivities] = useState([]);
   const navigate = useNavigate();
 
-  const fetchUser = async () => {
-    try {
-      const q = query(collection(db, "users"), where("uid", "==", user.uid));
-      const doc = await getDocs(q);
-      const data = doc.docs[0].data();
-      setName(data.username);
-      setProfileImg(data.photo);
-      setBio(data.bio);
-      setAge(data.age);
-      setActivities(data.activities);
-      console.log(data);
-    } catch (err) {
-      console.log(err);
+    const fetchUser = async () => {
+    try{
+        const q = query(collection(db, "users"), where("uid", "==", user.uid));
+        const doc = await getDocs(q);
+        const data = doc.docs[0].data();
+        setName(data.username)
+        setProfileImg(data.photo)
+        setBio(data.bio)
+        setAge(data.age)
+        setActivities(data.activities)
+    }catch(err){
+        console.log(err)
     }
   };
   useEffect(() => {
