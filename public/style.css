@@ -1,17 +1,12 @@
 * {
   box-sizing: border-box;
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  width: 375px;
-  height: 667px;
-}
-
-#root{
-  position: relative;
-  min-height: 100vh;
+  max-width: 375px;
+  max-height: 667px;  
 }
 
 a:link {
@@ -23,22 +18,32 @@ ul {
     list-style: none;
   }
 
-  /* footer {
-    position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  } */
+  footer{
+position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 43px;
+    background-color: rgba(255, 255, 255, 0.714);
+
+  }
 
   footer section {
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
+    width: 100%;
   }
 
   section img {
     height: 40px;
     width: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-addIcon{
+    width: 45px;
+    height: 43px;
   }
   
   .nav-container {
@@ -47,21 +52,20 @@ height: 50px;
   }
 
   .nav-trigger img {
-    /* position: absolute;
-    top: 20px;
-    right: 20px; */
-    height: 45px;
+    height: 40px;
     width: 45px;
-    border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+    padding-right: 3px;
   }
 
   .nav-dropdown {
     position: absolute;
-    top: 100px;
     right: 20px;
+    bottom: 50px;
     background-color: rgba(255, 255, 255, 0.804);
     border-radius: var(--border-radius);
     padding: 10px 20px;
@@ -107,9 +111,16 @@ height: 50px;
     color: var(--secondary-text-color);
     font-weight: 400;
   }
+
+  /* CENTER CONTENTS IN DROP MENU */
+  /* .nav-dropdown ul a{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  } */
   
   .nav-dropdown ul li{
-    padding: 10px  0;
+    padding: 15px  0;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
   
@@ -129,11 +140,11 @@ height: 50px;
   }
   
   .nav-dropItem img{
-    max-width: 30px;
-    /* max-height: 50px; */
+    /* max-width: 30px;
+    max-height: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
     margin-right: 10px;
     opacity: 0.5;
-    transition: var(--speed);
+    transition: var(--speed); */
   }

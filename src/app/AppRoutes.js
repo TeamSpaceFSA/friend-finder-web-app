@@ -6,7 +6,6 @@ import {
   SignUp,
   Error,
   Resetpassword,
-  Settings,
   Help,
   Suggestions,
   About,
@@ -36,7 +35,6 @@ function AppRoutes() {
             <Route path="/home" element={<HomeMap />} />
             <Route path="/setupprofile" element={<ProfileSetup />} />
             <Route path="/resetpassword" element={<Resetpassword />} />
-            <Route path="/settings" element={<Settings />} />
             <Route path="/help" element={<Help />} />
             <Route path="/suggestions" element={<Suggestions />} />
             <Route path="/about" element={<About />} />
