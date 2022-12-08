@@ -61,27 +61,27 @@ const CreateEventForm = () => {
       ];
     // key is the category, value is the icon img link
       const categories = [
-        { key: "bar", value: ["https://i.imgur.com/kAT7Tux.png","bar"] },
-        { key: "gym", value: ["https://i.imgur.com/Laj8Vax.png","gym"] },
-        { key: "bowling", value: ["https://i.imgur.com/q8E53YA.png","bowling"] },
-        { key: "skating", value: ["https://i.imgur.com/q8E53YA.png","skating"] },
-        { key: "movies", value:[ "https://i.imgur.com/2j1RFp3.png","movies"] },
-        { key: "museum", value: ["https://i.imgur.com/aHp0rTZ.png","museum"] },
-        { key: "art gallery", value: ["https://i.imgur.com/gfCp9pF.png","art gallery"] },
-        { key: "hiking", value: ["https://i.imgur.com/q8E53YA.png","hiking"] },
-        { key: "sight-seeing", value: ["https://i.imgur.com/Q6KfnsT.png","sight-seeing"] },
-        { key: "foodie", value: ["https://i.imgur.com/sckBLS5.png","foodie"] },
-        { key: "beach", value: ["https://i.imgur.com/WVZRwfu.png","beach"] },
-        { key: "shopping", value: ["https://i.imgur.com/ln9hhKg.png","shopping"] },
-        { key: "dancing", value: ["https://i.imgur.com/c1ftBzM.png","dancing"] },
-        { key: "studying", value: ["https://i.imgur.com/n6O9vmP.png","studying"] },
-        { key: "painting", value: ["https://i.imgur.com/q8E53YA.png","painting"] },
-        { key: "cooking class", value: ["https://i.imgur.com/6Avb5MI.png","cooking class"] },
-        { key: "art classes", value: ["https://i.imgur.com/BHPdsgy.png","art classes"] },
-        { key: "park", value: ["https://i.imgur.com/HFRMicZ.png","park" ]},
-        { key: "concerts", value: ["https://i.imgur.com/fvHYF32.png","concerts"] },
-        { key: "arcade", value: ["https://i.imgur.com/78AAJJz.png","arcade"] },
-        { key: "other", value: ["https://i.imgur.com/CCLrVtI.png","other"] },
+        { key: "bar", value: "https://i.imgur.com/kAT7Tux.png"},
+        { key: "gym",  value: "https://i.imgur.com/Laj8Vax.png"},
+        { key: "bowling", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "skating", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "movies", value: "https://i.imgur.com/2j1RFp3.png" },
+        { key: "museum", value: "https://i.imgur.com/aHp0rTZ.png" },
+        { key: "art gallery", value: "https://i.imgur.com/gfCp9pF.png", },
+        { key: "hiking", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "sight-seeing", value: "https://i.imgur.com/Q6KfnsT.png" },
+        { key: "foodie", value: "https://i.imgur.com/sckBLS5.png" },
+        { key: "beach", value: "https://i.imgur.com/WVZRwfu.png" },
+        { key: "shopping", value: "https://i.imgur.com/ln9hhKg.png"},
+        { key: "dancing", value: "https://i.imgur.com/c1ftBzM.png" },
+        { key: "studying", value: "https://i.imgur.com/n6O9vmP.png" },
+        { key: "painting", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "cooking class", value: "https://i.imgur.com/6Avb5MI.png" },
+        { key: "art classes", value: "https://i.imgur.com/BHPdsgy.png" },
+        { key: "park", value: "https://i.imgur.com/HFRMicZ.png" },
+        { key: "concerts", value: "https://i.imgur.com/fvHYF32.png" },
+        { key: "arcade", value: "https://i.imgur.com/78AAJJz.png" },
+        { key: "other", value: "https://i.imgur.com/CCLrVtI.png" },
       ];
 
     //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
@@ -158,7 +158,7 @@ const CreateEventForm = () => {
                     </div>
                 <h1>Category:</h1>
                 <div>
-                    <select className="activityBar" onChange={e=>{setIcon(e.target.value[0]); setActivities(e.target.value[1])}}>
+                    <select className="activityBar" onChange={e=>{setIcon(e.target.value); setActivities(e.target.value); console.log(e.target.value)}}>
                         {categories.map((category)=>(
                             <option key={category.key} value={category.value} className="activityOption">
                                 {category.key}
