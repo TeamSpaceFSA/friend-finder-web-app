@@ -14,14 +14,16 @@ const EventsList = () => {
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
     const events = useSelector(allEvents);
-    const [events, setEvents] = useState([]);
+
+    //Separating event types
+    const futureEvents = events.futureEvents
+    const pastEvents = events.pastEvents
+    const hostedEvents = events.hostedEvents
     
-    useEffect(() => {
+    useEffect(async () => {
         dispatch(fetchFutureEvents()),
         [dispatch]
     })
-
-    Events = useSelector(allEvents)
     
 
 ​
