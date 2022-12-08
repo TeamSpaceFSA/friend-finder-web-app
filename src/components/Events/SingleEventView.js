@@ -30,7 +30,7 @@ const SingleEventView = () => {
                 <p key={cat}>{cat}</p>
             )): <p>n/a</p>}</h2>
             <GoogleMap zoom={60} center={{lat: event.location.lat, lng: event.location.lng}} mapContainerClassName="map-container">
-            <MarkerF position={{lat: event.location.lat, lng: event.location.lng}} icon="https://i.imgur.com/OX3qSvl.png"></MarkerF>
+            <MarkerF position={{lat: event.location.lat, lng: event.location.lng}} icon={event.icon}></MarkerF>
         </GoogleMap>
         </div>
     )
