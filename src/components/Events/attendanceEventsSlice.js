@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { query, collection, getDocs, where, serverTimestamp } from "firebase/firestore"
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
-​
+
 export const fetchFutureEvents = createAsyncThunk(
     'fetchFutureEvents',
     async () => {
@@ -21,7 +21,6 @@ export const fetchFutureEvents = createAsyncThunk(
         }
     }
 )
-​
 // export const fetchPastEvents = createAsyncThunk(
 //     'fetchPastEvents',
 //     async () => {
@@ -37,7 +36,6 @@ export const fetchFutureEvents = createAsyncThunk(
 //         }
 //     }
 // )
-​
 // //fix this later
 // export const fetchHostedEvents = createAsyncThunk(
 //     'fetchHostedEvents',
@@ -54,7 +52,6 @@ export const fetchFutureEvents = createAsyncThunk(
 //         }
 //     }
 // )
-​
 const eventsSlice = createSlice({
     name: 'events',
     initialState: {
@@ -75,9 +72,7 @@ const eventsSlice = createSlice({
         // });
     }
 });
-​
 export const allEvents = (state) => {
     return state.events;
 };
-​
 export default eventsSlice.reducer;
