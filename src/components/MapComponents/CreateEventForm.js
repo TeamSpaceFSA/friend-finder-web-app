@@ -124,7 +124,10 @@ const CreateEventForm = () => {
                 user: user.uid,
                 amPm : mornAft,
                 date: date,
-                icon: icon
+                icon: icon,
+                requestJoin: [],
+                accepted: [],
+                rejected: []
             });
             navigate("/home");
         } catch (err) {
