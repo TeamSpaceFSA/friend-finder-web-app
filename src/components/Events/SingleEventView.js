@@ -25,11 +25,10 @@ const SingleEventView = () => {
             <h2>Description:{description}</h2>
             <h2> # of People: {headcount}</h2>
             <h2>Start:{startTime}</h2>
-            <h2>End:{endTime}</h2>
-            {/* <h2>Activity:{category ? category.map(cat => (
+            {/* <h2>End:{endTime}</h2> */}
+            <h2>Activity:{category ? category.map(cat => (
                 <p key={cat}>{cat}</p>
-            )): <p>n/a</p>}</h2> */}
-            {/* <h2>Activity: {category.iconAct.</h2> */}
+            )): <p>n/a</p>}</h2> 
             <GoogleMap zoom={60} center={{lat: event.location.lat, lng: event.location.lng}} mapContainerClassName="map-container">
             <MarkerF position={{lat: event.location.lat, lng: event.location.lng}} icon={event.icon}></MarkerF>
         </GoogleMap>

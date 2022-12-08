@@ -83,7 +83,30 @@ const CreateEventForm = () => {
         { key: "arcade", value: "https://i.imgur.com/78AAJJz.png" },
         { key: "other", value: "https://i.imgur.com/CCLrVtI.png" },
       ];
-
+      const cat = [
+        { key: "1", value: "bar" },
+        { key: "2", value: "gym" },
+        { key: "3", value: "bowling" },
+        { key: "4", value: "skating" },
+        { key: "5", value: "movies" },
+        { key: "6", value: "museum" },
+        { key: "7", value: "art gallery" },
+        { key: "8", value: "hiking" },
+        { key: "9", value: "sight-seeing" },
+        { key: "10", value: "foodie" },
+        { key: "11", value: "beach" },
+        { key: "12", value: "shopping" },
+        { key: "13", value: "dancing" },
+        { key: "14", value: "studying" },
+        { key: "15", value: "painting" },
+        { key: "16", value: "cooking class" },
+        { key: "17", value: "art classes" },
+        { key: "18", value: "park" },
+        { key: "19", value: "concerts" },
+        { key: "20", value: "arcade" },
+        { key: "21", value: "other" },
+      ];
+    
     //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
     //the bottom of the CreateEventForm.
     const submit = async (e) => {
@@ -158,7 +181,7 @@ const CreateEventForm = () => {
                     </div>
                 <h1>Category:</h1>
                 <div>
-                    <select className="activityBar" onChange={e=>{setIcon(e.target.value); setActivities(e.target.value); console.log(e.target.value)}}>
+                    <select className="activityBar" onChange={e=>setIcon(e.target.value)}>
                         {categories.map((category)=>(
                             <option key={category.key} value={category.value} className="activityOption">
                                 {category.key}
@@ -166,20 +189,19 @@ const CreateEventForm = () => {
                         ))}
                     </select>
                 </div>
-                    {/* <Multiselect
-                        isObject={false}
-                        onRemove={(event) => {
-                        console.log(event);
-                        }}
-                        onSelect={(event) => {
-                        console.log(event);
-                        setActivities(event)
-                        }}
-                        options={categories.map((category) => category.value)}
-                        //option to add pre-selected activities
-                        //   selectedValues={["arcade"]}
-                        showCheckbox
-                    /> */}
+                <h1>Additional Activities:</h1>
+                <Multiselect
+          isObject={false}
+          onRemove={(event) => {
+            console.log(event);
+          }}
+          onSelect={(event) => {
+            console.log(event);
+            setActivities(event)
+          }}
+          options={cat.map((category) => category.value)}
+          showCheckbox
+        />
                 <h1>Location:</h1>
                 <PlacesAutocomplete setSelected={setSelected} />
                 <button onClick={submit}>Create Event</button>
