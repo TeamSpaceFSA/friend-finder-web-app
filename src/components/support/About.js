@@ -12,7 +12,7 @@ const About = () => {
         onClick={() => navigate(-1)}
       />
 
-      <div>We help you make friends based on common interests</div>
+      <h1>We bring you new friends based on common interests</h1>
 
       <p>
         New Friends began as an idea formulated by Andrea, known as Dre. In 2022,
@@ -27,7 +27,7 @@ const About = () => {
       </p>
 
       <div className="creatorNotes">
-        <h1>Notes from the creators:</h1>
+        <h1>Comments from the creators:</h1>
         <div className="creator">
           <h2>Andrea 'Dre' Arnold</h2>
           <img src="" alt="" />
