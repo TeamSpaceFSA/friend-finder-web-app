@@ -1,7 +1,13 @@
 import React from "react";
+// import { toast } from "react-toastify";
 import "./Toggle.css"
 
 const Toggle = ({ label }) => {
+
+// const handleNotifications = () => {
+//     toast.dismiss()
+// }
+
   return (
     <div className="container">
       {label}{" "}

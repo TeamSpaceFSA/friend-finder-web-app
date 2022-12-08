@@ -17,7 +17,8 @@ import {
   CreateEventForm,
   EventList,
   Footer,
-  SingleEventView
+  SingleEventView,
+  Toggle,
 } from "../components/index";
 import { auth } from "./FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -55,7 +56,7 @@ function AppRoutes() {
 
             <Route path="*" element={<Error />} />
           </Routes>
-          <Footer />
+            <Footer />
         </>
       ) : (
         <Routes>
