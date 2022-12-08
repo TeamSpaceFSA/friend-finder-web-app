@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../app/FirebaseConfig"
 import { doc, setDoc, collection, addDoc } from "firebase/firestore"
@@ -11,6 +11,7 @@ import { NumberPicker } from "react-widgets";
 
 const CreateEventForm = () => {
     const [ user ] = useAuthState(auth)
+    const id = useId()
     const navigate = useNavigate()
 
     //This state is needed for our address search bar functionality to handle the selected address.
@@ -124,7 +125,8 @@ const CreateEventForm = () => {
                 user: user.uid,
                 amPm : mornAft,
                 date: date,
-                icon: icon
+                icon: icon,
+                eventId: id
             });
             navigate("/home");
         } catch (err) {
