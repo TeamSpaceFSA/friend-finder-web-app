@@ -20,11 +20,36 @@ const CreateEventForm = () => {
     const [ description, setDescription ] = useState("") //description of event
     const [ headcount, setHeadcount ] = useState("") //# of people attending event
     const [ startTime, setStartTime ] = useState("") //start time of event
-    const [ endTime, setEndTime ] = useState("") //end time of event
+    // const [ endTime, setEndTime ] = useState("") //end time of event
     const [ age, setAge ] = useState("") //age range of the event
-    const [ activities, setActivities ] = useState([]) //categories associated with event
+    const [ activities, setActivities ] = useState("") //categories associated with event
     const [ location, setLocation ] = useState("") //location of the event
     const [ creator, setCreator ] = useState("") //creator of the event
+    const [ date, setDate ] = useState("") //Date of the event
+    const [ mornAft, setMornAft ] = useState("") //Morning or afternoon of the event
+    const [ icon, setIcon ] = useState("") //setting marker 
+
+    const timeRange = [
+        { key: "0", value: "---select time---"},
+        { key: "1", value: "12:00"},
+        { key: "2", value: "1:00"},
+        { key: "3", value: "2:00"},
+        { key: "4", value: "3:00"},
+        { key: "5", value: "4:00"},
+        { key: "6", value: "5:00"},
+        { key: "7", value: "6:00"},
+        { key: "8", value: "7:00"},
+        { key: "9", value: "8:00"},
+        { key: "10", value: "9:00"},
+        { key: "11", value: "10:00"},
+        { key: "12", value: "11:00"}
+    ];
+
+    const amPM = [
+      { key: "0", value: "---AM / PM---"},
+      { key: "1", value: "AM"},
+      { key: "2", value: "PM"}
+    ]
 
     const ageRange = [
         { key: "0", value: "---select age---" },
@@ -34,8 +59,31 @@ const CreateEventForm = () => {
         { key: "4", value: "35-39" },
         { key: "5", value: "40+" },
       ];
-    
+    // key is the category, value is the icon img link
       const categories = [
+        { key: "bar", value: "https://i.imgur.com/kAT7Tux.png"},
+        { key: "gym",  value: "https://i.imgur.com/Laj8Vax.png"},
+        { key: "bowling", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "skating", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "movies", value: "https://i.imgur.com/2j1RFp3.png" },
+        { key: "museum", value: "https://i.imgur.com/aHp0rTZ.png" },
+        { key: "art gallery", value: "https://i.imgur.com/gfCp9pF.png", },
+        { key: "hiking", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "sight-seeing", value: "https://i.imgur.com/Q6KfnsT.png" },
+        { key: "foodie", value: "https://i.imgur.com/sckBLS5.png" },
+        { key: "beach", value: "https://i.imgur.com/WVZRwfu.png" },
+        { key: "shopping", value: "https://i.imgur.com/ln9hhKg.png"},
+        { key: "dancing", value: "https://i.imgur.com/c1ftBzM.png" },
+        { key: "studying", value: "https://i.imgur.com/n6O9vmP.png" },
+        { key: "painting", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "cooking class", value: "https://i.imgur.com/6Avb5MI.png" },
+        { key: "art classes", value: "https://i.imgur.com/BHPdsgy.png" },
+        { key: "park", value: "https://i.imgur.com/HFRMicZ.png" },
+        { key: "concerts", value: "https://i.imgur.com/fvHYF32.png" },
+        { key: "arcade", value: "https://i.imgur.com/78AAJJz.png" },
+        { key: "other", value: "https://i.imgur.com/CCLrVtI.png" },
+      ];
+      const cat = [
         { key: "1", value: "bar" },
         { key: "2", value: "gym" },
         { key: "3", value: "bowling" },
@@ -58,7 +106,7 @@ const CreateEventForm = () => {
         { key: "20", value: "arcade" },
         { key: "21", value: "other" },
       ];
-
+    
     //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
     //the bottom of the CreateEventForm.
     const submit = async (e) => {
@@ -70,17 +118,22 @@ const CreateEventForm = () => {
                 description: description,
                 headcount: headcount,
                 startTime: startTime,
-                endTime: endTime,
+                // endTime: endTime,
                 age: age,
                 location: selected,
-                user: user.uid
+                user: user.uid,
+                amPm : mornAft,
+                date: date,
+                icon: icon,
+                requestJoin: [],
+                accepted: [],
+                rejected: []
             });
             navigate("/home");
         } catch (err) {
             console.log(err)
         }
     }
-
 
     return(
         <>
@@ -96,12 +149,29 @@ const CreateEventForm = () => {
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
                     <NumberPicker min={1} value={headcount} onChange={headcount => setHeadcount(headcount)} />
+                <h1>Date:</h1>
+                <input type="date" value={date}
+                    onChange={(e) => setDate(e.target.value)} />
                 <h1>Start Time:</h1>
-                <input type="text" value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)} />
-                <h1>End Time:</h1>
+                <div className="age-menu">
+                        <select className="age-searchBar" onChange={(e)=> setStartTime(e.target.value)} name="ages">
+                            {timeRange.map((time) => (
+                            <option key={time.key} className="ageOption">
+                                {time.value}
+                            </option>
+                            ))}
+                        </select>
+                        <select className="age-searchBar" onChange={(e)=> setMornAft(e.target.value)} name="ages">
+                            {amPM.map((time) => (
+                            <option key={time.key} className="ageOption">
+                                {time.value}
+                            </option>
+                            ))}
+                        </select>
+                    </div>
+                {/* <h1>End Time:</h1>
                 <input type="text" value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)} />
+                    onChange={(e) => setEndTime(e.target.value)} /> */}
                 <h1>Age Range:</h1>
                 {/* ??ADD BOOLEAN/CHECKBOX FOR OVER/UNDER 21 YO */}
                     <div className="age-menu">
@@ -113,21 +183,29 @@ const CreateEventForm = () => {
                             ))}
                         </select>
                     </div>
-                <h1>Related Activities:</h1>
-                    <Multiselect
-                        isObject={false}
-                        onRemove={(event) => {
-                        console.log(event);
-                        }}
-                        onSelect={(event) => {
-                        console.log(event);
-                        setActivities(event)
-                        }}
-                        options={categories.map((category) => category.value)}
-                        //option to add pre-selected activities
-                        //   selectedValues={["arcade"]}
-                        showCheckbox
-                    />
+                <h1>Category:</h1>
+                <div>
+                    <select className="activityBar" onChange={e=>setIcon(e.target.value)}>
+                        {categories.map((category)=>(
+                            <option key={category.key} value={category.value} className="activityOption">
+                                {category.key}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <h1>Additional Activities:</h1>
+                <Multiselect
+          isObject={false}
+          onRemove={(event) => {
+            console.log(event);
+          }}
+          onSelect={(event) => {
+            console.log(event);
+            setActivities(event)
+          }}
+          options={cat.map((category) => category.value)}
+          showCheckbox
+        />
                 <h1>Location:</h1>
                 <PlacesAutocomplete setSelected={setSelected} />
                 <button onClick={submit}>Create Event</button>

@@ -71,7 +71,7 @@ const HomeMap = () => {
       <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} mapContainerClassName="map-container">
         {markers.map(marker => <MarkerF key={marker.time.toISOString()} position={{ lat: marker.lat, lng: marker.lng }} icon="https://i.imgur.com/OX3qSvl.png" />)}
         {console.log(events)}
-        {events.map(event => <MarkerF key={event.name} position={{ lat: event.location.lat, lng: event.location.lng }} icon="https://i.imgur.com/OX3qSvl.png" onClick={() => setSelectedMarker(event)}/>)}
+        {events.map(event => <MarkerF key={event.name} position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon} onClick={() => setSelectedMarker(event)}/>)}
         {selectedMarker && <InfoWindowF key={selectedMarker.name} position={{lat: selectedMarker.location.lat, lng: selectedMarker.location.lng}}>
             <>
             <h1>{selectedMarker.name}</h1>
