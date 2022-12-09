@@ -128,7 +128,7 @@ const CreateEventForm = () => {
                 requestJoin: [],
                 accepted: [],
                 rejected: [],
-                identifier: Date.now().toString(36) + Math.random().toString(36).substr(2)
+                identifier: Date.now().toString(36) + Math.random().toString(36).substr(2) //makes a statistically unique ID that is not the same as the document id
             });
             navigate("/home");
         } catch (err) {
