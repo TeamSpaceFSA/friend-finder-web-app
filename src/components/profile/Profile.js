@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, Link } from "react-router-dom";
-import { auth, db } from "../../app/FirebaseConfig"
-import { query, collection, getDocs, where } from "firebase/firestore"
+import { auth, db } from "../../app/FirebaseConfig";
+import { query, collection, getDocs, where } from "firebase/firestore";
+
+import Footer from "../homepage/Footer";
 
 const Profile = () => {
     const [user] = useAuthState(auth)
@@ -65,4 +67,4 @@ const Profile = () => {
 
 }
 
-export default Profile
+export default Profile;

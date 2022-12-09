@@ -12,10 +12,12 @@ export const fetchFutureEvents = createAsyncThunk(
             where("accepted", "array-contains", user.uid),
             where("startTime", ">", serverTimestamp() ))
             const doc = await getDocs(q);
-            const data = doc.docs 
-            //doc is an array of docs which have attribute data() that contains our desired data
-            //to extract individual data, use doc.docs[index].data().desiredItem
-            return data
+            const locations = []
+            for (let i=0; i< doc.docs.length; i++){
+                const data = doc.docs[i].data();
+                locations.push(data);
+            }
+            return locations 
         } catch (err) {
             console.log(err)
         }

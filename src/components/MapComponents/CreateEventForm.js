@@ -22,12 +22,12 @@ const CreateEventForm = () => {
     const [ startTime, setStartTime ] = useState("") //start time of event
     // const [ endTime, setEndTime ] = useState("") //end time of event
     const [ age, setAge ] = useState("") //age range of the event
-    const [ activities, setActivities ] = useState([]) //categories associated with event
+    const [ activities, setActivities ] = useState("") //categories associated with event
     const [ location, setLocation ] = useState("") //location of the event
     const [ creator, setCreator ] = useState("") //creator of the event
     const [ date, setDate ] = useState("") //Date of the event
     const [ mornAft, setMornAft ] = useState("") //Morning or afternoon of the event
-
+    const [ icon, setIcon ] = useState("") //setting marker 
 
     const timeRange = [
         { key: "0", value: "---select time---"},
@@ -59,8 +59,31 @@ const CreateEventForm = () => {
         { key: "4", value: "35-39" },
         { key: "5", value: "40+" },
       ];
-    
+    // key is the category, value is the icon img link
       const categories = [
+        { key: "bar", value: "https://i.imgur.com/kAT7Tux.png"},
+        { key: "gym",  value: "https://i.imgur.com/Laj8Vax.png"},
+        { key: "bowling", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "skating", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "movies", value: "https://i.imgur.com/2j1RFp3.png" },
+        { key: "museum", value: "https://i.imgur.com/aHp0rTZ.png" },
+        { key: "art gallery", value: "https://i.imgur.com/gfCp9pF.png", },
+        { key: "hiking", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "sight-seeing", value: "https://i.imgur.com/Q6KfnsT.png" },
+        { key: "foodie", value: "https://i.imgur.com/sckBLS5.png" },
+        { key: "beach", value: "https://i.imgur.com/WVZRwfu.png" },
+        { key: "shopping", value: "https://i.imgur.com/ln9hhKg.png"},
+        { key: "dancing", value: "https://i.imgur.com/c1ftBzM.png" },
+        { key: "studying", value: "https://i.imgur.com/n6O9vmP.png" },
+        { key: "painting", value: "https://i.imgur.com/q8E53YA.png" },
+        { key: "cooking class", value: "https://i.imgur.com/6Avb5MI.png" },
+        { key: "art classes", value: "https://i.imgur.com/BHPdsgy.png" },
+        { key: "park", value: "https://i.imgur.com/HFRMicZ.png" },
+        { key: "concerts", value: "https://i.imgur.com/fvHYF32.png" },
+        { key: "arcade", value: "https://i.imgur.com/78AAJJz.png" },
+        { key: "other", value: "https://i.imgur.com/CCLrVtI.png" },
+      ];
+      const cat = [
         { key: "1", value: "bar" },
         { key: "2", value: "gym" },
         { key: "3", value: "bowling" },
@@ -83,7 +106,7 @@ const CreateEventForm = () => {
         { key: "20", value: "arcade" },
         { key: "21", value: "other" },
       ];
-
+    
     //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
     //the bottom of the CreateEventForm.
     const submit = async (e) => {
@@ -100,7 +123,11 @@ const CreateEventForm = () => {
                 location: selected,
                 user: user.uid,
                 amPm : mornAft,
-                date: date
+                date: date,
+                icon: icon,
+                requestJoin: [],
+                accepted: [],
+                rejected: []
             });
             navigate("/home");
         } catch (err) {
@@ -108,10 +135,9 @@ const CreateEventForm = () => {
         }
     }
 
-
     return(
         <>
-        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
+        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
         <div id="CreateEventContainer">
             <form>
                 <h1>Create Event</h1>
@@ -122,7 +148,7 @@ const CreateEventForm = () => {
                 <input type="text" value={description}
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
-                    <NumberPicker value={headcount} onChange={headcount => setHeadcount(headcount)} />
+                    <NumberPicker min={1} value={headcount} onChange={headcount => setHeadcount(headcount)} />
                 <h1>Date:</h1>
                 <input type="date" value={date}
                     onChange={(e) => setDate(e.target.value)} />
@@ -147,6 +173,7 @@ const CreateEventForm = () => {
                 <input type="text" value={endTime}
                     onChange={(e) => setEndTime(e.target.value)} /> */}
                 <h1>Age Range:</h1>
+                {/* ??ADD BOOLEAN/CHECKBOX FOR OVER/UNDER 21 YO */}
                     <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
                             {ageRange.map((age) => (
@@ -156,21 +183,29 @@ const CreateEventForm = () => {
                             ))}
                         </select>
                     </div>
-                <h1>Related Activities:</h1>
-                    <Multiselect
-                        isObject={false}
-                        onRemove={(event) => {
-                        console.log(event);
-                        }}
-                        onSelect={(event) => {
-                        console.log(event);
-                        setActivities(event)
-                        }}
-                        options={categories.map((category) => category.value)}
-                        //option to add pre-selected activities
-                        //   selectedValues={["arcade"]}
-                        showCheckbox
-                    />
+                <h1>Category:</h1>
+                <div>
+                    <select className="activityBar" onChange={e=>setIcon(e.target.value)}>
+                        {categories.map((category)=>(
+                            <option key={category.key} value={category.value} className="activityOption">
+                                {category.key}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <h1>Additional Activities:</h1>
+                <Multiselect
+          isObject={false}
+          onRemove={(event) => {
+            console.log(event);
+          }}
+          onSelect={(event) => {
+            console.log(event);
+            setActivities(event)
+          }}
+          options={cat.map((category) => category.value)}
+          showCheckbox
+        />
                 <h1>Location:</h1>
                 <PlacesAutocomplete setSelected={setSelected} />
                 <button onClick={submit}>Create Event</button>

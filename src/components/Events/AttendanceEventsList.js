@@ -14,13 +14,20 @@ const EventsList = () => {
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
     const events = useSelector(allEvents);
+
+    //Separating event types
+    const futureEvents = events.futureEvents
+    const pastEvents = events.pastEvents
+    const hostedEvents = events.hostedEvents
     
-    useEffect(() => {
-        dispatch(fetchFutureEvents)
+    useEffect(async () => {
+        dispatch(fetchFutureEvents()),
+        [dispatch]
     })
+    
+
 ​
-    let allEvents = [...events];
-    //events is a reference to state. State cannot be altered directly, so we deepcopy it here into a new mutable object allEvents.
+    
 ​
     console.log(allEvents)
 ​
