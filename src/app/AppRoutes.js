@@ -19,7 +19,8 @@ import {
   Footer,
   SingleEventView,
   Toggle,
-  EditEvent
+  EditEvent,
+  EventsListFiltered
 } from "../components/index";
 import { auth } from "./FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -54,7 +55,7 @@ function AppRoutes() {
               element={<CreateEventForm />}
             />
             <Route path="/profile/eventList" element={<EventList />} />
-            <Route path="/editEvent" element={<EditEvent/>}/>
+
             <Route path="*" element={<Error />} />
           </Routes>
             <Footer />
