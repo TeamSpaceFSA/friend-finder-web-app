@@ -124,7 +124,8 @@ const CreateEventForm = () => {
                 icon: icon,
                 requestJoin: [],
                 accepted: [],
-                rejected: []
+                rejected: [],
+                identifier: Date.now().toString(36) + Math.random().toString(36).substr(2)
             });
             navigate("/home");
           
