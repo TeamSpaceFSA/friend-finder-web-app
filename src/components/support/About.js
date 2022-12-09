@@ -30,9 +30,9 @@ const About = () => {
       </p>
 
       <div className="creatorNotes">
-        <h1>Comments from the creators:</h1>
+        <h2>Comments from the creators:</h2>
         <div className="creator">
-          <img
+          <img className="creator-img"
             src="https://i.ibb.co/9gCytgY/F40-BF646-4252-4-B55-9104-C5-B69-B1-DAD3-E.jpg"
             alt=""
           />
@@ -60,7 +60,7 @@ const About = () => {
 
         <div className="creator">
           {/* IMAGE HERE */}
-          <img src="" alt="" />
+          <img className="creator-img" src="" alt="" />
           <div className="creatorContact">
             <h2>Jenny Wu</h2>
             <a href="https://www.linkedin.com/in/jennyzwu/">
@@ -77,7 +77,7 @@ const About = () => {
 
         <div className="creator">
           {/* IMAGE HERE */}
-          <img src="" alt="" />
+          <img className="creator-img" src="" alt="" />
           <div className="creatorContact">
             <h2>Jacob Saddler</h2>
             <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -94,7 +94,7 @@ const About = () => {
 
         <div className="creator">
           {/* IMAGE HERE */}
-          <img src="" alt="" />
+          <img className="creator-img" src="" alt="" />
           <div className="creatorContact">
             <h2>Harry Huang</h2>
             <a href="https://www.linkedin.com/in/harryzhuang/">

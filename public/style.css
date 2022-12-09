@@ -186,11 +186,12 @@ h3 span {
   margin-bottom: 3rem;
 }
 
-.creator img {
+.creator-img {
   height: 100px;
   width: 100px;
   border-radius: 50%;
   float: left;
+  box-shadow: 3px 3px 7px #4744449a
 }
 
 .creatorContact {
