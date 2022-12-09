@@ -121,7 +121,10 @@ const CreateEventForm = () => {
                 user: user.uid,
                 amPm : mornAft,
                 date: date,
-                icon: icon
+                icon: icon,
+                requestJoin: [],
+                accepted: [],
+                rejected: []
             });
             navigate("/home");
           
@@ -132,7 +135,7 @@ const CreateEventForm = () => {
 
     return(
         <>
-        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
+        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
         <div id="CreateEventContainer">
             <form>
                 <h1>Create Event</h1>
@@ -143,7 +146,7 @@ const CreateEventForm = () => {
                 <input type="text" value={description} label={description}
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
-                    <NumberPicker value={headcount} label={headcount} onChange={headcount => setHeadcount(headcount)}/>
+                    <NumberPicker min={1} value={headcount} onChange={headcount => setHeadcount(headcount)} />
                 <h1>Date:</h1>
                 <input type="date" value={date}
                     onChange={(e) => setDate(e.target.value)}/>
@@ -165,6 +168,7 @@ const CreateEventForm = () => {
                         </select>
                     </div>
                 <h1>Age Range:</h1>
+                {/* ??ADD BOOLEAN/CHECKBOX FOR OVER/UNDER 21 YO */}
                     <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
                             {ageRange.map((age) => (

@@ -6,7 +6,6 @@ import {
   SignUp,
   Error,
   Resetpassword,
-  Settings,
   Help,
   Suggestions,
   About,
@@ -18,7 +17,9 @@ import {
   CreateEventForm,
   EventList,
   Footer,
-  SingleEventView
+  SingleEventView,
+  Toggle,
+  EditEvent
 } from "../components/index";
 import { auth } from "./FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -37,7 +38,6 @@ function AppRoutes() {
             <Route path="/home" element={<HomeMap />} />
             <Route path="/setupprofile" element={<ProfileSetup />} />
             <Route path="/resetpassword" element={<Resetpassword />} />
-            <Route path="/settings" element={<Settings />} />
             <Route path="/help" element={<Help />} />
             <Route path="/suggestions" element={<Suggestions />} />
             <Route path="/about" element={<About />} />
@@ -54,10 +54,10 @@ function AppRoutes() {
               element={<CreateEventForm />}
             />
             <Route path="/profile/eventList" element={<EventList />} />
-
+            <Route path="/editEvent" element={<EditEvent/>}/>
             <Route path="*" element={<Error />} />
           </Routes>
-          <Footer />
+            <Footer />
         </>
       ) : (
         <Routes>
