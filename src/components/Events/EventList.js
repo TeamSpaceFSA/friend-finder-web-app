@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 const EventList = () => {
   const [user] = useAuthState(auth)
   const [events, setEvents] = useState([])
+  const [hidden, setHidden] = useState(false)
   const navigate = useNavigate()
 
   const fetchEvents = async () => {
@@ -58,14 +59,14 @@ const EventList = () => {
 
   return (
     <>
-      <div>Event List</div>
-      <div>My Events:</div> 
+      <h1>My Events:</h1> 
+      <h4>Click on event name to edit</h4>
       {events.map((doc) =>
         <div key={doc.id} onClick={() => setSelectedEvent(doc)}>
-          <h2>{doc.name}</h2>
+          <h2 onClick={()=>setHidden(true)}>{doc.name}</h2>
           <p>{doc.description}</p>
-          <button onClick={() => {
-            viewEditEvent(selectedEvent)}}>Edit</button>
+         {hidden ? <button onClick={() => {
+            viewEditEvent(selectedEvent)}}>Edit</button>: ""}
           <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
         </div>)}
 
