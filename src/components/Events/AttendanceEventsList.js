@@ -20,22 +20,17 @@ const EventsList = () => {
     const pastEvents = events.pastEvents
     const hostedEvents = events.hostedEvents
     
-    useEffect(async () => {
-        dispatch(fetchFutureEvents()),
-        [dispatch]
-    })
-    
+    useEffect(() => {
+        dispatch(fetchFutureEvents())
+    },[dispatch])
 
-​
-    
-​
     console.log(allEvents)
-​
+
     return (
         <div>
-​
+
         </div>
     )
 }
-​
+
 export default EventsList
