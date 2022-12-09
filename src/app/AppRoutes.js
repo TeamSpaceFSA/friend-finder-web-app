@@ -46,6 +46,7 @@ function AppRoutes() {
             <Route path="/profile/editprofile" element={<EditProfile />} />
             <Route path="/profile/friendslist" element={<FriendsList />} />
             <Route path="/singleEventView" element={<SingleEventView />} />
+            <Route path="/editEventView" element={<EditEvent />} />
             <Route
               path="/profile/createEventMap"
               element={<CreateEventMap />}

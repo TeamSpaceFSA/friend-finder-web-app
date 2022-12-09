@@ -1,13 +1,16 @@
-import React, { useState, useMemo, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { auth, db } from "../../app/FirebaseConfig"
-import { onSnapshot, query, collection, doc, getDocs, documentId, where, deleteDoc } from "firebase/firestore";
+import { query, collection, doc, getDocs, where, deleteDoc } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 const EventList = () => {
   const [user] = useAuthState(auth)
   const [events, setEvents] = useState([])
+  const [hidden, setHidden] = useState(false)
+  const navigate = useNavigate()
 
   const fetchEvents = async () => {
     try{
@@ -40,25 +43,34 @@ const EventList = () => {
     }
   }
 
+  const [ selectedEvent, setSelectedEvent ] = useState("")
+
+  const viewEditEvent = () => {
+    // Here, we pass the variable 'selectedMarker' as a value for our key 'state' so our SingleEventView 
+    // component recognizes which event we are referring to.
+    navigate("/editEventView", {state: selectedEvent})
+    console.log("Here is the selectedEvent", selectedEvent)
+  }
+
   //Fetch all events everytime the page is loaded.
   useEffect(() => {
     fetchEvents()
   }, [])
 
-  //We want to be able to filter events by 
   return (
     <>
-      <div>Event List</div>
+      <h1>My Events:</h1> 
+      <h4>Click on event name to edit</h4>
       {events.map((doc) =>
-        <div key={doc.id}>
-          <h2>{doc.name}</h2>
+        <div key={doc.id} onClick={() => setSelectedEvent(doc)}>
+          <h2 onClick={()=>setHidden(true)}>{doc.name}</h2>
           <p>{doc.description}</p>
-          <button>Edit</button>
+         {hidden ? <button onClick={() => {
+            viewEditEvent(selectedEvent)}}>Edit</button>: ""}
           <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
         </div>)}
-      <div>My Events</div>
+
     </>
   )
 }
-
 export default EventList
