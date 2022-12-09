@@ -12,10 +12,11 @@ const SingleEventView = () => {
     //location.state holds all of our single event data, therefore we define it to make it easier to refer to.
     const event = location.state
     // console.log("This is the state we have passed in from the Marker we have clicked", location.state)
-    const { name, category, headcount, startTime, description } = event
-    const host = event.user //cant deconstruct as user above bc user keyword reserved for useAuthState
-    const [user] = useAuthState(auth);
-   
+    const { name, category, headcount, startTime, description, requested } = event
+
+    //User authentication 
+    const host = event.user 
+    const [user] = useAuthState(auth); 
 
     const libraries = ["places"]
     const { isLoaded } = useLoadScript({
@@ -24,6 +25,22 @@ const SingleEventView = () => {
     })
     if (!isLoaded) return (<div>Loading...</div>)
     console.log(event)
+
+    //Accept reject button event handling
+    /**
+     * Inserts associated user ID into accepted array in event document, removes from rejected array if necessary
+     */
+    function handleAccept(){
+
+    }
+
+    /**
+     * Inserts associated user ID into rejected array in event document, removes from accepted array if necessary
+     */
+    function handleReject(){
+
+    }
+
     return (
         <div>
             <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} />
@@ -37,7 +54,17 @@ const SingleEventView = () => {
 
             {/* If user is event host, provide attendance management functionality */}
             {host == user ? <div>
-
+                {/* map requested users and link accept and reject buttons to each user */}
+                {requested.map( user => (
+                    <div classname="attendee">
+                        <div classname='attendeeInformation'>
+                            <img src={user.photo} alt='user profile'></img>
+                            <div>{user.name}</div>
+                            <button onClick={handleAccept}>Accept</button>
+                            <button onClick={handleReject}>Reject</button>
+                        </div>
+                    </div>
+                ) )}
             </div> : null}
 
             <GoogleMap zoom={60} center={{ lat: event.location.lat, lng: event.location.lng }} mapContainerClassName="map-container">
