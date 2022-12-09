@@ -196,4 +196,6 @@ h3 span {
 .creatorContact {
 display: flex;
 justify-content: space-around;
-align-items: center;}
+align-items: center;
+padding-top: .5rem;
+}
