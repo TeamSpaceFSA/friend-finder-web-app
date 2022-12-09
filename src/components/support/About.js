@@ -23,7 +23,7 @@ const About = () => {
         their studies at Fullstack Academy for their final Capstone project.
         After voting and deliberating, amongst 30+ ideas, New Friends was chosen
         out of the bunch. In the 2.5 week project deadline, the team made a MVP
-        (minimal value product) verson of their new social media app using both
+        (minimal viable product) verson of their new social media app using both
         known and new technologies. The project was then first shared with a
         select audience as part of the students' graduation at Fullstack Academy
         where it receieved a lot of positive feedback.
