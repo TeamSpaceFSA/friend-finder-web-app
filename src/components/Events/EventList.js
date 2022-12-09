@@ -128,7 +128,7 @@ const ageRange = [
     try{
       const eventCollectionRef = query(collection(db,"events"),where("user","==",user.uid))
       const data = await getDocs(eventCollectionRef)
-      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id, name:doc.name})))
+      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
     }catch(err){
       console.log(err)
     }
@@ -174,6 +174,7 @@ const ageRange = [
     <>
       <div>Event List</div>
       <div>My Events:</div>
+
         {/* {events.map((doc)=>
         // <div key={doc.id}>
         //   <form key={doc.id}>
@@ -236,6 +237,71 @@ const ageRange = [
         //    <button onClick={()=>deleteEvent(doc.id)}>Remove Event</button>
         // </div>
         // )} */}
+
+        {events.map((doc)=>
+        <div key={doc.id}>
+          <form key={doc.id}>
+            Event:<input type="text" defaultValue={doc.name} onChange={(e)=>setName(e.target.value && doc.name)}/>
+            Location:{doc.location.address}
+            <PlacesAutocomplete defaultValue={doc.location.address} setSelected={setSelected} />
+            Description:<textarea type="text" defaultValue={doc.description} onChange={(e)=>setDescription(e.target.value)}/>
+            # of People:
+            <NumberPicker min={1} defaultValue={doc.headcount} onChange={headcount => setHeadcount(headcount)} />
+            Age Range:<div className="age-menu">
+                        <select className="age-searchBar"  defaultValue={doc.age} onChange={(e)=> setAge(e.target.value)} name="ages">
+                            {ageRange.map((age) => (
+                            <option key={age.key} className="ageOption">
+                                {age.value}
+                            </option>
+                            ))}
+                        </select>
+                    </div>
+            Date: <input type="date" defaultValue={doc.date}
+                    onChange={(e) => setDate(e.target.value)} />
+            Start:<div className="age-menu">
+                        <select className="age-searchBar" defaultValue={doc.startTime} onChange={(e)=> setStartTime(e.target.value)} name="ages">
+                            {timeRange.map((time) => (
+                            <option key={time.key} className="ageOption">
+                                {time.value}
+                            </option>
+                            ))}
+                        </select>
+                        <select className="age-searchBar" defaultValue={doc.amPm} onChange={(e)=> setMornAft(e.target.value)} name="ages">
+                            {amPM.map((time) => (
+                            <option key={time.key} className="ageOption">
+                                {time.value}
+                            </option>
+                            ))}
+                        </select>
+                    </div>
+            Activity: <div>
+                    <select className="activityBar" defaultValue={doc.icon} onChange={e=>setIcon(e.target.value)}>
+                        {categories.map((category)=>(
+                            <option key={category.key} value={category.value} className="activityOption">
+                                {category.key}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                Additional Activities:<Multiselect
+          isObject={false}
+          onRemove={(event) => {
+            console.log(event);
+          }}
+          onSelect={(event) => {
+            console.log(event);
+            setActivities(event)
+          }}
+          options={cat.map((category) => category.value)}
+          selectedValues={doc.category}
+          showCheckbox
+        />
+          </form>
+          <button onClick={()=>updateEvent(doc.id)}>Submit Changes</button>
+           <button onClick={()=>deleteEvent(doc.id)}>Remove Event</button>
+        </div>
+        )}
+
       <div>Attending Events:</div>
        
       {events.map((doc) =>
@@ -276,7 +342,7 @@ const PlacesAutocomplete = ({ setSelected }) => {
         onChange={(e) => setValue(e.target.value)}
         disabled={!ready}
         className="combobox-input"
-        placeholder={"Search an address"}
+        placeholder={"Change address"}
       />
       <ComboboxPopover>
         <ComboboxList>
