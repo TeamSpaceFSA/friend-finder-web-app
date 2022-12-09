@@ -59,6 +59,7 @@ const About = () => {
         </div>
 
         <div className="creator">
+          {/* IMAGE HERE */}
           <img src="" alt="" />
           <div className="creatorContact">
             <h2>Jenny Wu</h2>
@@ -71,10 +72,11 @@ const About = () => {
             </a>
           </div>
           <br />
-          <p>"write here"</p>
+          <p>"WRITE HERE"</p>
         </div>
 
         <div className="creator">
+          {/* IMAGE HERE */}
           <img src="" alt="" />
           <div className="creatorContact">
             <h2>Jacob Saddler</h2>
@@ -87,10 +89,11 @@ const About = () => {
             </a>
           </div>
           <br />
-          <p>"write here"</p>
+          <p>"WRITE HERE"</p>
         </div>
 
         <div className="creator">
+          {/* IMAGE HERE */}
           <img src="" alt="" />
           <div className="creatorContact">
             <h2>Harry Huang</h2>
@@ -103,7 +106,7 @@ const About = () => {
             </a>
           </div>
           <br />
-          <p>"write here"</p>
+          <p>"WRITE HERE"</p>
         </div>
       </div>
     </div>
