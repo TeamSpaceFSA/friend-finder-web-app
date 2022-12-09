@@ -124,7 +124,7 @@ const ageRange = [
     try{
       const eventCollectionRef = query(collection(db,"events"),where("user","==",user.uid))
       const data = await getDocs(eventCollectionRef)
-      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id, name:doc.name})))
+      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
     }catch(err){
       console.log(err)
     }
@@ -164,8 +164,9 @@ const ageRange = [
         {events.map((doc)=>
         <div key={doc.id}>
           <form key={doc.id}>
-            Event:<input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
-            Location:<PlacesAutocomplete defaultValue={doc.location.address} setSelected={setSelected} />
+            Event:<input type="text" defaultValue={doc.name} onChange={(e)=>setName(e.target.value && doc.name)}/>
+            Location:{doc.location.address}
+            <PlacesAutocomplete defaultValue={doc.location.address} setSelected={setSelected} />
             Description:<textarea type="text" defaultValue={doc.description} onChange={(e)=>setDescription(e.target.value)}/>
             # of People:
             <NumberPicker min={1} defaultValue={doc.headcount} onChange={headcount => setHeadcount(headcount)} />
@@ -263,7 +264,7 @@ const PlacesAutocomplete = ({ setSelected }) => {
         onChange={(e) => setValue(e.target.value)}
         disabled={!ready}
         className="combobox-input"
-        placeholder={"Search an address"}
+        placeholder={"Change address"}
       />
       <ComboboxPopover>
         <ComboboxList>
