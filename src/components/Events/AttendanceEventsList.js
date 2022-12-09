@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector, useDispatch } from "react-redux";
 import { allEvents, fetchFutureEvents } from "./attendanceEventsSlice";
-​
+
 const EventsList = () => {
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
@@ -38,4 +38,4 @@ const EventsList = () => {
     )
 }
 ​
-export default EventsList
+export default EventsListFiltered
