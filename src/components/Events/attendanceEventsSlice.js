@@ -62,8 +62,8 @@ const eventsSlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchFutureEvents.fulfilled, (state, action) => {
-            state.futureEvents = action.payload 
+        builder.addCase(fetchAcceptedEvents.fulfilled, (state, action) => {
+            state.acceptedEvents = action.payload 
         });
         // builder.addCase(fetchPastEvents.fulfilled, (state, action) => {
         //     state.pastEvents = action.payload
