@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
-import { render } from "@testing-library/react";
 
 const SingleEventView = () => {
     const navigate = useNavigate()
