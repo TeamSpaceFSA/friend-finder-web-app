@@ -3,21 +3,20 @@ import { query, collection, getDocs, where, serverTimestamp } from "firebase/fir
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
 
-export const fetchFutureEvents = createAsyncThunk(
-    'fetchFutureEvents',
+export const fetchAcceptedEvents = createAsyncThunk(
+    'fetchAcceptedEvents',
     async () => {
         try {
             const [user] = useAuthState(auth);
             const q = query(collection(db, "events"), 
-            where("accepted", "array-contains", user.uid),
-            where("startTime", ">", serverTimestamp() ))
+            where("accepted", "array-contains", user.uid));
             const doc = await getDocs(q);
-            const locations = []
+            const events = [];
             for (let i=0; i< doc.docs.length; i++){
                 const data = doc.docs[i].data();
-                locations.push(data);
+                events.push(data);
             }
-            return locations 
+            return events 
         } catch (err) {
             console.log(err)
         }
@@ -57,14 +56,14 @@ export const fetchFutureEvents = createAsyncThunk(
 const eventsSlice = createSlice({
     name: 'events',
     initialState: {
-        futureEvents: [], //upcoming events
-        pastEvents: [], //complete events
+        acceptedEvents: [], //events where join request approved
+        rejectedEvents: [], //events where join request denied
         hostedEvents: [], //upcoming events you are hosting
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchFutureEvents.fulfilled, (state, action) => {
-            state.futureEvents = action.payload 
+        builder.addCase(fetchAcceptedEvents.fulfilled, (state, action) => {
+            state.acceptedEvents = action.payload 
         });
         // builder.addCase(fetchPastEvents.fulfilled, (state, action) => {
         //     state.pastEvents = action.payload
