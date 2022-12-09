@@ -14,11 +14,11 @@ const CreateEventForm = () => {
     const navigate = useNavigate()
 
     //This state is needed for our address search bar functionality to handle the selected address.
-    const [ selected, setSelected] = useState(null);
+    const [ selected, setSelected] = useState(null); //set back to null if this doesn't work
 
     const [ name, setName ] = useState("") //name of event
     const [ description, setDescription ] = useState("") //description of event
-    const [ headcount, setHeadcount ] = useState("") //# of people attending event
+    const [ headcount, setHeadcount ] = useState(1) //# of people attending event
     const [ startTime, setStartTime ] = useState("") //start time of event
     // const [ endTime, setEndTime ] = useState("") //end time of event
     const [ age, setAge ] = useState("") //age range of the event
@@ -106,11 +106,9 @@ const CreateEventForm = () => {
         { key: "20", value: "arcade" },
         { key: "21", value: "other" },
       ];
-    
-    //This allows us to create a new event in Firebase when the user clicks the 'create event' button at
-    //the bottom of the CreateEventForm.
+
     const submit = async (e) => {
-        try{
+      try{
             e.preventDefault();
             await addDoc(collection(db, "events"), {
                 name: name,
@@ -118,7 +116,6 @@ const CreateEventForm = () => {
                 description: description,
                 headcount: headcount,
                 startTime: startTime,
-                // endTime: endTime,
                 age: age,
                 location: selected,
                 user: user.uid,
@@ -127,6 +124,7 @@ const CreateEventForm = () => {
                 icon: icon
             });
             navigate("/home");
+          
         } catch (err) {
             console.log(err)
         }
@@ -140,15 +138,15 @@ const CreateEventForm = () => {
                 <h1>Create Event</h1>
                 <h1>Name Of Event:</h1>
                 <input type="text" value={name}
-                    onChange={(e) => setName(e.target.value)} />
+                    onChange={(e) => setName(e.target.value)}></input>
                 <h1>Description:</h1>
-                <input type="text" value={description}
+                <input type="text" value={description} label={description}
                     onChange={(e) => setDescription(e.target.value)} />
                 <h1>Headcount:</h1>
-                    <NumberPicker value={headcount} onChange={headcount => setHeadcount(headcount)} />
+                    <NumberPicker value={headcount} label={headcount} onChange={headcount => setHeadcount(headcount)}/>
                 <h1>Date:</h1>
                 <input type="date" value={date}
-                    onChange={(e) => setDate(e.target.value)} />
+                    onChange={(e) => setDate(e.target.value)}/>
                 <h1>Start Time:</h1>
                 <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setStartTime(e.target.value)} name="ages">
@@ -166,9 +164,6 @@ const CreateEventForm = () => {
                             ))}
                         </select>
                     </div>
-                {/* <h1>End Time:</h1>
-                <input type="text" value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)} /> */}
                 <h1>Age Range:</h1>
                     <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
@@ -204,7 +199,15 @@ const CreateEventForm = () => {
         />
                 <h1>Location:</h1>
                 <PlacesAutocomplete setSelected={setSelected} />
-                <button onClick={submit}>Create Event</button>
+              {name.length <= 0 ? <button onClick={submit} disabled={true}>Create Event</button> : description.length <= 0 ? 
+              <button onClick={submit} disabled={true}>Create Event</button> :  headcount <= 0 ? 
+              <button onClick={submit} disabled={true}>Create Event</button> : startTime.length <= 0 ?
+              <button onClick={submit} disabled={true}>Create Event</button> : age.length <= 0 ?
+              <button onClick={submit} disabled={true}>Create Event</button> : activities.length <= 0 ?
+              <button onClick={submit} disabled={true}>Create Event</button> : selected == null ?
+              <button onClick={submit} disabled={true}>Create Event</button> : mornAft.length <= 0 ?
+              <button onClick={submit} disabled={true}>Create Event</button> : icon.length <= 0 ?
+              <button onClick={submit} disabled={true}>Create Event</button> : <button onClick={submit}>Create Event</button>}
             </form>
         </div>
         </>
