@@ -190,4 +190,10 @@ h3 span {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  float: left;
 }
+
+.creatorContact {
+display: flex;
+justify-content: space-around;
+align-items: center;}

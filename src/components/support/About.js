@@ -32,9 +32,10 @@ const About = () => {
         <div className="creator">
           <img
             src="https://i.ibb.co/9gCytgY/F40-BF646-4252-4-B55-9104-C5-B69-B1-DAD3-E.jpg"
-            alt=""
-          />
-          <h2>Andrea 'Dre' Arnold</h2>
+            alt="" 
+          /><div className="creatorContact">
+          <h2>Andrea 'Dre' Arnold </h2>
+          <a href="https://www.linkedin.com/in/arnoldandrea/"><img src="https://www.iconpacks.net/icons/2/free-linkedin-logo-icon-2430-thumb.png" style={{ height: "33px", width: "33px" }} alt="" /></a></div>
           <p>
             "I see New Friends as a very useful, fun, and lucrative social mobile
             app. Imagine commuting to or visiting a new town... It can be hard
@@ -47,20 +48,23 @@ const About = () => {
 
         <div className="creator">
           <img src="" alt="" />
+          <div className="creatorContact">
           <h2>Jenny Wu</h2>
-          <p>"write here"</p>
+          <a href="https://www.linkedin.com/in/jennyzwu/"><img src="https://www.iconpacks.net/icons/2/free-linkedin-logo-icon-2430-thumb.png" style={{ height: "33px", width: "33px" }} alt="" /></a></div>          <p>"write here"</p>
         </div>
 
         <div className="creator">
           <img src="" alt="" /> 
+          <div className="creatorContact">
           <h2>Jacob Saddler</h2>
-          <p>"write here"</p>
+          <a href="https://www.linkedin.com/in/jacob-saddler/"><img src="https://www.iconpacks.net/icons/2/free-linkedin-logo-icon-2430-thumb.png" style={{ height: "33px", width: "33px" }} alt="" /></a></div>           <p>"write here"</p>
         </div>
 
         <div className="creator">
           <img src="" alt="" />
+          <div className="creatorContact">
           <h2>Harry Huang</h2>
-          <p>"write here"</p>
+          <a href="https://www.linkedin.com/in/harryzhuang/"><img src="https://www.iconpacks.net/icons/2/free-linkedin-logo-icon-2430-thumb.png" style={{ height: "33px", width: "33px" }} alt="" /></a></div>           <p>"write here"</p>
         </div>
       </div>
     </div>
