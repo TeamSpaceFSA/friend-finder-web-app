@@ -106,7 +106,7 @@ const SignIn = () => {
       </div>
      
       <h3 className="no-logIn">
-        Don't have an account?<Link to="/">Sign Up</Link>
+        Don't have an account? <Link to="/">Sign Up</Link>
       </h3></div>
       <div className="newuser-footer">
         <h5 className="newuser-about">
