@@ -2,15 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Optima, sans-serif;
 }
+
+/* CHOOSE FONT FOR ENTIRE APP or 1 FOR TITLE, 1 FOR TEXT */
+/* Didot, serif; */
 
 body {
   max-width: 375px;
   max-height: 667px;
-}
-
-#root {
-  margin-bottom: 45px;
 }
 
 a:link {
@@ -22,6 +22,109 @@ ul {
   list-style: none;
 }
 
+/* SIGN UP/IN VIEWS */
+.logIn {
+  text-align:center;
+  line-height: 1.75;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 50%;
+}
+
+.logIn input {
+  background-color: rgba(216, 215, 215, 0.424);
+  padding: 5px;
+  margin-bottom: 2px;
+  border: none;
+}
+
+::placeholder { 
+  color: rgb(101, 100, 100);
+}
+
+.logIn button {
+  width: 13.5rem;
+  height: 1.75rem;
+}
+
+.logIn button img{
+  margin-top: 2px;
+  margin-bottom: -2px;
+}
+
+.logInGoogle{
+  margin-top: 43px;
+}
+
+.signIn-msg{
+  color: rgb(103, 102, 102);
+  font-size: 13px;
+  line-height: normal;
+  margin-bottom: 11px;
+}
+
+.logIn-or{
+  color: rgb(160, 158, 158);
+  margin-left: 28px;
+  margin-bottom: 15px;
+display: flex;
+}
+
+.or {
+  margin-top: 9px;
+  padding: 0 3px;
+  font-size: 12px;
+}
+
+.forgot {
+  text-align: right;
+  margin: 0px 12px 10px;
+  font-size: 12px;
+}
+
+.logIn-again {
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.no-logIn {
+  font-size: 14px;
+}
+
+.newuser-footer {
+  width: 375px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  padding: 2px;
+  background-color: rgba(176, 175, 175, 0.284);
+}
+
+.newuser-footer a {
+  padding: .25rem;
+}
+
+.newuser-about {
+    padding-left: 293px;
+}
+
+/* HOME VIEW */
+.home{
+  display: flex;
+  justify-content: center;
+}
+
+.home-header{
+  z-index: 1;
+   position: absolute;
+   top: 3rem;
+   text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    font-size: 45px;
+    color: rgba(0, 0, 0, 0.452);
+  }
+
+/* FOOTER & DROP MENU */
 footer {
   position: fixed;
   bottom: 0;
@@ -152,6 +255,7 @@ h3 span {
     transition: var(--speed); */
 }
 
+/* ABOUT VIEW */
 .about {
   background-image: url("https://i.ibb.co/pKgd7BG/NFIcon.png");
   background-position: center;
@@ -165,7 +269,7 @@ h3 span {
   text-align: justify;
   font-size: 45px;
   line-height: 200%;
-  padding: 35px 0;
+  padding: 0 0 35px;
 }
 
 .aboutDescription {

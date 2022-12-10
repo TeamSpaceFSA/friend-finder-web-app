@@ -1,16 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
   return (
     <div className="about">
-      <img
+      {/* <img
         src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png"
         alt=""
         style={{ height: "50px", width: "50px" }}
         onClick={() => navigate(-1)}
-      />
+      /> */}
 
       <h1 className="aboutIntro">
         We find you new friends based on common interests
@@ -20,7 +20,7 @@ const About = () => {
         New Friends began as an idea formulated by Andrea, known as Dre, in
         2022. Soon after, the social app idea was introduced to her team and
         fellow classmates, Jenny Wu, Jacob Saddler, and Harry Huang, during
-        their studies at Fullstack Academy for their final Capstone project.
+        their studies as beginner software developers at Fullstack Academy for their final Capstone project.
         After voting and deliberating, amongst 30+ ideas, New Friends was chosen
         out of the bunch. In the 2.5 week project deadline, the team made a MVP
         (minimal value product) verson of their new social media app using both

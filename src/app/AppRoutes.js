@@ -64,6 +64,8 @@ function AppRoutes() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/resetpassword" element={<Resetpassword />} />
           <Route path="*" element={<Error />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/help" element={<Help />} />
         </Routes>
       )}
       <ToastContainer
