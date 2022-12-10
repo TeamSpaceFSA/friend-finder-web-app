@@ -8,34 +8,33 @@ import Multiselect from "multiselect-react-dropdown";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useSelector, useDispatch } from "react-redux";
-import { allEvents, fetchFutureEvents } from "./attendanceEventsSlice";
-​
-const EventsList = () => {
+import { allEvents, fetchAcceptedEvents } from "./attendanceEventsSlice";
+
+const EventsListFiltered = () => {
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
     const events = useSelector(allEvents);
 
     //Separating event types
-    const futureEvents = events.futureEvents
-    const pastEvents = events.pastEvents
+    const acceptedEvents = events.acceptedEvents
+    const rejectedEvents = events.rejectedEvents
     const hostedEvents = events.hostedEvents
     
-    useEffect(async () => {
-        dispatch(fetchFutureEvents()),
-        [dispatch]
-    })
+    useEffect(() => {
+        dispatch(fetchAcceptedEvents())
+    }, [dispatch]);
     
 
-​
+
     
-​
+
     console.log(allEvents)
-​
+
     return (
         <div>
-​
+
         </div>
     )
 }
-​
-export default EventsList
+
+export default EventsListFiltered
