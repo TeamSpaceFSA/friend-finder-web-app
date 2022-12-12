@@ -42,17 +42,26 @@ const HomeMap = () => {
   })
 
   //Fetching all event data from Firebase
+  // const fetchEvents = async () => {
+  //   try {
+  //     const q = query(collection(db, "events"))
+  //     const doc = await getDocs(q)
+  //     const locations = []
+  //     for (let i = 0; i < doc.docs.length; i++) {
+  //       const data = doc.docs[i].data()
+  //       locations.push(data)
+  //     }
+  //     setEvents(locations)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
   const fetchEvents = async () => {
-    try {
-      const q = query(collection(db, "events"))
-      const doc = await getDocs(q)
-      const locations = []
-      for (let i = 0; i < doc.docs.length; i++) {
-        const data = doc.docs[i].data()
-        locations.push(data)
-      }
-      setEvents(locations)
-    } catch (err) {
+    try{
+      const eventCollectionRef = query(collection(db,"events"))
+      const data = await getDocs(eventCollectionRef)
+      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
+    }catch(err){
       console.log(err)
     }
   }
