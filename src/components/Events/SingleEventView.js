@@ -81,6 +81,10 @@ const SingleEventView = () => {
     function handleReject(){
 
     }
+
+    function handleRequestJoin(){
+        
+    }
    
 
     return (
@@ -115,7 +119,10 @@ const SingleEventView = () => {
             )) : <p>n/a</p>}</h3>
 
             {/* If user is event host, provide attendance management functionality */}
-            {host == user ? <div>
+            {host == user ? 
+
+            //expression if host user should be to approve/reject requests to join on user list
+            <div>
                 {/* map requested users and link accept and reject buttons to each user */}
                 {requested.map( user => (
                     <div classname="attendee">
@@ -127,7 +134,14 @@ const SingleEventView = () => {
                         </div>
                     </div>
                 ) )}
-            </div> : null}
+            </div> : 
+
+            //expression if not host user should be request to join
+            <div>
+                <button onClick={handleRequestJoin}>Request to join</button>
+            </div>
+            };
+
 <div className="event-single-map">
             <GoogleMap  zoom={60}  center={{ lat: event.location.lat, lng: event.location.lng }} mapContainerClassName="map-container">
                 <MarkerF position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon}></MarkerF>
