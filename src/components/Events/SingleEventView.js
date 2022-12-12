@@ -67,17 +67,35 @@ const SingleEventView = () => {
     if (!isLoaded) return (<div>Loading...</div>)
     console.log(event)
 
-    //Accept reject button event handling
-    /**
-     * Inserts associated user ID into accepted array in event document, removes from rejected array if necessary
-     */
-    function handleAccept(){
+    //Accept Reject event handlers
+    async function handleAccept(user) {
+        try{
+            //Filter out user from rejected list if inside
+            setRejected( (rejectedArr) => rejectedArr.filter(element => element !== user))
 
+            //Add to accepted list
+            setAccepted( (acceptedArr) => [...acceptedArr, user]);
+
+            //Push local state to firestore
+            await updateDoc(docRef, {
+                rejected: rejectedArr,
+                accepted: acceptedArr
+            });
+            // toast('Guest accepted', {
+            //     position: "top-right",
+            //     autoClose: 5000,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            //   });
+        } catch(err){
+            console.log(err)
+        }
     }
 
-    /**
-     * Inserts associated user ID into rejected array in event document, removes from accepted array if necessary
-     */
     function handleReject(){
 
     }
