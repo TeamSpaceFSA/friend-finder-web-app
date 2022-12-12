@@ -22,7 +22,7 @@ ul {
   list-style: none;
 }
 
-/* SIGN UP/IN VIEWS */
+/* SIGN UP/IN & RESET VIEWS */
 .logIn {
   text-align:center;
   line-height: 1.75;
@@ -30,6 +30,10 @@ ul {
   margin-right: auto;
   width: 15rem;
   margin-top: 50%;
+}
+
+.logIn-logo{
+  margin-bottom: 41px;
 }
 
 .logIn input {
@@ -46,18 +50,23 @@ ul {
 .logIn button {
   width: 13.5rem;
   height: 1.75rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 12px;
+  margin-top: 2px;
 }
 
 .logIn button img{
   margin-top: 2px;
   margin-bottom: -2px;
+  margin-right: 7px;
 }
 
-.logInGoogle{
-  margin-top: 43px;
+.logIn-btn-name {
+margin-top: 3.5px;
 }
 
-.signIn-msg{
+.signIn-msg, .suggestions-msg, .create-profile-msg, .edit-profile-msg{
   color: rgb(103, 102, 102);
   font-size: 13px;
   line-height: normal;
@@ -67,6 +76,7 @@ ul {
 .logIn-or{
   color: rgb(160, 158, 158);
   margin-left: 28px;
+  margin-top: 8px;
   margin-bottom: 15px;
 display: flex;
 }
@@ -95,10 +105,10 @@ display: flex;
 .newuser-footer {
   width: 375px;
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   padding: 2px;
-  background-color: rgba(176, 175, 175, 0.284);
+  background-color: rgba(176, 175, 175, 0.474);
 }
 
 .newuser-footer a {
@@ -107,6 +117,55 @@ display: flex;
 
 .newuser-about {
     padding-left: 293px;
+}
+
+.forgot-input {
+  margin-top: 20px;
+}
+
+.forgot-header{
+  margin-top: -10px;
+}
+
+/* PROFILE SETUP & EDIT PROFILE */
+.create-profile, .edit-profile, #CreateEventContainer, .event-single {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 15%;
+  padding-bottom: 150px;
+}
+
+.create-profile h2, .edit-profile h2, #CreateEventContainer h2,.friendslist h2 {
+  margin-top: -5px;
+  padding-bottom: 11px;
+}
+
+.create-profile form input, .edit-profile form input, #CreateEventContainer form input {
+  background-color: rgba(216, 215, 215, 0.424);
+  padding: 5px;
+  margin-bottom: 2px;
+  border: none;
+  width: 98%
+}
+
+.age-menu{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.age-menu select {
+  width: 99%;
+  height: 25px;
+  background-color: rgba(216, 215, 215, 0.424);
+  border: none;
+  margin-bottom: 1px;
+}
+
+.add-activities {
+  margin-bottom: 4px;
 }
 
 /* HOME VIEW */
@@ -123,6 +182,43 @@ display: flex;
     font-size: 45px;
     color: rgba(0, 0, 0, 0.452);
   }
+
+  .home-popup {
+    text-align:center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 9rem;
+  }
+
+  .home-popup p{
+    margin-top: -4px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    text-align: justify;
+    padding-left: 2px;
+  }
+
+  .home-popup button {
+    width: 68%;
+    height: 1.25rem;
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
+
+/* USER PROFILE */
+
+
+/* SINGLE EVENT */
+.event-single{
+  width: 20rem;
+}
+
+.userInfoDiv{
+  background-color: rgba(249, 249, 249, 0.64);
+  box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
+  border-radius: 25%;
+}
+
 
 /* FOOTER & DROP MENU */
 footer {
@@ -269,12 +365,12 @@ h3 span {
   text-align: justify;
   font-size: 45px;
   line-height: 200%;
-  padding: 0 0 35px;
+  margin: 0 .5px 35px;
 }
 
 .aboutDescription {
   text-align: justify;
-  padding-bottom: 60px;
+  margin: 0 4px 60px;
   font-size: 20px;
 }
 
@@ -303,4 +399,59 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 padding-top: .5rem;
+}
+
+/* HELP VIEW */
+/* .help {
+  height: 667px;
+  background-image: url("https://i.ibb.co/pKgd7BG/NFIcon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-attachment: fixed;
+} */
+
+/* SUGGESTIONS VIEWS */
+.suggestions{
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 15%;
+}
+
+.suggestions-header {
+  line-height: .8;
+  margin-bottom: 15px;
+}
+
+.suggestions img {
+  margin-bottom: -15px;
+}
+
+.suggestions input{
+background-color: rgba(216, 215, 215, 0.424);
+  padding: 5px;
+  margin-bottom: 2px;
+  border: none;
+  width: 98%
+}
+
+.suggestions textarea {
+  background-color: rgba(216, 215, 215, 0.424);
+width: 98%;
+height: 85px;
+border: none;
+}
+
+.suggestions h3, .create-profile h3, .edit-profile h3, #CreateEventContainer h3 {
+  /* margin: 0; */
+  padding: 10px 0px 0px 3px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.suggestions button, .create-profile button, .edit-profile button, #CreateEventContainer button {
+  width: 98%;
+  height: 1.75rem;
 }

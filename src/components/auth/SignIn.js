@@ -72,16 +72,17 @@ const SignIn = () => {
   return (
     <div >
         <div className="logIn">
-        <img src="https://images.cooltext.com/5633399.png" alt="New Friends" style={{ height: "40px", width: "240px" }}/>
+        <img className="logIn-logo" src="https://images.cooltext.com/5633399.png" alt="New Friends" style={{ height: "40px", width: "240px"}}/>
 
-        <button className="logInGoogle" onClick={googleSignIn}>
+        <button onClick={googleSignIn}>
           <img
             src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png"
             alt=""
             style={{ height: "20px", width: "20px" }}
-          />
-          Sign In with Google
-        </button> <div className="logIn-or">
+          /><div className="logIn-btn-name">Sign In with Google</div>
+          
+        </button> 
+        <div className="logIn-or">
           <div>__________</div>
           <div className="or">OR</div>
           <div>__________</div>
@@ -99,7 +100,7 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <br/>
-        <button onClick={logIn}>Log in</button>
+        <button onClick={logIn}><div className="logIn-btn-name">Log in</div></button>
       </div>
       <div className="forgot">
         <Link to="/resetpassword">Forgot password?</Link>

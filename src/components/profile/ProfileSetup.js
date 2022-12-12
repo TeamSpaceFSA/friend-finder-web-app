@@ -37,7 +37,7 @@ const ProfileSetup = () => {
     }
   };
   const ageRange = [
-    { key: "0", value: "---select age---" },
+    { key: "0", value: "---select---" },
     { key: "1", value: "18-20" },
     { key: "2", value: "21-26" },
     { key: "3", value: "27-34" },
@@ -70,23 +70,24 @@ const ProfileSetup = () => {
   ];
 
   return (
-    <div>
+    <div className="create-profile">
+      <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
       <form>
-      <h1>Create Profile</h1>
-      <h1>Already have a photo? Upload file below</h1>
-      <h2>Image file:</h2>
+      <h2>Create Profile</h2>
+      <div className="create-profile-msg">Let your new friends know who you are. Include an image, bio, and interests to get started. Happy finding New Friends! &#128522;</div>
+      <h3>Image file:</h3>
       <input type="text" value={image}
                     onChange={(e) => setImage(e.target.value)} />
-      <h1>Username:</h1>
+      <h3>Username:</h3>
       <input type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)} />
-      <h1>Email:</h1>
+      <h3>Email:</h3>
       <input type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)} />
-      <h1>Age Range:</h1>
-      <div className="age-menu">
+      
+      <div className="age-menu"><h3>Age Range:</h3>
         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
           {ageRange.map((age) => (
             <option key={age.key} className="ageOption">
@@ -95,12 +96,12 @@ const ProfileSetup = () => {
           ))}
         </select>
       </div>
-      <h1>Bio:</h1>
+      <h3>Bio:</h3>
       <input type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)} />
-      <h1>Favorite Activities:</h1>
-        <Multiselect
+      <h3>Interests:</h3>
+        <Multiselect className="add-activities"
           isObject={false}
           onRemove={(event) => {
             console.log(event);
