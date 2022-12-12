@@ -72,7 +72,7 @@ const EventList = () => {
       {events.map((doc,index) =>
         <div key={doc.id} onClick={() => setSelectedEvent(doc)}>
           <h2 onClick={()=>handleClick(index)}>Event:{doc.name}</h2>
-          <p>Plan:{doc.description}</p>
+          <p>Requested to Join:{doc.description}</p>
             {hidden[index] && (<button onClick={()=>viewEditEvent(selectedEvent)}>Edit</button>)}
           <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
         </div>)}

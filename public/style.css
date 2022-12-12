@@ -9,7 +9,7 @@
 /* Didot, serif; */
 
 body {
-  max-width: 375px;
+  max-width: 100%;
   max-height: 667px;
 }
 
@@ -24,7 +24,7 @@ ul {
 
 /* SIGN UP/IN & RESET VIEWS */
 .logIn {
-  text-align:center;
+  text-align: center;
   line-height: 1.75;
   margin-left: auto;
   margin-right: auto;
@@ -32,7 +32,7 @@ ul {
   margin-top: 50%;
 }
 
-.logIn-logo{
+.logIn-logo {
   margin-bottom: 41px;
 }
 
@@ -43,7 +43,7 @@ ul {
   border: none;
 }
 
-::placeholder { 
+::placeholder {
   color: rgb(101, 100, 100);
 }
 
@@ -56,29 +56,32 @@ ul {
   margin-top: 2px;
 }
 
-.logIn button img{
+.logIn button img {
   margin-top: 2px;
   margin-bottom: -2px;
   margin-right: 7px;
 }
 
 .logIn-btn-name {
-margin-top: 3.5px;
+  margin-top: 3.5px;
 }
 
-.signIn-msg, .suggestions-msg, .create-profile-msg, .edit-profile-msg{
+.signIn-msg,
+.suggestions-msg,
+.create-profile-msg,
+.edit-profile-msg {
   color: rgb(103, 102, 102);
   font-size: 13px;
   line-height: normal;
   margin-bottom: 11px;
 }
 
-.logIn-or{
+.logIn-or {
   color: rgb(160, 158, 158);
   margin-left: 28px;
   margin-top: 8px;
   margin-bottom: 15px;
-display: flex;
+  display: flex;
 }
 
 .or {
@@ -112,24 +115,26 @@ display: flex;
 }
 
 .newuser-footer a {
-  padding: .25rem;
+  padding: 0.25rem;
 }
 
 .newuser-about {
-    padding-left: 293px;
+  padding-left: 293px;
 }
 
 .forgot-input {
   margin-top: 20px;
 }
 
-.forgot-header{
+.forgot-header {
   margin-top: -10px;
 }
 
 /* PROFILE SETUP & EDIT PROFILE */
-.create-profile, .edit-profile, #CreateEventContainer, .event-single {
-  text-align:center;
+.create-profile,
+.edit-profile,
+#CreateEventContainer {
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 15rem;
@@ -137,20 +142,25 @@ display: flex;
   padding-bottom: 150px;
 }
 
-.create-profile h2, .edit-profile h2, #CreateEventContainer h2,.friendslist h2 {
+.create-profile h2,
+.edit-profile h2,
+#CreateEventContainer h2,
+.friendslist h2 {
   margin-top: -5px;
   padding-bottom: 11px;
 }
 
-.create-profile form input, .edit-profile form input, #CreateEventContainer form input {
+.create-profile form input,
+.edit-profile form input,
+#CreateEventContainer form input {
   background-color: rgba(216, 215, 215, 0.424);
   padding: 5px;
   margin-bottom: 2px;
   border: none;
-  width: 98%
+  width: 98%;
 }
 
-.age-menu{
+.age-menu {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
@@ -169,56 +179,106 @@ display: flex;
 }
 
 /* HOME VIEW */
-.home{
+.home {
   display: flex;
   justify-content: center;
 }
 
-.home-header{
+.home-header {
   z-index: 1;
-   position: absolute;
-   top: 3rem;
-   text-shadow: 0px 0px 10px rgb(255, 255, 255);
-    font-size: 45px;
-    color: rgba(0, 0, 0, 0.452);
-  }
+  position: absolute;
+  top: 3rem;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
+  font-size: 45px;
+  color: rgba(0, 0, 0, 0.452);
+}
 
-  .home-popup {
-    text-align:center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 9rem;
-  }
+.home-popup {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 9rem;
+}
 
-  .home-popup p{
-    margin-top: -4px;
-    margin-bottom: 4px;
-    font-size: 15px;
-    text-align: justify;
-    padding-left: 2px;
-  }
+.home-popup p {
+  margin-top: -4px;
+  margin-bottom: 4px;
+  font-size: 15px;
+  text-align: justify;
+  padding-left: 2px;
+}
 
-  .home-popup button {
-    width: 68%;
-    height: 1.25rem;
-    margin-bottom: 2px;
-    font-size: 12px;
-  }
+.home-popup button {
+  width: 68%;
+  height: 1.25rem;
+  margin-bottom: 2px;
+  font-size: 12px;
+}
 
 /* USER PROFILE */
 
-
 /* SINGLE EVENT */
-.event-single{
-  width: 20rem;
+.event-single {
+  /* text-align:center; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10%;
+  margin-top: 15%;
+  margin-bottom: 20px;
+  line-height: normal;
 }
 
-.userInfoDiv{
+.event-single h3 {
+  padding: 0;
+  text-align: left;
+}
+
+.event-single img {
+  border-radius: 50%;
+}
+
+.event-single-map {
+  width: 100%;
+}
+
+.userInfoDiv {
   background-color: rgba(249, 249, 249, 0.64);
   box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
   border-radius: 25%;
+  margin: 0;
+  /* min-width: 40%; */
+  /* width: 40rem; */
+  padding-top: 7px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.userInfoDiv h2 {
+  font-size: 16px;
+  margin-top: -10px;
+  margin-bottom: 3px;
+}
+
+.userInfoDiv h3 {
+  padding: 0 15px 0;
+  text-align: left;
+  font-size: 15px;
+}
+
+.interest {
+  line-height: 0.5;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.medialinks {
+  margin-top: 5px;
+}
 
 /* FOOTER & DROP MENU */
 footer {
@@ -365,7 +425,7 @@ h3 span {
   text-align: justify;
   font-size: 45px;
   line-height: 200%;
-  margin: 0 .5px 35px;
+  margin: 0 0.5px 35px;
 }
 
 .aboutDescription {
@@ -391,14 +451,14 @@ h3 span {
   width: 100px;
   border-radius: 50%;
   float: left;
-  box-shadow: 3px 3px 7px #4744449a
+  box-shadow: 3px 3px 7px #4744449a;
 }
 
 .creatorContact {
-display: flex;
-justify-content: space-around;
-align-items: center;
-padding-top: .5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
 }
 
 /* HELP VIEW */
@@ -412,8 +472,8 @@ padding-top: .5rem;
 } */
 
 /* SUGGESTIONS VIEWS */
-.suggestions{
-  text-align:center;
+.suggestions {
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 15rem;
@@ -421,7 +481,7 @@ padding-top: .5rem;
 }
 
 .suggestions-header {
-  line-height: .8;
+  line-height: 0.8;
   margin-bottom: 15px;
 }
 
@@ -429,29 +489,35 @@ padding-top: .5rem;
   margin-bottom: -15px;
 }
 
-.suggestions input{
-background-color: rgba(216, 215, 215, 0.424);
+.suggestions input {
+  background-color: rgba(216, 215, 215, 0.424);
   padding: 5px;
   margin-bottom: 2px;
   border: none;
-  width: 98%
+  width: 98%;
 }
 
 .suggestions textarea {
   background-color: rgba(216, 215, 215, 0.424);
-width: 98%;
-height: 85px;
-border: none;
+  width: 98%;
+  height: 85px;
+  border: none;
 }
 
-.suggestions h3, .create-profile h3, .edit-profile h3, #CreateEventContainer h3 {
+.suggestions h3,
+.create-profile h3,
+.edit-profile h3,
+#CreateEventContainer h3 {
   /* margin: 0; */
   padding: 10px 0px 0px 3px;
   text-align: left;
   font-size: 15px;
 }
 
-.suggestions button, .create-profile button, .edit-profile button, #CreateEventContainer button {
+.suggestions button,
+.create-profile button,
+.edit-profile button,
+#CreateEventContainer button {
   width: 98%;
   height: 1.75rem;
 }

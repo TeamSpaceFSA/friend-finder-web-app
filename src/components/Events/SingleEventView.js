@@ -88,26 +88,26 @@ const SingleEventView = () => {
         <div className="event-single">
             {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} /> */}
             <h2>{name}</h2>
-            <h3 onClick={handleClick}>Host:</h3><div><img src={profimage} alt="" style={{ height: "50px", width: "50px"}}/>{profName}</div>
+            <div><h3>Host:<img onClick={handleClick} src={profimage} alt="" style={{ height: "50px", width: "50px"}}/>{profName}</h3></div>
             {visible ? <div className="userInfoDiv">
-                <img src={profimage} alt="" style={{ height: "100px", width: "100px"}}/>
+                <img src={profimage} alt="" style={{ height: "85px", width: "85px"}}/>
                 <h2>{profName}</h2>
-                <h4>{bio}</h4>
-                <h4>{age}</h4>
-                <h4>Favorites:</h4>
-                {activities ? activities.map((activity) => (
-                <h4 key={activity}>{activity}</h4>
-            )) : <p>No activities yet</p>}
+                <h3><strong>Bio</strong>: {bio}</h3>
+                <h3><strong>Age</strong>: {age}</h3>
+                <h3><strong>Interests</strong>:</h3>
+                <div className="interest">{activities ? activities.map((activity) => (
+                <h3  key={activity}>{activity}</h3>
+            )) : <h3>No interests added.</h3>}</div>
                    <div className="medialinks">
-                {facebook ? <a href={facebook} target="_blank"><img src="https://img.icons8.com/color/512/facebook-new.png" alt="" style={{ height: "50px", width: "50px" }}/></a>: ""}
-                {instagram ? <a href={instagram} target="_blank"><img src="https://img.icons8.com/color/512/instagram-new.png" alt="" style={{ height: "50px", width: "50px" }}/></a>: ""}
-                {tiktok ? <a href={tiktok} target="_blank"><img src="https://img.icons8.com/color/512/tiktok.png" alt="" style={{ height: "50px", width: "50px" }}/></a>: ""}
-                {whatsapp ? <a href={whatsapp} target="_blank"><img src="https://img.icons8.com/color/512/whatsapp.png" alt="" style={{ height: "50px", width: "50px" }}/></a>: ""}
+                {facebook ? <a href={facebook} target="_blank"><img src="https://img.icons8.com/color/512/facebook-new.png" alt="" style={{ height: "30px", width: "30px" }}/></a>: ""}
+                {instagram ? <a href={instagram} target="_blank"><img src="https://img.icons8.com/color/512/instagram-new.png" alt="" style={{ height: "30px", width: "30px" }}/></a>: ""}
+                {tiktok ? <a href={tiktok} target="_blank"><img src="https://img.icons8.com/color/512/tiktok.png" alt="" style={{ height: "30px", width: "30px" }}/></a>: ""}
+                {whatsapp ? <a href={whatsapp} target="_blank"><img src="https://img.icons8.com/color/512/whatsapp.png" alt="" style={{ height: "30px", width: "30px" }}/></a>: ""}
                 </div>
             </div> : ""}
-            <h3>Where:</h3><div>{event.location.address}</div>
-            <h3>Description:</h3><div>{description}</div>
-            <h3> # of People:</h3> <div>{headcount}</div>
+            <div><h3>Where:</h3>{event.location.address}</div>
+            <div><h3>Description:</h3>{description}</div>
+            <div><h3># of People:</h3> {headcount}</div>
             <h3>When:</h3><div>{date}</div>
             <h3>Start(EST):</h3><div>{startTime}{amPm}</div>
             <h3>Activities:{category ? category.map(cat => (
@@ -127,11 +127,11 @@ const SingleEventView = () => {
                         </div>
                     </div>
                 ) )}
-            </div> : null}
+            </div> : null}</div>
 <div className="event-single-map">
             <GoogleMap  zoom={60}  center={{ lat: event.location.lat, lng: event.location.lng }} mapContainerClassName="map-container">
                 <MarkerF position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon}></MarkerF>
-            </GoogleMap></div></div>
+            </GoogleMap></div>
             </>
     )
 }
