@@ -4,6 +4,7 @@ import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { doc, updateDoc, query, collection, getDocs, where } from "firebase/firestore"
+// import { toast } from "react-toastify";
 
 const SingleEventView = () => {
     const navigate = useNavigate()
@@ -12,7 +13,12 @@ const SingleEventView = () => {
     //location.state holds all of our single event data, therefore we define it to make it easier to refer to.
     const event = location.state
     // console.log("This is the state we have passed in from the Marker we have clicked", location.state)
-    const { name, category, headcount, startTime, description, requested, identifier, amPm, date } = event
+    const { name, category, headcount, startTime, description, requested, accepted, rejected, amPm, date, id } = event
+
+    //Local state for manipulation of accepted, rejected arrays
+    const [acceptedArr, setAccepted] = useState(accepted)
+    const [rejectedArr, setRejected] = useState(rejected)
+
 
     // grab host information to display on info popup
     const [profName, setName] = useState("")
@@ -67,21 +73,64 @@ const SingleEventView = () => {
     if (!isLoaded) return (<div>Loading...</div>)
     console.log(event)
 
-    //Accept reject button event handling
-    /**
-     * Inserts associated user ID into accepted array in event document inside firestore, removes from rejected array if necessary
-     */
-    function handleAccept(user) {
-        const q = query(collection(db, "events"),
-            where("identifier", "==", identifier));
-        const docRef = doc(db, "events",)
+    //Event document reference
+    const docRef = doc(db, "events", id)
+
+    //Accept Reject event handlers
+    async function handleAccept(user) {
+        try{
+            //Filter out user from rejected list if inside
+            setRejected( (rejectedArr) => rejectedArr.filter(element => element !== user))
+
+            //Add to accepted list
+            setAccepted( (acceptedArr) => [...acceptedArr, user]);
+
+            //Push local state to firestore
+            await updateDoc(docRef, {
+                rejected: rejectedArr,
+                accepted: acceptedArr
+            });
+            // toast('Guest accepted', {
+            //     position: "top-right",
+            //     autoClose: 5000,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            //   });
+        } catch(err){
+            console.log(err)
+        }
     }
 
-    /**
-     * Inserts associated user ID into rejected array in event document inside firestore, removes from accepted array if necessary
-     */
-    function handleReject(user) {
+    async function handleReject(user) {
+        try{
+            //Filter out user from accepted list if inside
+            setAccepted( (acceptedArr) => acceptedArr.filter(element => element !== user))
 
+            //Add to rejected list
+            setRejected( (rejectedArr) => [...rejectedArr, user])
+
+            //Push local state to firestore
+            await updateDoc(docRef, {
+                rejected: rejected,
+                accepted: accepted
+            });
+            // toast('Guest rejected', {
+            //     position: "top-right",
+            //     autoClose: 5000,
+            //     hideProgressBar: false,
+            //     closeOnClick: true,
+            //     pauseOnHover: true,
+            //     draggable: true,
+            //     progress: undefined,
+            //     theme: "light",
+            //   });
+        } catch(err){
+            console.log(err)
+        }
     }
    
 
