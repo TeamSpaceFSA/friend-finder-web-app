@@ -202,7 +202,7 @@ const ageRange = [
           showCheckbox
         />
           </form>
-          <button onClick={()=>updateEvent(id)}>Submit Changes</button>
+          {selected == null ? <button disabled={true} onClick={()=>updateEvent(id)}>Submit Changes</button> : <button onClick={()=>updateEvent(id)}>Submit Changes</button>}
          </div>
     )
 }

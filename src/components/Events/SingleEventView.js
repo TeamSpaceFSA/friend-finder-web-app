@@ -12,7 +12,7 @@ const SingleEventView = () => {
     //location.state holds all of our single event data, therefore we define it to make it easier to refer to.
     const event = location.state
     // console.log("This is the state we have passed in from the Marker we have clicked", location.state)
-    const { name, category, headcount, startTime, description, requested, amPm, date } = event
+    const { name, category, headcount, startTime, description, requested, amPm, date, id } = event
 
     // grab host information to display on info popup
     const [profName, setName] = useState("")
