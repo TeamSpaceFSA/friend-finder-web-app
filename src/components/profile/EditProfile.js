@@ -78,7 +78,7 @@ const EditProfile = () => {
     }
   };
   const ageRange = [
-    { key: "0", value: "---select age---" },
+    { key: "0", value: "---select---" },
     { key: "1", value: "18-20" },
     { key: "2", value: "21-26" },
     { key: "3", value: "27-34" },
@@ -111,35 +111,37 @@ const EditProfile = () => {
   ];
 
   return (
-    <div>
-      <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{ height: "50px", width: "50px" }} onClick={() => navigate("/profile")} />
-      <h1>Edit Profile</h1>
-      <form>
-        <h2>Image file:</h2>
+    <div className="edit-profile">
+      {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{ height: "50px", width: "50px" }} onClick={() => navigate("/profile")} /> */}
+      <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
+      
+      <form><h2>Edit Profile</h2>
+      <div className="edit-profile-msg">Don't forget to include a means of communication to share with your new friends!</div>
+        <h3>Image file:</h3>
         <input type="text" value={image}
           onChange={(e) => setProfileImg(e.target.value)} />
-        <h1>Username:</h1>
+        <h3>Username:</h3>
         <input type="text"
           value={name}
           onChange={(e) => setName(e.target.value)} />
-        <h1>Instagram:</h1>
+        <h3>Instagram:</h3>
         <input type="text"
           value={instagram}
           onChange={(e) => setInstagram(e.target.value)} />
-        <h1>Facebook:</h1>
+        <h3>Facebook:</h3>
         <input type="text"
           value={facebook}
           onChange={(e) => setFacebook(e.target.value)} />
-        <h1>Whatsapp:</h1>
+        <h3>Whatsapp:</h3>
         <input type="text"
           value={whatsapp}
           onChange={(e) => setWhatsapp(e.target.value)} />
-        <h1>Tiktok:</h1>
+        <h3>Tiktok:</h3>
         <input type="text"
           value={tiktok}
           onChange={(e) => setTiktok(e.target.value)} />
-        <h1>Age Range:</h1>
-        <div className="age-menu">
+       
+        <div className="age-menu"> <h3>Age Range:</h3>
           <select className="age-searchBar" onChange={(e) => setAge(e.target.value)} name="ages" value={age}>
             {ageRange.map((age) => (
               <option key={age.key} className="ageOption">
@@ -148,12 +150,12 @@ const EditProfile = () => {
             ))}
           </select>
         </div>
-        <h1>Bio:</h1>
+        <h3>Bio:</h3>
         <input type="text"
           value={bio}
           onChange={(e) => setBio(e.target.value)} />
-        <h1>Favorite Activities:</h1>
-        <Multiselect
+        <h3>Interests:</h3>
+        <Multiselect className="add-activities"
           isObject={false}
           onRemove={(event) => {
             console.log(event);

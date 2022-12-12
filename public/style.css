@@ -66,7 +66,7 @@ ul {
 margin-top: 3.5px;
 }
 
-.signIn-msg{
+.signIn-msg, .suggestions-msg, .create-profile-msg, .edit-profile-msg{
   color: rgb(103, 102, 102);
   font-size: 13px;
   line-height: normal;
@@ -127,6 +127,47 @@ display: flex;
   margin-top: -10px;
 }
 
+/* PROFILE SETUP & EDIT PROFILE */
+.create-profile, .edit-profile, #CreateEventContainer {
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 15%;
+  padding-bottom: 150px;
+}
+
+.create-profile h2, .edit-profile h2, #CreateEventContainer h2 {
+  margin-top: -5px;
+  padding-bottom: 11px;
+}
+
+.create-profile form input, .edit-profile form input, #CreateEventContainer form input {
+  background-color: rgba(216, 215, 215, 0.424);
+  padding: 5px;
+  margin-bottom: 2px;
+  border: none;
+  width: 98%
+}
+
+.age-menu{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.age-menu select {
+  width: 99%;
+  height: 25px;
+  background-color: rgba(216, 215, 215, 0.424);
+  border: none;
+  margin-bottom: 1px;
+}
+
+.add-activities {
+  margin-bottom: 4px;
+}
+
 /* HOME VIEW */
 .home{
   display: flex;
@@ -141,6 +182,10 @@ display: flex;
     font-size: 45px;
     color: rgba(0, 0, 0, 0.452);
   }
+
+/* USER PROFILE */
+
+
 
 /* FOOTER & DROP MENU */
 footer {
@@ -332,3 +377,48 @@ padding-top: .5rem;
   background-size: 400px;
   background-attachment: fixed;
 } */
+
+/* SUGGESTIONS VIEWS */
+.suggestions{
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15rem;
+  margin-top: 15%;
+}
+
+.suggestions-header {
+  line-height: .8;
+  margin-bottom: 15px;
+}
+
+.suggestions img {
+  margin-bottom: -15px;
+}
+
+.suggestions input{
+background-color: rgba(216, 215, 215, 0.424);
+  padding: 5px;
+  margin-bottom: 2px;
+  border: none;
+  width: 98%
+}
+
+.suggestions textarea {
+  background-color: rgba(216, 215, 215, 0.424);
+width: 98%;
+height: 85px;
+border: none;
+}
+
+.suggestions h3, .create-profile h3, .edit-profile h3, #CreateEventContainer h3 {
+  /* margin: 0; */
+  padding: 10px 0px 0px 3px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.suggestions button, .create-profile button, .edit-profile button, #CreateEventContainer button {
+  width: 98%;
+  height: 1.75rem;
+}
