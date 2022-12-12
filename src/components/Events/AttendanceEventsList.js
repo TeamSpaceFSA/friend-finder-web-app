@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useSelector, useDispatch } from "react-redux";
 import { allEvents, fetchAcceptedEvents } from "./attendanceEventsSlice";
 
+//Upcoming feature, not yet available
+
 const EventsListFiltered = () => {
     const [user] = useAuthState(auth);
     const dispatch = useDispatch();
@@ -24,7 +26,7 @@ const EventsListFiltered = () => {
         dispatch(fetchAcceptedEvents())
     }, [dispatch]);
     
-
+    
 
     
 
