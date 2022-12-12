@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
+import { doc, updateDoc, query, collection, where } from "firebase/firestore"
 
 const SingleEventView = () => {
     const navigate = useNavigate()
@@ -11,11 +12,11 @@ const SingleEventView = () => {
     //location.state holds all of our single event data, therefore we define it to make it easier to refer to.
     const event = location.state
     // console.log("This is the state we have passed in from the Marker we have clicked", location.state)
-    const { name, category, headcount, startTime, description, requested } = event
+    const { name, category, headcount, startTime, description, requested, identifier } = event
 
     //User authentication 
-    const host = event.user 
-    const [user] = useAuthState(auth); 
+    const host = event.user
+    const [user] = useAuthState(auth);
 
     const libraries = ["places"]
     const { isLoaded } = useLoadScript({
@@ -27,16 +28,18 @@ const SingleEventView = () => {
 
     //Accept reject button event handling
     /**
-     * Inserts associated user ID into accepted array in event document, removes from rejected array if necessary
+     * Inserts associated user ID into accepted array in event document inside firestore, removes from rejected array if necessary
      */
-    function handleAccept(){
-
+    function handleAccept(user) {
+        const q = query(collection(db, "events"),
+            where("identifier", "==", identifier));
+        const docRef = doc(db, "events",)
     }
 
     /**
-     * Inserts associated user ID into rejected array in event document, removes from accepted array if necessary
+     * Inserts associated user ID into rejected array in event document inside firestore, removes from accepted array if necessary
      */
-    function handleReject(){
+    function handleReject(user) {
 
     }
 
@@ -54,16 +57,16 @@ const SingleEventView = () => {
             {/* If user is event host, provide attendance management functionality */}
             {host == user ? <div>
                 {/* map requested users and link accept and reject buttons to each user */}
-                {requested.map( user => (
+                {requested.map(user => (
                     <div classname="attendee">
                         <div classname='attendeeInformation'>
                             <img src={user.photo} alt='user profile'></img>
                             <div>{user.name}</div>
-                            <button onClick={handleAccept}>Accept</button>
-                            <button onClick={handleReject}>Reject</button>
+                            <button onClick={() => handleAccept(user)}>Accept</button>
+                            <button onClick={() => handleReject(user)}>Reject</button>
                         </div>
                     </div>
-                ) )}
+                ))}
             </div> : null}
 
             <GoogleMap zoom={60} center={{ lat: event.location.lat, lng: event.location.lng }} mapContainerClassName="map-container">
