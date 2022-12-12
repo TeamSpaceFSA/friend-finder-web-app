@@ -20,7 +20,8 @@ import {
   SingleEventView,
   Toggle,
   EditEvent,
-  EventsListFiltered
+  EventsListFiltered,
+  OneEventInList
 } from "../components/index";
 import { auth } from "./FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -47,6 +48,7 @@ function AppRoutes() {
             <Route path="/profile/friendslist" element={<FriendsList />} />
             <Route path="/singleEventView" element={<SingleEventView />} />
             <Route path="/editEventView" element={<EditEvent />} />
+            <Route path="/eventInList" element={<OneEventInList />} />
             <Route
               path="/profile/createEventMap"
               element={<CreateEventMap />}

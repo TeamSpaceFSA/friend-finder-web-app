@@ -108,7 +108,6 @@ const HomeMap = () => {
             <h2>{selectedMarker.name}</h2>
             <p>{selectedMarker.description}</p>
             <button onClick={() => viewSingleEvent(selectedMarker)}>Full Event Details</button>
-            <button>Request to Join</button>
             </div>
             </>
           </InfoWindowF>}
