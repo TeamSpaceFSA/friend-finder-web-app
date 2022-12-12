@@ -144,7 +144,7 @@ const ageRange = [
     console.log("This is the event we clicked on", event)
     
     return(
-        <div>
+        <div className="event-edit">
         <form key={id}>
           Event:<input type="text" value={aname} onChange={(e)=>setName(e.target.value)}/>
         Location:{event.location.address}

@@ -66,6 +66,7 @@ const EventList = () => {
 
   return (
     <>
+    <div className="eventlist">
       <h1>My Events:</h1> 
       <h4>Click on event name to edit</h4>
       {events.map((doc,index) =>
@@ -75,7 +76,7 @@ const EventList = () => {
             {hidden[index] && (<button onClick={()=>viewEditEvent(selectedEvent)}>Edit</button>)}
           <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
         </div>)}
-
+</div>
     </>
   )
 }

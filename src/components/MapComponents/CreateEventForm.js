@@ -189,7 +189,7 @@ const CreateEventForm = () => {
                         ))}
                     </select>
                 </div>
-                <h3>Additional Activities:</h3>
+                <h3>Additional Categories:</h3>
                 <Multiselect className="add-activities"
           isObject={false}
           onRemove={(event) => {

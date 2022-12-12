@@ -6,9 +6,9 @@ const Error = () => {
         navigate(-1)
     }
     return(
-        <div>
-        <img src="https://sitechecker.pro/wp-content/uploads/2017/12/404.png"/>
-        <h1 onClick={goBack}>Go Back</h1>
+        <div className="error">
+        <img src="https://sitechecker.pro/wp-content/uploads/2017/12/404.png" alt=""/>
+        <h2 onClick={goBack}>Go Back</h2>
         </div>
     )
 
