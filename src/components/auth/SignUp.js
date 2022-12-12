@@ -94,8 +94,8 @@ const SignUp = () => {
             src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png"
             alt=""
             style={{ height: "20px", width: "20px" }}
-          />
-          Sign In with Google
+          /><div className="logIn-btn-name">
+          Sign In with Google</div>
         </button> <div className="logIn-or">
           <div>__________</div>
           <div className="or">OR</div>
@@ -116,7 +116,7 @@ const SignUp = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button onClick={regSignUp}>Sign Up</button>
+          <button onClick={regSignUp}><div className="logIn-btn-name">Sign Up</div></button>
         </div>
 
         <h3 className="logIn-again">

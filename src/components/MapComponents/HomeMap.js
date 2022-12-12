@@ -104,11 +104,12 @@ const HomeMap = () => {
         {events.map(event => <MarkerF key={event.name} position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon} onClick={() => setSelectedMarker(event)}/>)}
         {selectedMarker && <InfoWindowF key={selectedMarker.name} position={{lat: selectedMarker.location.lat, lng: selectedMarker.location.lng}}>
             <>
-            <h1>{selectedMarker.name}</h1>
+            <div className="home-popup">
+            <h2>{selectedMarker.name}</h2>
             <p>{selectedMarker.description}</p>
-            <button onClick={() => viewSingleEvent(selectedMarker)}>Event Details</button>
-            <button>Request To Join</button>
-            
+            <button onClick={() => viewSingleEvent(selectedMarker)}>Full Event Details</button>
+            <button>Request to Join</button>
+            </div>
             </>
           </InfoWindowF>}
       </GoogleMap>

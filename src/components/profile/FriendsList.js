@@ -25,12 +25,12 @@ const FriendsList = () => {
         fetchFriends()
     },[user])
     return(
-        <div>
-             <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
-            <h1>Friends:</h1>
+        <div className="friendslist">
+             <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
+            <h2>Friends:</h2>
             {friends ? friends.map((friend)=>{
                 <p>{friend}</p>
-            }): <h1>Create or join an event to make friends!</h1>}
+            }): <h2>Create or join an event to make friends!</h2>}
         </div>
     )
 }
