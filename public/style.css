@@ -22,7 +22,7 @@ ul {
   list-style: none;
 }
 
-/* SIGN UP/IN VIEWS */
+/* SIGN UP/IN & RESET VIEWS */
 .logIn {
   text-align:center;
   line-height: 1.75;
@@ -30,6 +30,10 @@ ul {
   margin-right: auto;
   width: 15rem;
   margin-top: 50%;
+}
+
+.logIn-logo{
+  margin-bottom: 41px;
 }
 
 .logIn input {
@@ -46,15 +50,20 @@ ul {
 .logIn button {
   width: 13.5rem;
   height: 1.75rem;
+  display: flex;
+  justify-content: center;
+  margin-left: 12px;
+  margin-top: 2px;
 }
 
 .logIn button img{
   margin-top: 2px;
   margin-bottom: -2px;
+  margin-right: 7px;
 }
 
-.logInGoogle{
-  margin-top: 43px;
+.logIn-btn-name {
+margin-top: 3.5px;
 }
 
 .signIn-msg{
@@ -67,6 +76,7 @@ ul {
 .logIn-or{
   color: rgb(160, 158, 158);
   margin-left: 28px;
+  margin-top: 8px;
   margin-bottom: 15px;
 display: flex;
 }
@@ -95,10 +105,10 @@ display: flex;
 .newuser-footer {
   width: 375px;
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   padding: 2px;
-  background-color: rgba(176, 175, 175, 0.284);
+  background-color: rgba(176, 175, 175, 0.474);
 }
 
 .newuser-footer a {
@@ -107,6 +117,14 @@ display: flex;
 
 .newuser-about {
     padding-left: 293px;
+}
+
+.forgot-input {
+  margin-top: 20px;
+}
+
+.forgot-header{
+  margin-top: -10px;
 }
 
 /* HOME VIEW */
@@ -269,12 +287,12 @@ h3 span {
   text-align: justify;
   font-size: 45px;
   line-height: 200%;
-  padding: 0 0 35px;
+  margin: 0 .5px 35px;
 }
 
 .aboutDescription {
   text-align: justify;
-  padding-bottom: 60px;
+  margin: 0 4px 60px;
   font-size: 20px;
 }
 
@@ -304,3 +322,13 @@ justify-content: space-around;
 align-items: center;
 padding-top: .5rem;
 }
+
+/* HELP VIEW */
+/* .help {
+  height: 667px;
+  background-image: url("https://i.ibb.co/pKgd7BG/NFIcon.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 400px;
+  background-attachment: fixed;
+} */
