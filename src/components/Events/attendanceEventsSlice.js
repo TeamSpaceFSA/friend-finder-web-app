@@ -3,6 +3,8 @@ import { query, collection, getDocs, where, serverTimestamp } from "firebase/fir
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
 
+//Helper functions for upcoming feature, not yet mature
+
 export const fetchAcceptedEvents = createAsyncThunk(
     'fetchAcceptedEvents',
     async () => {
