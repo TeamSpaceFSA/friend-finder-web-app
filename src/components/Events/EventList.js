@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const EventList = () => {
   const [user] = useAuthState(auth)
   const [events, setEvents] = useState([])
-  const [hidden, setHidden] = useState(false)
+  const [hidden, setHidden] = useState(events.map(()=>true))
   const navigate = useNavigate()
 
   const fetchEvents = async () => {
@@ -52,6 +52,13 @@ const EventList = () => {
     console.log("Here is the selectedEvent", selectedEvent)
   }
 
+  // toggle edit button visibility
+  const handleClick = (index) => {
+    const visible = [...hidden]
+    visible[index] = !visible[index]
+    setHidden(visible)
+  }
+
   //Fetch all events everytime the page is loaded.
   useEffect(() => {
     fetchEvents()
@@ -61,12 +68,11 @@ const EventList = () => {
     <>
       <h1>My Events:</h1> 
       <h4>Click on event name to edit</h4>
-      {events.map((doc) =>
+      {events.map((doc,index) =>
         <div key={doc.id} onClick={() => setSelectedEvent(doc)}>
-          <h2 onClick={()=>setHidden(true)}>{doc.name}</h2>
-          <p>{doc.description}</p>
-         {hidden ? <button onClick={() => {
-            viewEditEvent(selectedEvent)}}>Edit</button>: ""}
+          <h2 onClick={()=>handleClick(index)}>Event:{doc.name}</h2>
+          <p>Plan:{doc.description}</p>
+            {hidden[index] && (<button onClick={()=>viewEditEvent(selectedEvent)}>Edit</button>)}
           <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
         </div>)}
 

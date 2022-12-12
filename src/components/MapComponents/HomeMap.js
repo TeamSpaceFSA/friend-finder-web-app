@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useEffect } from "react";
-import { GoogleMap, useLoadScript, MarkerF, InfoWindow, InfoWindowF } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, MarkerF, InfoWindow, InfoWindowF, MapOptions, MapTypeControlStyle } from "@react-google-maps/api";
 import usePlacesAutocomplete, { getGeocode, getLatLng } from "use-places-autocomplete";
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from "@reach/combobox";
 import "@reach/combobox/styles.css";
@@ -7,6 +7,24 @@ import { useNavigate } from "react-router-dom";
 import { current } from "@reduxjs/toolkit";
 import { db } from "../../app/FirebaseConfig"
 import { onSnapshot, query, collection, doc, getDocs, documentId } from "firebase/firestore";
+
+
+//map styling
+// const mapOptions = (map) => {
+//   return {
+//   // mapTypeControlOptions: {
+//   //   position: 'BOTTOM_RIGHT'
+//   // }
+//     zoomControlOptions: {
+//         position: map.ControlPosition.RIGHT_CENTER,   
+//         style: map.ZoomControlStyle.SMALL
+//     },
+//     mapTypeControlOptions: {
+//         position: map.ControlPosition.BOTTOM_RIGHT    
+//     },
+//   };
+// }
+
 
 const HomeMap = () => {
   //Need 'libraries' for Google Maps API.
@@ -24,17 +42,26 @@ const HomeMap = () => {
   })
 
   //Fetching all event data from Firebase
+  // const fetchEvents = async () => {
+  //   try {
+  //     const q = query(collection(db, "events"))
+  //     const doc = await getDocs(q)
+  //     const locations = []
+  //     for (let i = 0; i < doc.docs.length; i++) {
+  //       const data = doc.docs[i].data()
+  //       locations.push(data)
+  //     }
+  //     setEvents(locations)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
   const fetchEvents = async () => {
-    try {
-      const q = query(collection(db, "events"))
-      const doc = await getDocs(q)
-      const locations = []
-      for (let i = 0; i < doc.docs.length; i++) {
-        const data = doc.docs[i].data()
-        locations.push(data)
-      }
-      setEvents(locations)
-    } catch (err) {
+    try{
+      const eventCollectionRef = query(collection(db,"events"))
+      const data = await getDocs(eventCollectionRef)
+      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
+    }catch(err){
       console.log(err)
     }
   }
@@ -64,11 +91,14 @@ const HomeMap = () => {
   if (!isLoaded) return (<div>Loading...</div>)
   return (
     <>
-      <div>Available Events</div>
+        <div className="home">
+          <h2 className="home-header">Available Events</h2>
       <div className="places-container">
         {/* <PlacesAutocomplete setSelected={setSelected} /> */}
-      </div>
-      <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} mapContainerClassName="map-container">
+      </div>      
+      
+      <GoogleMap zoom={10} center={{ lat: 40.7580, lng: -73.9855 }} 
+      mapContainerClassName="map-container">
         {markers.map(marker => <MarkerF key={marker.time.toISOString()} position={{ lat: marker.lat, lng: marker.lng }} icon="https://i.imgur.com/OX3qSvl.png" />)}
         {console.log(events)}
         {events.map(event => <MarkerF key={event.name} position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon} onClick={() => setSelectedMarker(event)}/>)}
@@ -82,6 +112,7 @@ const HomeMap = () => {
             </>
           </InfoWindowF>}
       </GoogleMap>
+      </div>
     </>
   )
 }
