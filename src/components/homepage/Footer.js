@@ -105,7 +105,7 @@ const Footer = () => {
 
             <div className={`nav-dropdown ${open ? "active" : "inactive"}`}>
               <h3>
-                New Friend Finder
+                <strong>New Friends+</strong>
                 <br />
                 <span>@{name}</span>
               </h3>

@@ -138,6 +138,7 @@ const CreateEventForm = () => {
         <>
         {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/> */}
         <div id="CreateEventContainer">
+        <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
             <form>
                 <h2>Create Event</h2>
                 <h3>Name Of Event:</h3>

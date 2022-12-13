@@ -144,14 +144,13 @@ async function handleReject(docId, userId) {
   return (
     <>
     <div className="eventlist">
-      <h1>My Events:</h1> 
-      <h4>Click on event name to edit</h4>
+<img src="https://cdn4.iconfinder.com/data/icons/entertainment-6/64/confetti-party0A-birthday0A-fun-celebration0A-1024.png" alt="" style={{height:"50px", width:"50px"}} />      <div className="eventlist-msg">*click on event name to edit*</div>
       {events.map((doc,index) =>
-        <div key={doc.id} onClick={() => setSelectedEvent(doc)}>
-          <h2 onClick={()=>handleClick(index)}>Event:{doc.name}</h2>
-          <p>Plan:{doc.description}</p>
+        <div className="eventlist-card" key={doc.id} onClick={() => setSelectedEvent(doc)}>
+          <h2 onClick={()=>handleClick(index)}>{doc.name}</h2>
+          <p><em>{doc.description}</em></p>
             {hidden[index] && (<button onClick={()=>{viewEditEvent(selectedEvent);}}>Edit</button>)}
-          <button onClick={()=>deleteEvent(doc.id)}>Remove Event</button>
+          <button onClick={()=>deleteEvent(doc.id)}>Remove</button>
           {/* <button onClick={() => fetchreqUsers(selectedEvent)}>Fetch Req Users</button> */}
           {/* Map out requesting users and put buttons next to them to accept/reject */}
           {console.log("This is the problem ", doc.requested)}
@@ -166,10 +165,10 @@ async function handleReject(docId, userId) {
                             <button onClick={() => handleReject(doc.id,user)}>Reject</button>
                         </div>
                     </div>
-                )) :<div>No requests yet!</div>}
+                )) :<p>No requests yet!</p>}
                 {doc.accepted ? doc.accepted.map(user => (
                   <div>
-                    <h2>Participants:</h2>
+                    <h3>Participants:</h3>
                   <div value={user}><img src="https://t3.ftcdn.net/jpg/03/42/99/68/360_F_342996846_tHMepJOsXWwbvMpG7uiYpE68wbfQ9e4s.jpg" onClick={() => setUserId(user)} alt="" style={{ height: "50px", width: "50px"}}/></div>
                             <button onClick={() => viewOneUser()}>View Profile</button>
                   </div>

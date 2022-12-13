@@ -31,9 +31,11 @@ const FriendsList = () => {
     useEffect(()=>{
         fetchFriends()
     },[user])
+    
     return(
         <div className="friendslist">
-             <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
+             <img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/contacts-1024.png" alt="" style={{height:"55px", width:"50px"}}/>
+            
             <h3 onClick={handleClick}>Friend Requests(1)</h3>
             {visible ?<div>
             <p>greenPotato</p>

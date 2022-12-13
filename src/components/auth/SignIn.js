@@ -113,7 +113,7 @@ const SignIn = () => {
         <h5 className="newuser-about">
           <Link to="/about">About</Link>
         </h5>
-        <h5>
+        <h5 className="newuser-help">
           <Link to="/help">Help</Link>
         </h5>
       </div>
