@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { db } from "../../app/FirebaseConfig"
 import { doc, query, collection, getDocs, where } from "firebase/firestore"
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -40,6 +42,10 @@ const OneEventInList = () => {
         }
     }
 
+    const friendReq = () => {
+        setVisible(current => !current)
+    }
+
     useEffect(() => {
         fetchUser()
     }, [])
@@ -48,6 +54,7 @@ const OneEventInList = () => {
         <>
         <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} />
         <div className="userInfoDiv">
+            {visible ? <button onClick={friendReq}>Friend Request</button>:<button onClick={friendReq}>Friend Request Sent!</button>}
             <h1>{profName}</h1>
             <img src={profimage} alt="" style={{ height: "100px", width: "100px"}}/>
                 <h4>{bio}</h4>
