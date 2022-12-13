@@ -13,16 +13,8 @@ const Help = () => {
   return (
     <>
       {user ? (
-        <div className="help">FAQ </div>
-      ) : (
-        <div className="help">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
-            alt=""
-            style={{ height: "25px", width: "25px", margin: "3px" }}
-            onClick={() => navigate(-1)}
-          />
-          <div>FAQ</div>
+        <div>
+          <div className="help">FAQ </div>
           <div className="creator">
             <p>"Q: As a event host, why can't I remove users from my events?"</p>
             <p>"A: As creators, we decided to not include that functionality to prevent hosts from flip-flopping on their attendance decisions to improve the experience for guests"</p>
@@ -35,6 +27,20 @@ const Help = () => {
             <p>"Q: What if I double-booked for two events?"</p>
             <p>"A: As a user, it's your responsibility to be diligent about your schedule. However, you can always remove the event from your schedule as a user."</p>
           </div>
+          <div className="creator">
+            <p>"Q: Can I message my friends on this app?"</p>
+            <p>"A: Not yet! In-app messaging functionality will be available in the near future."</p>
+          </div>
+        </div>
+      ) : (
+        <div className="help">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
+            alt=""
+            style={{ height: "25px", width: "25px", margin: "3px" }}
+            onClick={() => navigate(-1)}
+          />
+          <div>FAQ</div>
           <div className="newuser-footer">
             <h5 className="newuser-about">
               <Link to="/about">About</Link>
@@ -44,9 +50,7 @@ const Help = () => {
             </h5>
           </div>
         </div>
-        </div>
-  )
-}
+      )}
     </>
   );
 };
