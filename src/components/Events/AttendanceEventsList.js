@@ -54,7 +54,7 @@ const EventsListFiltered = () => {
             <div key={doc.id}>
             <h2>Event:{doc.name}</h2>
             <h4>Date: {doc.date}, Time: {doc.startTime} {doc.amPm}</h4>
-            <p>Plan:{doc.description}</p>)
+            <p>Plan:{doc.description}</p>
             </div>)}
         </div>
     )
