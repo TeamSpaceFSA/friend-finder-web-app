@@ -29,7 +29,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 15rem;
-  margin-top: 50%;
+  margin-top: 25%;
 }
 
 .logIn-logo {
@@ -106,7 +106,7 @@ ul {
 }
 
 .newuser-footer {
-  width: 375px;
+  width: 100%;
   display: flex;
   position: fixed;
   bottom: 0px;
@@ -119,7 +119,10 @@ ul {
 }
 
 .newuser-about {
-  padding-left: 293px;
+  /* padding-left: 293px; */
+}
+.newuser-help {
+/* padding-right: -200px; */
 }
 
 .forgot-input {
@@ -178,15 +181,72 @@ ul {
   margin-bottom: 4px;
 }
 
+
+
+/* PROFILE VIEW */
+.profileView{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 23rem;
+  margin-top: 25%;
+  font-size: 15px;
+}
+
+.profileView-user{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.profileView-img p{
+  font-size: 12px;
+}
+
+.profileView-img img{
+  border-radius: 50%;
+  box-shadow: 3px 3px 7px #050505ac;
+}
+.profileView-name h3{
+  margin-top: -15px;
+padding-bottom: 15px;
+}
+
+.profileView-name button {
+  height: 1.5rem;
+  width: 10rem;
+  margin-bottom: 2px;
+}
+
+hr {
+ 
+  border-top: .5px solid rgba(128, 128, 128, 0.266);
+  margin: 25px 0;
+  width:100%;
+  padding: 0 20px
+}
+
+.profileView-activities {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profileView .medialinks {
+  margin-top: -7px;
+}
+
+
+
 /* HOME VIEW */
 .home {
   display: flex;
   justify-content: center;
+  margin-top: -15px;
 }
 
 .home-header {
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 3rem;
   text-shadow: 0px 0px 10px rgb(255, 255, 255);
   font-size: 45px;
@@ -215,8 +275,6 @@ ul {
   font-size: 12px;
 }
 
-/* USER PROFILE */
-
 /* SINGLE EVENT */
 .event-single {
   text-align:center;
@@ -238,6 +296,8 @@ ul {
 
 .event-single img {
   border-radius: 50%;
+  box-shadow: 3px 3px 7px #050505ac;
+
 }
 
 .event-single-map {
@@ -290,7 +350,7 @@ margin-bottom: -10px;
 }
 
 .userInfoDiv {
-  background-color: rgba(249, 249, 249, 0.64);
+  background-color: rgba(249, 249, 249, 0.933);
   box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
   border-radius: 25%;
   margin: 0;
@@ -301,10 +361,12 @@ margin-bottom: -10px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  /* line-height: normal; */
 }
 
 .userInfoDiv h2 {
   font-size: 16px;
+  margin-top: -8px;
   margin-bottom: 3px;
 }
 
@@ -312,10 +374,10 @@ margin-bottom: -10px;
   padding: 0 15px 0;
   text-align: left;
   font-size: 15px;
+  line-height: 2;
 }
 
 .interest {
-  line-height: 0.5;
   font-size: 15px;
   display: flex;
   justify-content: center;
@@ -328,13 +390,22 @@ margin-bottom: -10px;
   margin-top: 5px;
 }
 
+/* EVENT LIST */
+.eventlist, .friendslist, .help {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 23rem;
+  margin-top: 15%;
+}
+
 /* FOOTER & DROP MENU */
 footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 43px;
-  background-color: rgba(255, 255, 255, 0.714);
+  background-color: rgba(255, 255, 255, 0.927);
   margin-left: auto;
   margin-right: auto;
 }
@@ -377,11 +448,14 @@ section img {
   position: absolute;
   right: 20px;
   bottom: 50px;
-  background-color: rgba(255, 255, 255, 0.804);
+  background-color: rgba(255, 255, 255, 0.931);
   border-radius: var(--border-radius);
   padding: 10px 20px;
   width: 200px;
+  text-align: center;
 }
+
+
 
 .nav-dropdown::before {
   content: "";
@@ -418,25 +492,26 @@ h3 {
 }
 
 h3 span {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--secondary-text-color);
   font-weight: 400;
 }
 
 /* CENTER CONTENTS IN DROP MENU */
-/* .nav-dropdown ul a{
+.nav-dropdown ul a{
     display: flex;
     flex-direction: column;
-    align-content: center;
-  } */
+    text-decoration: none;
+  }
 
 .nav-dropdown ul li {
-  padding: 15px 0;
+  padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 20px;
 }
 
 .nav-dropdown ul li:hover a {
-  color: rgb(212, 33, 9);
+  /* color: rgb(212, 33, 9); */
   cursor: pointer;
 }
 
@@ -468,6 +543,8 @@ h3 span {
   background-size: 400px;
   background-attachment: fixed;
   padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aboutIntro {
@@ -488,7 +565,7 @@ h3 span {
 }
 
 .creator {
-  margin: 1.5rem;
+  margin: 1.5rem 18%;
   padding: 1rem;
   background-color: rgba(249, 249, 249, 0.64);
   box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
@@ -566,7 +643,27 @@ h3 span {
 .suggestions button,
 .create-profile button,
 .edit-profile button,
-#CreateEventContainer button {
+#CreateEventContainer button, .nav-dropdown button {
   width: 98%;
   height: 1.75rem;
+}
+
+/* ERROR VIEW */
+.error {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50%;
+}
+
+.error img {
+border-radius: 25%;
+box-shadow: 0px 0px 35px 4px rgb(0, 0, 0);
+
+}
+
+.error button {
+  height: 1.5rem;
+padding: 0 5px;
+margin-top: 1rem;
 }

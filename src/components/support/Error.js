@@ -7,8 +7,9 @@ const Error = () => {
     }
     return(
         <div className="error">
-        <img src="https://sitechecker.pro/wp-content/uploads/2017/12/404.png" alt=""/>
-        <h2 onClick={goBack}>Go Back</h2>
+        <img src="https://geek.hellyer.kiwi/files/2017/06/cat-404.jpg" alt="" style={{ height: "280px", width: "390px"}}/>
+        <div></div>
+        <button onClick={goBack}>Oh no!! Go back!</button>
         </div>
     )
 

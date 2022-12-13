@@ -201,7 +201,7 @@ const SingleEventView = () => {
                 <td className="center">{description}</td>
             </tr>
             <tr>
-                <td><strong>People Expected:</strong></td>
+                <td><strong>People Invited:</strong></td>
                 <td className="center">{headcount}</td>
             </tr>
             <tr>

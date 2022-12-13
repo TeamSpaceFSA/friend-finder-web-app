@@ -105,7 +105,7 @@ const Footer = () => {
 
             <div className={`nav-dropdown ${open ? "active" : "inactive"}`}>
               <h3>
-                New Friend Finder
+                <strong>New Friends+</strong>
                 <br />
                 <span>@{name}</span>
               </h3>
@@ -118,7 +118,10 @@ const Footer = () => {
                     label="Notifications"
                   />
                 </li>
-                <DropdownItem text={"Chat Log"} />
+                {/* <DropdownItem text={"Chat Log"} /> */}
+                <Link to="/profile/editprofile">
+                  <DropdownItem text={"Edit Profile"} />
+                </Link>
                 <Link to="/about">
                   <DropdownItem text={"About Us"} />
                 </Link>
