@@ -21,7 +21,7 @@ const OneEventInList = () => {
     const [facebook, setFacebook] = useState("")
     const [whatsapp, setWhatsapp] = useState("")
     const [tiktok, setTiktok] = useState("")
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(true)
 
     const fetchUser = async () => {
         try {
