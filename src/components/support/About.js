@@ -134,12 +134,9 @@ const About = () => {
             2022. Soon after, the social app idea was introduced to her team and
             fellow classmates, Jenny Wu, Jacob Saddler, and Harry Huang, during
             their studies as beginner software developers at Fullstack Academy
-            for their final Capstone project. After voting and deliberating,
-            amongst 30+ ideas, New Friends was chosen out of the bunch. In the
-            2.5 week project deadline, the team made a MVP (minimal value
-            product) verson of their new social media app using both known and
-            new technologies. The project was then first shared with a select
-            audience as part of the students' graduation at Fullstack Academy
+            for their final Capstone project. In
+            2.5 weeks, the team made a closed beta version of their new social media app. The project then shared with a select
+            audience of students at Fullstack Academy
             where it receieved a lot of positive feedback.
           </p>
 
@@ -163,12 +160,11 @@ const About = () => {
               </div>
               <br />
               <p>
-                "I see New Friends as a very useful, fun, and lucrative social
-                mobile app. Imagine commuting to or visiting a new town... It
+                "I see New Friends as a very useful, fun, and productive social
+                app. Imagine commuting to or visiting a new town... It
                 can be hard to make friends or simply meet people with common
-                interests. This app closes that gap! As next steps, along with
-                my fellow creators (if they're interested of course, hehe), I
-                would like to expand the app and have it deployed for public
+                interests. This app closes that gap! As next steps, my fellow creators and I
+                would like to deploy the app for public
                 use!" &#x1F64F;&#127997;
               </p>
             </div>
@@ -192,7 +188,9 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
+
               <img className="creator-img" src="https://media-exp1.licdn.com/dms/image/C4D03AQH_UJOap4mbkw/profile-displayphoto-shrink_200_200/0/1646857767806?e=1676505600&v=beta&t=1FggEJ_LMyuUcnjkwbnoAkbhwBWOz3Wi924Lmpnk3LY" alt="" />
+
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -223,7 +221,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
           </div>
           <div className="newuser-footer">
