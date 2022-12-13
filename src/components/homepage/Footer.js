@@ -105,7 +105,11 @@ const Footer = () => {
 
             <div className={`nav-dropdown ${open ? "active" : "inactive"}`}>
               <h3>
-                <strong>New Friends+</strong>
+              <img
+          src="https://images.cooltext.com/5633399.png"
+          alt="New Friends"
+          style={{ height: "30px", width: "150px" }}
+        />
                 <br />
                 <span>@{name}</span>
               </h3>

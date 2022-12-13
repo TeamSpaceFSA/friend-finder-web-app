@@ -44,29 +44,53 @@ const Profile = () => {
     <>
       <div className="profileView">
         {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{ height: "50px", width: "50px" }} onClick={() => navigate("/home")} /> */}
-        <div className="profileView-user"><div className="profileView-img"><img src={image} alt="" style={{ height: "80px", width: "80px" }} />
-        <p><strong>{age} years</strong></p></div>
-        <div className="profileView-name"><h3><strong>@{name}</strong></h3><Link to="friendslist">
-          <button >My Friends</button>
-        </Link>
-        <div className="btn2"><Link to="editprofile">
-          <button>Edit Profile</button>
-        </Link></div></div></div>
-        <p><em>{bio}</em></p><hr></hr>
-        
-        
+        <div className="profileView-user">
+          <div className="profileView-img">
+            <img src={image} alt="" style={{ height: "80px", width: "80px" }} />
+            <p>
+              <strong>{age} years</strong>
+            </p>
+          </div>
+          <div className="profileView-name">
+            <h3>
+              <strong>@{name}</strong>
+            </h3>
+            <Link to="friendslist">
+              <button>My Friends</button>
+            </Link>
+            <div className="btn2">
+              <Link to="editprofile">
+                <button>Edit Profile</button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <p>
+          <em>{bio}</em>
+        </p>
+        <hr></hr>
+
         <div className="profileView-activities">
-        <p><strong>My interests include..</strong></p>
-        <div >
-          {activities ? (
-            activities.map((activity) => <p key={activity}>{activity}</p>)
-          ) : (
-            <p>No activities yet</p>
-          )}
-        </div></div>
+          <p>
+            <strong>My interests include..</strong>
+          </p>
+          <div>
+            {activities ? (
+              activities.map((activity) => <p key={activity}>{activity}</p>)
+            ) : (
+              <p>No activities yet</p>
+            )}
+          </div>
+        </div>
         <hr></hr>
         <div>Find me here!</div>
-        <div><img src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/arrow-down-1024.png" alt="" style={{ height: "20px", width: "20px" }}/></div>
+        <div>
+          <img
+            src="https://cdn0.iconfinder.com/data/icons/typicons-2/24/arrow-down-1024.png"
+            alt=""
+            style={{ height: "20px", width: "20px" }}
+          />
+        </div>
         <div className="medialinks">
           {facebook ? (
             <a href={facebook} target="_blank">

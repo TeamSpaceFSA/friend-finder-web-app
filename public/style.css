@@ -69,7 +69,7 @@ ul {
 .signIn-msg,
 .suggestions-msg,
 .create-profile-msg,
-.edit-profile-msg, .eventlist-msg {
+.edit-profile-msg, .eventlist-msg, .event-edit-msg, .create-event-msg {
   color: rgb(103, 102, 102);
   font-size: 13px;
   line-height: normal;
@@ -133,29 +133,29 @@ ul {
   margin-top: -10px;
 }
 
-/* PROFILE SETUP & EDIT PROFILE */
+/* SETUP/CREATE PROFILE & PROFILE/EVENT EDIT*/
 .create-profile,
 .edit-profile,
-#CreateEventContainer {
+#CreateEventContainer, .event-edit, .friendslist, .help {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 15rem;
+  width: 23rem;
   margin-top: 15%;
-  padding-bottom: 150px;
+  padding-bottom: 3rem;
 }
 
 .create-profile h2,
 .edit-profile h2,
 #CreateEventContainer h2,
-.friendslist h2 {
+.friendslist h2, .event-edit h2, .eventlist-h2, .friendslist h2 {
   margin-top: -5px;
   padding-bottom: 11px;
 }
 
 .create-profile form input,
 .edit-profile form input,
-#CreateEventContainer form input {
+#CreateEventContainer form input, .event-edit form input {
   background-color: rgba(216, 215, 215, 0.424);
   padding: 5px;
   margin-bottom: 2px;
@@ -163,13 +163,13 @@ ul {
   width: 98%;
 }
 
-.age-menu {
+.age-menu, .activity-menu {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.age-menu select {
+.age-menu select, .activity-menu select {
   width: 99%;
   height: 25px;
   background-color: rgba(216, 215, 215, 0.424);
@@ -181,6 +181,15 @@ ul {
   margin-bottom: 4px;
 }
 
+.btnadjust {
+  margin-top: 2px;
+}
+/* adjust text with drop menus under */
+/* .adjust {
+  margin-bottom: 20px;
+} */
+
+
 
 
 /* PROFILE VIEW */
@@ -189,8 +198,9 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 23rem;
-  margin-top: 25%;
+  margin-top: 15%;
   font-size: 15px;
+  padding-bottom: 3rem;
 }
 
 .profileView-user{
@@ -234,6 +244,7 @@ hr {
 .profileView .medialinks {
   margin-top: -7px;
 }
+
 
 
 /* HOME VIEW */
@@ -281,8 +292,6 @@ hr {
   margin-right: auto;
   padding: 0 10%;
   margin-top: 15%;
-  /* margin-bottom: 20px;
-  line-height: normal; */
 }
 
 .event-single h2 {
@@ -291,11 +300,6 @@ hr {
 
 .event-single h3 {
   padding: 0;
-}
-
-.event-single img {
-  border-radius: 50%;
-  box-shadow: 3px 3px 7px #050505ac;
 }
 
 .event-single-map {
@@ -319,6 +323,8 @@ table {
   .profileimg {
     margin-bottom: -8px;
     margin-top: -7px;
+    border-radius: 50%;
+  box-shadow: 3px 3px 7px #050505ac;
   }
 
 .center{
@@ -327,7 +333,6 @@ table {
 
 .center h3 {
   font-size: 15px;
-margin-top: -2px;
 margin-bottom: -10px;
 }
 
@@ -345,15 +350,15 @@ margin-bottom: -10px;
 
 .userFlashcard{
   position: absolute;
+  width: 40%;
+    line-height: 1;
 }
 
 .userInfoDiv {
   background-color: rgba(249, 249, 249, 0.933);
   box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
-  border-radius: 25%;
+  border-radius: 10%;
   margin: 0;
-  /* min-width: 40%; */
-  /* width: 40rem; */
   padding-top: 7px;
   text-align: center;
   margin-left: auto;
@@ -363,40 +368,39 @@ margin-bottom: -10px;
 
 .userInfoDiv h2 {
   font-size: 16px;
-  margin-top: -8px;
-  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 4px;
 }
 
 .userInfoDiv h3 {
-  padding: 0 15px 0;
+  padding: 0 15px;
   text-align: left;
   font-size: 15px;
-  line-height: 2;
+  margin-bottom: 3px;
 }
 
 .interest {
   font-size: 15px;
-  display: flex;
-  justify-content: center;
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -3px;
 }
 
 .medialinks {
   margin-top: 5px;
 }
 
-/* EVENT LIST & EDIT EVENT*/
-.eventlist, .friendslist, .help, .event-edit {
+
+
+
+/* EVENT LIST */
+.eventlist {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 23rem;
   margin-top: 15%;
-}
-
-.eventlist {
   padding-bottom: 3rem;
 }
 
@@ -407,21 +411,70 @@ margin-bottom: -10px;
   box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
 }
 
-.eventlist h2 {
+.eventlist-card h2, .requestedEvents h2 {
   font-size: 16px;
   margin-bottom: 5px;
+  padding: 0;
+  font-weight: bold;
+}
+
+.requestedEvents .time {
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 8px;
 }
 
 .eventlist button {
   height: 1.5rem;
-  width: 4rem;
+  width: 4.5rem;
   margin: 8px 2px 8px 0px;
 }
 
-.event-edit button {
-  height: 1.5rem;
-margin-top: 2px;
+.eventhr {
+  margin: -0 0 5px 0
 }
+
+.attendeeInformation {
+  display: flex;
+  justify-content: space-around;
+}
+
+.attendeeProfile img {
+  margin-top: 4px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px  #0505057c;
+}
+
+.accept-reject {
+  margin-top: 20px;
+}
+
+.accept-reject button, .friendslist button {
+ border: none;
+ background-color: transparent;
+ box-shadow: 0px 0px 0px black;
+ margin-right: 3px;
+}
+
+.accept-reject button:hover, .friendslist button:hover {
+  filter: grayscale(100%)
+}
+
+.newfriend {
+  margin: 1.5rem 20%;
+  padding: 1rem;
+  background-color: rgba(249, 249, 249, 0.64);
+  box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.newfriend p{
+ margin-bottom: 5px;
+}
+
+
+
 
 /* FOOTER & DROP MENU */
 footer {
@@ -643,17 +696,18 @@ h3 span {
   width: 98%;
 }
 
-.suggestions textarea {
+.suggestions textarea, .event-edit textarea {
   background-color: rgba(216, 215, 215, 0.424);
   width: 98%;
   height: 85px;
   border: none;
+  padding: 0 3px;
 }
 
 .suggestions h3,
 .create-profile h3,
 .edit-profile h3,
-#CreateEventContainer h3 {
+#CreateEventContainer h3, .event-edit h3{
   /* margin: 0; */
   padding: 10px 0px 0px 3px;
   text-align: left;
@@ -663,7 +717,7 @@ h3 span {
 .suggestions button,
 .create-profile button,
 .edit-profile button,
-#CreateEventContainer button, .nav-dropdown button {
+#CreateEventContainer button, .nav-dropdown button, .event-edit button {
   width: 98%;
   height: 1.75rem;
 }

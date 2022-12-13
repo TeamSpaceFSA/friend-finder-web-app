@@ -145,25 +145,29 @@ const ageRange = [
     
     return(
         <div className="event-edit">
-        <form key={id}>
-          Event:<input type="text" value={aname} onChange={(e)=>setName(e.target.value)}/>
-        Location:{event.location.address}
+                <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
+
+        <form key={id}><h2>Edit Event</h2>
+        <div className="event-edit-msg">Be sure to fill in each field in order to edit your event.</div>
+
+          <h3>Event:<input type="text" value={aname} onChange={(e)=>setName(e.target.value)}/></h3>
+        <h3>Location:<div>{event.location.address}</div></h3>
         <PlacesAutocomplete value={event.location.address} setSelected={setSelected} />
-        Description:<textarea type="text" value={adescription} onChange={(e)=>setDescription(e.target.value)}/>
-        # of People:
-        <NumberPicker min={1} value={aheadcount} onChange={headcount => setHeadcount(headcount)} />
-        Age Range:<div className="age-menu">
-    <select className="age-searchBar"  value={aage} onChange={(e)=> setAge(e.target.value)} name="ages">
+        <h3>Description:<div><textarea type="text" value={adescription} onChange={(e)=>setDescription(e.target.value)}/></div></h3>
+        <h3># of People:
+        <NumberPicker min={1} value={aheadcount} onChange={headcount => setHeadcount(headcount)} /></h3>
+        <h3>Age:<div className="age-menu">
+    <select className="age-searchBar" value={aage} onChange={(e)=> setAge(e.target.value)} name="ages">
             {ageRange.map((age) => (
                     <option key={age.key} className="ageOption">
                              {age.value}
                            </option>
                        ))}
                     </select>
-                    </div>
-            Date: <input type="date" value={adate}
-                    onChange={(e) => setDate(e.target.value)} />
-            Start:<div className="age-menu">
+                    </div></h3>
+            <h3>Date: <input type="date" value={adate}
+                    onChange={(e) => setDate(e.target.value)} /></h3>
+            <h3>Start:<div className="age-menu">
                        <select className="age-searchBar" value={astartTime} onChange={(e)=> setStartTime(e.target.value)} name="ages">
                         {timeRange.map((time) => (
                            <option key={time.key} className="ageOption">
@@ -178,8 +182,8 @@ const ageRange = [
                            </option>
                            ))}
                        </select>
-                    </div>
-        Activity: <div>
+                    </div></h3>
+        <h3>Category: <div className="activity-menu">
                 <select className="activityBar" value={aicon} onChange={e=>setIcon(e.target.value)}>
                        {categories.map((category)=>(
                            <option key={category.key} value={category.value} className="activityOption">
@@ -187,8 +191,8 @@ const ageRange = [
                            </option>
                        ))}
                    </select>
-                </div>
-               Additional Activities:<Multiselect
+                </div></h3>
+               <h3>Additional Categories:<Multiselect
          isObject={false}
           onRemove={(event) => {
             console.log(event);
@@ -200,9 +204,9 @@ const ageRange = [
           options={cat.map((category) => category.value)}
           selectedValues={aactivities}
           showCheckbox
-        />
+        /></h3>
           </form>
-          {selected == null ? <button disabled={true} onClick={()=>updateEvent(id)}>Submit Changes</button> : <button onClick={()=>updateEvent(id)}>Submit Changes</button>}
+          {selected == null ? <button className="btnadjust" disabled={true} onClick={()=>updateEvent(id)}>Submit Changes</button> : <button className="btnadjust" onClick={()=>updateEvent(id)}>Submit Changes</button>}
          </div>
     )
 }
@@ -233,7 +237,7 @@ const PlacesAutocomplete = ({ setSelected }) => {
           onChange={(e) => setValue(e.target.value)}
           disabled={!ready}
           className="combobox-input"
-          placeholder={"Please reconfirm address when updating"}
+          placeholder={"Please reconfirm the above address."}
         />
         <ComboboxPopover>
           <ComboboxList>

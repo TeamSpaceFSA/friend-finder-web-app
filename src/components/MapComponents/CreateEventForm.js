@@ -141,6 +141,8 @@ const CreateEventForm = () => {
         <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
             <form>
                 <h2>Create Event</h2>
+                <div className="create-event-msg">Time to make some connections! Fill in every field to create an event!</div>
+
                 <h3>Name Of Event:</h3>
                 <input type="text" value={name}
                     onChange={(e) => setName(e.target.value)}></input>

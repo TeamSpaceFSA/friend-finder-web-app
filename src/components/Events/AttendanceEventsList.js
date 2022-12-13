@@ -48,13 +48,13 @@ const EventsListFiltered = () => {
     console.log("This is events", events)
 
     return (
-        <div>
+        <div className="requestedEvents">
             
             {events.map((doc,index) =>
             <div key={doc.id}>
-            <h2>Event:{doc.name}</h2>
-            <h4>Date: {doc.date}, Time: {doc.startTime} {doc.amPm}</h4>
-            <p>Plan:{doc.description}</p>)
+            <h2>{doc.name}</h2>
+            <div className="time">Date: {doc.date}, {doc.startTime} {doc.amPm}</div>
+            <p><em>{doc.description}</em></p>
             </div>)}
         </div>
     )

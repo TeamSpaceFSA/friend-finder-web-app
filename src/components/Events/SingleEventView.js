@@ -123,10 +123,10 @@ const SingleEventView = () => {
             <div className="userFlashcard">
           {visible ? (
           <div className="userInfoDiv">
-            <img
+            <img className="profileimg"
               src={profimage}
               alt=""
-              style={{ height: "85px", width: "85px" }}
+              style={{ height: "70px", width: "70px" }}
             />
             <h2>{profName}</h2>
             <h3>
