@@ -161,8 +161,8 @@ const About = () => {
                 "I see New Friends as a very useful, fun, and productive social
                 app. Imagine commuting to or visiting a new town... It
                 can be hard to make friends or simply meet people with common
-                interests. This app closes that gap! As next steps, we
-                would like to expand the app and have it deployed for public
+                interests. This app closes that gap! As next steps, my fellow creators and I
+                would like to deploy the app for public
                 use!" &#x1F64F;&#127997;
               </p>
             </div>
@@ -186,7 +186,7 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/118464439_3884268154997995_334619796960176880_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=n5DR7hDSkjEAX-JnKhs&tn=g_ozPu3bDPsd2T16&_nc_ht=scontent-lga3-2.xx&oh=00_AfD-w_BDApPdRt1BT8uirr7wBhwacC4fIzCEMq88FGpaNQ&oe=63C061EB" alt="" />
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -215,7 +215,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
           </div>
           <div className="newuser-footer">
