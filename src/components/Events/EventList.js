@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-import { OneEventInList } from "../index.js";
+import { OneEventInList, EventsListFiltered } from "../index.js";
 
 const EventList = () => {
 
@@ -13,11 +13,6 @@ const EventList = () => {
   const [events, setEvents] = useState([])
   const [hidden, setHidden] = useState(events.map(()=>true))
   // fetch a pending user profiles from an event
-const [profName, setName] = useState("")
-const [profimage, setProfileImg] = useState("")
-const [bio, setBio] = useState("")
-const [age, setAge] = useState("")
-const [activities, setActivities] = useState([])
 const [ selectedEvent, setSelectedEvent ] = useState("")
 const [ userId, setUserId ] = useState("")
 
@@ -108,6 +103,16 @@ const [ userId, setUserId ] = useState("")
           accepted: arrayUnion(userId),
           requested: arrayRemove(userId)
       });
+      toast.success('Participant Added!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       
   } catch(err){
       console.log(err)
@@ -120,6 +125,16 @@ async function handleReject(docId, userId) {
         await updateDoc(doc(db,"events",docId), {
             requested: arrayRemove(userId)
         });
+        toast.success('Participant Removed', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
     
     } catch(err){
         console.log(err)
@@ -160,6 +175,8 @@ async function handleReject(docId, userId) {
                 )): null}
         </div>)}
 </div>
+<h1>Upcoming Events:</h1> 
+<EventsListFiltered />
     </>
   )
 }

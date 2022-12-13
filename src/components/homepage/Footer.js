@@ -118,10 +118,6 @@ const Footer = () => {
                     label="Notifications"
                   />
                 </li>
-                {/* <DropdownItem text={"Chat Log"} /> */}
-                <Link to="/profile/editprofile">
-                  <DropdownItem text={"Edit Profile"} />
-                </Link>
                 <Link to="/about">
                   <DropdownItem text={"About Us"} />
                 </Link>

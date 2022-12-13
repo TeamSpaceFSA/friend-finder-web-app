@@ -3,15 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { auth, db } from "../../app/FirebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {
-  doc,
-  updateDoc,
-  query,
-  collection,
-  getDocs,
-  where,
-  arrayUnion,
-} from "firebase/firestore";
+import { doc, updateDoc, query, collection, getDocs, where, arrayUnion } from "firebase/firestore"
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleEventView = () => {
   const navigate = useNavigate();
@@ -87,18 +81,29 @@ const SingleEventView = () => {
 
   //Event document reference
   const docRef = doc(db, "events", id);
-
-  //Request Join event handler
-  async function handleRequestJoin() {
-    try {
-      console.log("This is user", user);
-      await updateDoc(docRef, {
-        requested: arrayUnion(user.uid),
-      });
-    } catch (err) {
-      console.log(err);
+    
+    //Request Join event handler
+    async function handleRequestJoin(){
+        try{
+            console.log("This is user", user)
+            await updateDoc(docRef, {
+                requested: arrayUnion(user.uid)
+            });
+            toast.success('Request Sent!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+        } catch(err){
+            console.log(err)
+        }
     }
-  }
+  
 
   return (
     <>
