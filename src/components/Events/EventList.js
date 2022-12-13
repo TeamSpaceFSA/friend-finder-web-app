@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-import { OneEventInList } from "../index.js";
+import { OneEventInList, EventsListFiltered } from "../index.js";
 
 const EventList = () => {
 
@@ -161,6 +161,8 @@ async function handleReject(docId, userId) {
                 )): null}
         </div>)}
 </div>
+<h1>Upcoming Events:</h1> 
+<EventsListFiltered />
     </>
   )
 }
