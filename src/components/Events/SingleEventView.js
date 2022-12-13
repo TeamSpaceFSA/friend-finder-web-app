@@ -105,19 +105,18 @@ const SingleEventView = () => {
       <div className="event-single">
         {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} /> */}
         <h2>{name}</h2>
-        <div>
-          <h3>
-            Host:
-            <img
+        <table>
+            <tr>
+                <td><strong>Host:</strong></td>
+                <td className="center"><div><img className="profileimg"
               onClick={handleClick}
               src={profimage}
               alt=""
               style={{ height: "50px", width: "50px" }}
             />
-            {profName}
-          </h3>
-        </div>
-        {visible ? (
+            <h3>{profName}</h3></div>
+            <div className="userFlashcard">
+          {visible ? (
           <div className="userInfoDiv">
             <img
               src={profimage}
@@ -191,32 +190,37 @@ const SingleEventView = () => {
         ) : (
           ""
         )}
-        <div>
-          <h3>Where:</h3>
-          {event.location.address}
-        </div>
-        <div>
-          <h3>Description:</h3>
-          {description}
-        </div>
-        <div>
-          <h3># of People:</h3> {headcount}
-        </div>
-        <h3>When:</h3>
-        <div>{date}</div>
-        <h3>Start(EST):</h3>
-        <div>
-          {startTime}
-          {amPm}
-        </div>
-        <h3>
-          Activities:
-          {category ? (
+        </div></td>
+            </tr>
+            <tr>
+                <td><strong>Where:</strong></td>
+                <td className="center">{event.location.address}</td>
+            </tr>
+            <tr>
+                <td><strong>Description:</strong></td>
+                <td className="center">{description}</td>
+            </tr>
+            <tr>
+                <td><strong>People Expected:</strong></td>
+                <td className="center">{headcount}</td>
+            </tr>
+            <tr>
+                <td><strong>When:</strong></td>
+                <td className="center">{date}</td>
+            </tr>
+            <tr>
+                <td><strong>Start (EST):</strong></td>
+                <td className="center">{startTime}{amPm}</td>
+            </tr>
+            <tr>
+                <td><strong>Categories:</strong></td>
+                <td className="event-single-activity">{category ? (
             category.map((cat) => <p key={cat}>{cat}</p>)
           ) : (
             <p>n/a</p>
-          )}
-        </h3>
+          )}</td>
+            </tr>
+        </table>
         {host === user.uid ? null : (
           <button onClick={() => handleRequestJoin()}>Join Event</button>
         )}
