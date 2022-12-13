@@ -42,17 +42,26 @@ const HomeMap = () => {
   })
 
   //Fetching all event data from Firebase
+  // const fetchEvents = async () => {
+  //   try {
+  //     const q = query(collection(db, "events"))
+  //     const doc = await getDocs(q)
+  //     const locations = []
+  //     for (let i = 0; i < doc.docs.length; i++) {
+  //       const data = doc.docs[i].data()
+  //       locations.push(data)
+  //     }
+  //     setEvents(locations)
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
   const fetchEvents = async () => {
-    try {
-      const q = query(collection(db, "events"))
-      const doc = await getDocs(q)
-      const locations = []
-      for (let i = 0; i < doc.docs.length; i++) {
-        const data = doc.docs[i].data()
-        locations.push(data)
-      }
-      setEvents(locations)
-    } catch (err) {
+    try{
+      const eventCollectionRef = query(collection(db,"events"))
+      const data = await getDocs(eventCollectionRef)
+      setEvents(data.docs.map((doc)=>({...doc.data(), id: doc.id})))
+    }catch(err){
       console.log(err)
     }
   }
@@ -95,11 +104,12 @@ const HomeMap = () => {
         {events.map(event => <MarkerF key={event.name} position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon} onClick={() => setSelectedMarker(event)}/>)}
         {selectedMarker && <InfoWindowF key={selectedMarker.name} position={{lat: selectedMarker.location.lat, lng: selectedMarker.location.lng}}>
             <>
-            <h1>{selectedMarker.name}</h1>
+            <div className="home-popup">
+            <h2>{selectedMarker.name}</h2>
             <p>{selectedMarker.description}</p>
-            <button onClick={() => viewSingleEvent(selectedMarker)}>Event Details</button>
-            <button>Request To Join</button>
-            
+            <button onClick={() => viewSingleEvent(selectedMarker)}>Full Event Details</button>
+            <button>Request to Join</button>
+            </div>
             </>
           </InfoWindowF>}
       </GoogleMap>

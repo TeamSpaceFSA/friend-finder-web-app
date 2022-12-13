@@ -1,15 +1,40 @@
 import React from "react";
+import { auth } from "../../app/FirebaseConfig";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+
 import { useNavigate } from "react-router-dom";
 
 const Help = () => {
-  const navigate = useNavigate()
-    return(
-        <div>
-          <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
-          FAQ  
-        </div> 
-    )
+  const [user] = useAuthState(auth);
 
-}
+  const navigate = useNavigate();
 
-export default Help
+  return (
+    <>
+      {user ? (
+        <div className="help">FAQ </div>
+      ) : (
+        <div className="help">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
+            alt=""
+            style={{ height: "25px", width: "25px", margin: "3px" }}
+            onClick={() => navigate(-1)}
+          />
+          <div>FAQ</div>
+          <div className="newuser-footer">
+            <h5 className="newuser-about">
+              <Link to="/about">About</Link>
+            </h5>
+            <h5>
+              <Link to="/help">Help</Link>
+            </h5>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Help;

@@ -144,7 +144,7 @@ const ageRange = [
     console.log("This is the event we clicked on", event)
     
     return(
-        <div>
+        <div className="event-edit">
         <form key={id}>
           Event:<input type="text" value={aname} onChange={(e)=>setName(e.target.value)}/>
         Location:{event.location.address}
@@ -202,7 +202,7 @@ const ageRange = [
           showCheckbox
         />
           </form>
-          <button onClick={()=>updateEvent(id)}>Submit Changes</button>
+          {selected == null ? <button disabled={true} onClick={()=>updateEvent(id)}>Submit Changes</button> : <button onClick={()=>updateEvent(id)}>Submit Changes</button>}
          </div>
     )
 }

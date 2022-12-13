@@ -136,22 +136,22 @@ const CreateEventForm = () => {
 
     return(
         <>
-        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/>
+        {/* <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{height:"50px", width:"50px"}} onClick={()=>navigate(-1)}/> */}
         <div id="CreateEventContainer">
             <form>
-                <h1>Create Event</h1>
-                <h1>Name Of Event:</h1>
+                <h2>Create Event</h2>
+                <h3>Name Of Event:</h3>
                 <input type="text" value={name}
                     onChange={(e) => setName(e.target.value)}></input>
-                <h1>Description:</h1>
+                <h3>Description:</h3>
                 <input type="text" value={description} label={description}
                     onChange={(e) => setDescription(e.target.value)} />
-                <h1>Headcount:</h1>
+                <h3>Headcount:</h3>
                     <NumberPicker min={1} value={headcount} onChange={headcount => setHeadcount(headcount)} />
-                <h1>Date:</h1>
+                <h3>Date:</h3>
                 <input type="date" value={date}
                     onChange={(e) => setDate(e.target.value)}/>
-                <h1>Start Time:</h1>
+                <h3>Time:</h3>
                 <div className="age-menu">
                         <select className="age-searchBar" onChange={(e)=> setStartTime(e.target.value)} name="ages">
                             {timeRange.map((time) => (
@@ -168,9 +168,9 @@ const CreateEventForm = () => {
                             ))}
                         </select>
                     </div>
-                <h1>Age Range:</h1>
                 {/* ??ADD BOOLEAN/CHECKBOX FOR OVER/UNDER 21 YO */}
-                    <div className="age-menu">
+                    <div className="age-menu">                <h3>Age Range:</h3>
+
                         <select className="age-searchBar" onChange={(e)=> setAge(e.target.value)} name="ages">
                             {ageRange.map((age) => (
                             <option key={age.key} className="ageOption">
@@ -179,8 +179,8 @@ const CreateEventForm = () => {
                             ))}
                         </select>
                     </div>
-                <h1>Category:</h1>
-                <div>
+                <h3>Category:</h3>
+                <div className="age-menu">
                     <select className="activityBar" onChange={e=>setIcon(e.target.value)}>
                         {categories.map((category)=>(
                             <option key={category.key} value={category.value} className="activityOption">
@@ -189,8 +189,8 @@ const CreateEventForm = () => {
                         ))}
                     </select>
                 </div>
-                <h1>Additional Activities:</h1>
-                <Multiselect
+                <h3>Additional Categories:</h3>
+                <Multiselect className="add-activities"
           isObject={false}
           onRemove={(event) => {
             console.log(event);
@@ -202,7 +202,7 @@ const CreateEventForm = () => {
           options={cat.map((category) => category.value)}
           showCheckbox
         />
-                <h1>Location:</h1>
+                <h3>Location:</h3>
                 <PlacesAutocomplete setSelected={setSelected} />
               {name.length <= 0 ? <button onClick={submit} disabled={true}>Create Event</button> : description.length <= 0 ? 
               <button onClick={submit} disabled={true}>Create Event</button> :  headcount <= 0 ? 
