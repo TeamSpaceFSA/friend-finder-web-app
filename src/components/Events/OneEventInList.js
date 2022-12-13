@@ -4,11 +4,12 @@ import { db } from "../../app/FirebaseConfig"
 import { doc, query, collection, getDocs, where } from "firebase/firestore"
 
 
+
 const OneEventInList = () => {
     const location = useLocation()
+    const navigate = useNavigate()
 
     const user = location.state
-    console.log(user)
     const [profName, setName] = useState("")
     const [profimage, setProfileImg] = useState("")
     const [bio, setBio] = useState("")
@@ -43,8 +44,9 @@ const OneEventInList = () => {
         fetchUser()
     }, [])
 
-
     return (
+        <>
+        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} />
         <div className="userInfoDiv">
             <h1>{profName}</h1>
             <img src={profimage} alt="" style={{ height: "100px", width: "100px"}}/>
@@ -61,6 +63,7 @@ const OneEventInList = () => {
                 {whatsapp ? <a href={whatsapp} target="_blank"><img src="https://img.icons8.com/color/512/whatsapp.png" alt="" style={{ height: "50px", width: "50px" }}/></a>: ""}
                 </div>
         </div>
+        </>
     )
 }
 

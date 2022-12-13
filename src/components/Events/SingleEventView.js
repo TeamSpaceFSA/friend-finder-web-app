@@ -4,6 +4,8 @@ import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { auth, db } from "../../app/FirebaseConfig"
 import { useAuthState } from "react-firebase-hooks/auth";
 import { doc, updateDoc, query, collection, getDocs, where, arrayUnion } from "firebase/firestore"
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const SingleEventView = () => {
     const navigate = useNavigate()
@@ -77,6 +79,16 @@ const SingleEventView = () => {
             await updateDoc(docRef, {
                 requested: arrayUnion(user.uid)
             });
+            toast.success('Request Sent!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
         } catch(err){
             console.log(err)
         }
@@ -113,7 +125,7 @@ const SingleEventView = () => {
             <h3>Activities:{category ? category.map(cat => (
                 <p key={cat}>{cat}</p>
             )) : <p>n/a</p>}</h3> 
-            {host === user.uid ? null : <button onClick={() => handleRequestJoin()}>Join Event</button>}
+            {host === user.uid ? null : <button onClick={() => handleRequestJoin()}>Request to Join</button>}
 <div className="event-single-map">
             <GoogleMap  zoom={60}  center={{ lat: event.location.lat, lng: event.location.lng }} mapContainerClassName="map-container">
                 <MarkerF position={{ lat: event.location.lat, lng: event.location.lng }} icon={event.icon}></MarkerF>
