@@ -69,7 +69,7 @@ ul {
 .signIn-msg,
 .suggestions-msg,
 .create-profile-msg,
-.edit-profile-msg {
+.edit-profile-msg, .eventlist-msg {
   color: rgb(103, 102, 102);
   font-size: 13px;
   line-height: normal;
@@ -236,7 +236,6 @@ hr {
 }
 
 
-
 /* HOME VIEW */
 .home {
   display: flex;
@@ -297,7 +296,6 @@ hr {
 .event-single img {
   border-radius: 50%;
   box-shadow: 3px 3px 7px #050505ac;
-
 }
 
 .event-single-map {
@@ -361,7 +359,6 @@ margin-bottom: -10px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  /* line-height: normal; */
 }
 
 .userInfoDiv h2 {
@@ -390,13 +387,40 @@ margin-bottom: -10px;
   margin-top: 5px;
 }
 
-/* EVENT LIST */
-.eventlist, .friendslist, .help {
+/* EVENT LIST & EDIT EVENT*/
+.eventlist, .friendslist, .help, .event-edit {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 23rem;
   margin-top: 15%;
+}
+
+.eventlist {
+  padding-bottom: 3rem;
+}
+
+.eventlist-card {
+  margin: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(249, 249, 249, 0.64);
+  box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
+}
+
+.eventlist h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.eventlist button {
+  height: 1.5rem;
+  width: 4rem;
+  margin: 8px 2px 8px 0px;
+}
+
+.event-edit button {
+  height: 1.5rem;
+margin-top: 2px;
 }
 
 /* FOOTER & DROP MENU */
@@ -414,7 +438,6 @@ footer section {
   display: flex;
   justify-content: space-between;
   padding: 0 90px;
-  /* width: 100%; */
 }
 
 section img {
@@ -427,7 +450,7 @@ section img {
   width: 45px;
   height: 43px;
 }
-
+/* footer drop menu */
 .nav-container {
   width: 50px;
   height: 50px;
@@ -454,8 +477,6 @@ section img {
   width: 200px;
   text-align: center;
 }
-
-
 
 .nav-dropdown::before {
   content: "";
@@ -497,7 +518,6 @@ h3 span {
   font-weight: 400;
 }
 
-/* CENTER CONTENTS IN DROP MENU */
 .nav-dropdown ul a{
     display: flex;
     flex-direction: column;
