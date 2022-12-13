@@ -25,8 +25,8 @@ const About = () => {
             their studies as beginner software developers at Fullstack Academy
             for their final Capstone project. After voting and deliberating,
             amongst 30+ ideas, New Friends was chosen out of the bunch. In the
-            2.5 week project deadline, the team made a MVP (minimal value
-            product) verson of their new social media app using both known and
+            2.5 week project deadline, the team made a MVP (Minimum Viable
+            Product) verson of their new social media app using both known and
             new technologies. The project was then first shared with a select
             audience as part of the students' graduation at Fullstack Academy
             where it receieved a lot of positive feedback.
@@ -81,7 +81,7 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://media-exp1.licdn.com/dms/image/C4D03AQH_UJOap4mbkw/profile-displayphoto-shrink_200_200/0/1646857767806?e=1676505600&v=beta&t=1FggEJ_LMyuUcnjkwbnoAkbhwBWOz3Wi924Lmpnk3LY" alt="" />
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -93,7 +93,9 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
+                the itch to see visit new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
+                take you! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
@@ -186,7 +188,9 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/118464439_3884268154997995_334619796960176880_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=n5DR7hDSkjEAX-JnKhs&tn=g_ozPu3bDPsd2T16&_nc_ht=scontent-lga3-2.xx&oh=00_AfD-w_BDApPdRt1BT8uirr7wBhwacC4fIzCEMq88FGpaNQ&oe=63C061EB" alt="" />
+
+              <img className="creator-img" src="https://media-exp1.licdn.com/dms/image/C4D03AQH_UJOap4mbkw/profile-displayphoto-shrink_200_200/0/1646857767806?e=1676505600&v=beta&t=1FggEJ_LMyuUcnjkwbnoAkbhwBWOz3Wi924Lmpnk3LY" alt="" />
+
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -198,7 +202,9 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
+                the itch to see new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
+                take you! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
