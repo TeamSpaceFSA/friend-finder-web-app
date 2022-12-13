@@ -23,6 +23,18 @@ const Help = () => {
             onClick={() => navigate(-1)}
           />
           <div>FAQ</div>
+          <div className="creator">
+            <p>"Q: As a event host, why can't I remove users from my events?"</p>
+            <p>"A: As creators, we decided to not include that functionality to prevent hosts from flip-flopping on their attendance decisions to improve the experience for guests"</p>
+          </div>
+          <div className="creator">
+            <p>"Q: How do I find people that I already know?"</p>
+            <p>"A: The whole point of the app is to make new friends. There is no way to directly search for people to encourage exploration."</p>
+          </div>
+          <div className="creator">
+            <p>"Q: What if I double-booked for two events?"</p>
+            <p>"A: As a user, it's your responsibility to be diligent about your schedule. However, you can always remove the event from your schedule as a user."</p>
+          </div>
           <div className="newuser-footer">
             <h5 className="newuser-about">
               <Link to="/about">About</Link>
@@ -32,7 +44,9 @@ const Help = () => {
             </h5>
           </div>
         </div>
-      )}
+        </div>
+  )
+}
     </>
   );
 };
