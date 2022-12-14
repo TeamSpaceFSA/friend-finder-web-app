@@ -55,7 +55,7 @@ const FriendsList = () => {
             {/* {friends.requested ? friends.requested.map((friend)=>{
                 <p>{friend}</p>
             }): <h2>Create or join an event to make friends!</h2>} */}
-        </div>
+        <div className="space"></div></div>
     )
 }
 

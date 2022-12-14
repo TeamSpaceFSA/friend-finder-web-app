@@ -58,6 +58,7 @@ const Suggestions = () => {
         <button classname="btn">
         <input  type="submit" value="Send" /></button> </div>
       </form>
+      <div className="space"></div>
     </div>
   );
 };

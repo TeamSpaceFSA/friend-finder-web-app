@@ -136,7 +136,7 @@ const Profile = () => {
           ) : (
             ""
           )}
-        </div>
+        </div><div className="space"></div>
       </div>
     </>
   );

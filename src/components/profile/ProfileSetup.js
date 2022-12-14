@@ -117,6 +117,7 @@ const ProfileSetup = () => {
         />
       <button onClick={submit}>Create Profile</button>
       </form>
+      <div className="space"></div>
     </div>
   );
 };

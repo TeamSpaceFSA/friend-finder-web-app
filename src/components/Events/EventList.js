@@ -238,10 +238,10 @@ const EventList = () => {
 
         <h2 className="eventlist-h2">Requested Events</h2>
         <div className="eventlist-msg">
-          Here are events from other users you are looking to attend.
+          Here are events you are looking to attend.
         </div>
         <div className="eventlist-card"><EventsListFiltered /></div>
-      </div>
+      </div><div className="space"></div>
     </>
   );
 };

@@ -115,6 +115,7 @@ const About = () => {
             </div>
 
           </div>
+          <div className="space"></div>
         </div>
       ) : (
         <div className="about">
@@ -225,7 +226,7 @@ const About = () => {
               <br />
               <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
-            
+            <div className="space"></div>
           </div>
           <div className="newuser-footer">
             <h5 className="newuser-about">

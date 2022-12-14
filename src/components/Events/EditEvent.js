@@ -207,7 +207,8 @@ const ageRange = [
         /></h3>
           </form>
           {selected == null ? <button className="btnadjust" disabled={true} onClick={()=>updateEvent(id)}>Submit Changes</button> : <button className="btnadjust" onClick={()=>updateEvent(id)}>Submit Changes</button>}
-         </div>
+         <div className="space"></div></div>
+         
     )
 }
 

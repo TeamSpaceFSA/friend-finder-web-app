@@ -240,7 +240,7 @@ const SingleEventView = () => {
               icon={event.icon}
             ></MarkerF>
           </GoogleMap>
-        </div>
+        </div><div className="space"></div>
       </div>
     </>
   );

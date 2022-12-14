@@ -170,6 +170,7 @@ const EditProfile = () => {
         />
         <button onClick={submit}>Update Profile</button>
       </form>
+      <div className="space"></div>
     </div>
   )
 

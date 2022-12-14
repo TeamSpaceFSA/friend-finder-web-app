@@ -216,7 +216,7 @@ const CreateEventForm = () => {
               <button onClick={submit} disabled={true}>Create Event</button> : mornAft.length <= 0 ?
               <button onClick={submit} disabled={true}>Create Event</button> : icon.length <= 0 ?
               <button onClick={submit} disabled={true}>Create Event</button> : <button onClick={submit}>Create Event</button>}
-            </form>
+            </form><div className="space"></div>
         </div>
         </>
     )

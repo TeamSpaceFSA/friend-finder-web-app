@@ -33,7 +33,7 @@ const Help = () => {
             <p><strong>Q</strong>: Can I message my friends on this app?</p>
             <p><strong>A</strong>: <em>Messaging is coming soon!! However, it will only be a feature to further solidy event details. Once you make a new friend, you no longer need the app! We then give you access to contact information to grow your new friendship outside if the app. </em></p>
           </div>
-        </div></div>
+        </div><div className="space"></div></div>
       ) : (
         <div className="help">
           <img

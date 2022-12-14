@@ -10,6 +10,7 @@ const Error = () => {
         <img src="https://geek.hellyer.kiwi/files/2017/06/cat-404.jpg" alt="" style={{ height: "280px", width: "390px"}}/>
         <div></div>
         <button onClick={goBack}>Oh no!! Go back!</button>
+        <div className="space"></div>
         </div>
     )
 
