@@ -18,20 +18,20 @@ const Help = () => {
           <h2 >FAQ </h2>
           <div className="help-msg">Questions? We're here to help. &#128522;</div>
           <div className="creator">
-            <p><strong>Q</strong>: As a event host, why can't I remove users from my events?</p>
-            <p><strong>A</strong>: <em>Upon users' requests to your event, you have the option to approve or deny who attends.  Once approves, alerts are sent out to the attendees, then it's time to party!  So be sure to review users' profiles before accepting!</em></p>
-          </div>
-          <div className="creator">
             <p><strong>Q</strong>: How do I find people that I already know?</p>
-            <p><strong>A</strong>: <em>The point of New Friends+ is to make... New Friends+, hehe. If you looking to locate someone you are already aquainted with, maybe try Facebook.</em></p>
+            <p><strong>A</strong>: <em>The point of New Friends+ is to make... New Friends+, hehe. If you're looking to locate someone you are already aquainted with, uhm, maybe try Facebook.</em></p>
           </div>
           <div className="creator">
-            <p><strong>Q</strong>: What if I double-booked for two events?</p>
+            <p><strong>Q</strong>: What if I accidently double-booked for two events?</p>
             <p><strong>A</strong>: <em>No worries! You can always remove an event from your event list but please, be mindful of your schedule. When a user approves you, they'll be looking forward to meeting you as a potential new friend!!</em></p>
           </div>
           <div className="creator">
+            <p><strong>Q</strong>: As an event host, why can't I remove users from my events?</p>
+            <p><strong>A</strong>: <em>Upon users' requests to your event, you have the option to approve or deny who attends.  Once approved, alerts are sent out to the attendees, then it's time to party!  So be sure to review users' profiles before accepting!</em></p>
+          </div>
+          <div className="creator">
             <p><strong>Q</strong>: Can I message my friends on this app?</p>
-            <p><strong>A</strong>: <em>Messaging is coming soon!! However, it will only be a feature to further solidy event details. Once you make a new friend, you no longer need the app! We then give you access to contact information to grow your new friendship outside if the app. </em></p>
+            <p><strong>A</strong>: <em>Messaging is coming soon!! However, it will only be a feature to further solidy event details. Once you make a new friend, you no longer need us! We then give you access to contact information to grow your new friendship outside of the app. </em></p>
           </div>
         </div><div className="space"></div></div>
       ) : (
@@ -46,20 +46,20 @@ const Help = () => {
           <h2 >FAQ </h2>
           <div className="help-msg">Questions? We're here to help. &#128522;</div>
           <div className="creator">
-            <p><strong>Q</strong>: As a event host, why can't I remove users from my events?</p>
-            <p><strong>A</strong>: <em>Upon users' requests to your event, you have the option to approve or deny who attends.  Once approves, alerts are sent out to the attendees, then it's time to party!  So be sure to review users' profiles before accepting!</em></p>
-          </div>
-          <div className="creator">
             <p><strong>Q</strong>: How do I find people that I already know?</p>
-            <p><strong>A</strong>: <em>The point of New Friends+ is to make... New Friends+, hehe. If you looking to locate someone you are already aquainted with, maybe try Facebook.</em></p>
+            <p><strong>A</strong>: <em>The point of New Friends+ is to make... New Friends+, hehe. If you're looking to locate someone you are already aquainted with, uhm, maybe try Facebook.</em></p>
           </div>
           <div className="creator">
-            <p><strong>Q</strong>: What if I double-booked for two events?</p>
+            <p><strong>Q</strong>: What if accidentlyI double-booked for two events?</p>
             <p><strong>A</strong>: <em>No worries! You can always remove an event from your event list but please, be mindful of your schedule. When a user approves you, they'll be looking forward to meeting you as a potential new friend!!</em></p>
           </div>
           <div className="creator">
+            <p><strong>Q</strong>: As an event host, why can't I remove users from my events?</p>
+            <p><strong>A</strong>: <em>Upon users' requests to your event, you have the option to approve or deny who attends.  Once approved, alerts are sent out to the attendees, then it's time to party!  So be sure to review users' profiles before accepting!</em></p>
+          </div>
+          <div className="creator">
             <p><strong>Q</strong>: Can I message my friends on this app?</p>
-            <p><strong>A</strong>: <em>Messaging is coming soon!! However, it will only be a feature to further solidy event details. Once you make a new friend, you no longer need the app! We then give you access to contact information to grow your new friendship outside if the app. </em></p>
+            <p><strong>A</strong>: <em>Messaging is coming soon!! However, it will only be a feature to further solidy event details. Once you make a new friend, you no longer need us! We then give you access to contact information to grow your new friendship outside of the app. </em></p>
           </div>
         </div>
 

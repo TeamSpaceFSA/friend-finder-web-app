@@ -25,7 +25,7 @@ const About = () => {
             their studies as beginner software developers at Fullstack Academy
             for their final Capstone project. After voting and deliberating,
             amongst over 30 ideas, New Friends+ was chosen out of the bunch. In the
-            2.5 week project deadline, the team made a MVP (minimal value
+            2.5 week project deadline, the team made a MVP (minimal viable
             product) verson of their new social media app using both known and
             new technologies. The project was then first shared with a select
             audience as part of the students' graduation at Fullstack Academy
@@ -95,7 +95,7 @@ const About = () => {
               <br />
               <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
                 the itch to see visit new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
-                take you! It's only a matter of time before you meet someone new."</p>
+                take you?! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
@@ -111,7 +111,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
+              <p>"New Friends+ will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
 
           </div>
@@ -137,7 +137,7 @@ const About = () => {
             their studies as beginner software developers at Fullstack Academy
             for their final Capstone project. After voting and deliberating,
             amongst over 30 ideas, New Friends+ was chosen out of the bunch. In the
-            2.5 week project deadline, the team made a MVP (minimal value
+            2.5 week project deadline, the team made a MVP (minimal viable
             product) verson of their new social media app using both known and
             new technologies. The project was then first shared with a select
             audience as part of the students' graduation at Fullstack Academy
@@ -208,7 +208,7 @@ const About = () => {
               <br />
               <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
                 the itch to see new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
-                take you! It's only a matter of time before you meet someone new."</p>
+                take you?! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
@@ -224,7 +224,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
+              <p>"New Friends+ will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
             <div className="space"></div>
           </div>
