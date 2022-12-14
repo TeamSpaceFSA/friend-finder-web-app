@@ -81,7 +81,7 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://media-exp1.licdn.com/dms/image/C4D03AQH_UJOap4mbkw/profile-displayphoto-shrink_200_200/0/1646857767806?e=1676505600&v=beta&t=1FggEJ_LMyuUcnjkwbnoAkbhwBWOz3Wi924Lmpnk3LY" alt="" />
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -93,12 +93,13 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
+                the itch to see visit new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
+                take you! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
-              {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/118464439_3884268154997995_334619796960176880_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=n5DR7hDSkjEAX-JnKhs&tn=g_ozPu3bDPsd2T16&_nc_ht=scontent-lga3-2.xx&oh=00_AfD-w_BDApPdRt1BT8uirr7wBhwacC4fIzCEMq88FGpaNQ&oe=63C061EB" alt="Harry's beautiful face" />
               <div className="creatorContact">
                 <h2>Harry Huang</h2>
                 <a href="https://www.linkedin.com/in/harryzhuang/">
@@ -110,8 +111,9 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
+
           </div>
         </div>
       ) : (
@@ -164,9 +166,8 @@ const About = () => {
                 "I see New Friends+ as a very useful, fun, and lucrative social
                 mobile app. Imagine commuting to or visiting a new town... It
                 can be hard to make friends or simply meet people with common
-                interests. This app closes that gap! As next steps, along with
-                my fellow creators (if they're interested of course, hehe), I
-                would like to expand the app and have it deployed for public
+                interests. This app closes that gap! As next steps, my fellow creators and I
+                would like to deploy the app for public
                 use!" &#x1F64F;&#127997;
               </p>
             </div>
@@ -190,7 +191,9 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+
+              <img className="creator-img" src="https://media-exp1.licdn.com/dms/image/C4D03AQH_UJOap4mbkw/profile-displayphoto-shrink_200_200/0/1646857767806?e=1676505600&v=beta&t=1FggEJ_LMyuUcnjkwbnoAkbhwBWOz3Wi924Lmpnk3LY" alt="" />
+
               <div className="creatorContact">
                 <h2>Jacob Saddler</h2>
                 <a href="https://www.linkedin.com/in/jacob-saddler/">
@@ -202,12 +205,13 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is a fun and intuitive way to make new friends! Whether traveling for work, visiting family out of town, or just feeling 
+                the itch to see new places, you'll always have a bit of free time to take advantage of. Thus, why not hop on New Friends+ and see where the events
+                take you! It's only a matter of time before you meet someone new."</p>
             </div>
 
             <div className="creator">
-              {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.6435-9/118464439_3884268154997995_334619796960176880_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=n5DR7hDSkjEAX-JnKhs&tn=g_ozPu3bDPsd2T16&_nc_ht=scontent-lga3-2.xx&oh=00_AfD-w_BDApPdRt1BT8uirr7wBhwacC4fIzCEMq88FGpaNQ&oe=63C061EB" alt="Harry's beautiful face" />
               <div className="creatorContact">
                 <h2>Harry Huang</h2>
                 <a href="https://www.linkedin.com/in/harryzhuang/">
@@ -219,8 +223,9 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends will really help ease people's transitions into a post-pandemic society and help them reclaim their social lives."</p>
             </div>
+            
           </div>
           <div className="newuser-footer">
             <h5 className="newuser-about">

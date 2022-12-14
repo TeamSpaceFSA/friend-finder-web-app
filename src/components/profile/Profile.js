@@ -48,7 +48,7 @@ const Profile = () => {
           <div className="profileView-img">
             <img src={image} alt="" style={{ height: "80px", width: "80px" }} />
             <p>
-              <strong>{age} years</strong>
+              <strong>{age} years old</strong>
             </p>
           </div>
           <div className="profileView-name">
