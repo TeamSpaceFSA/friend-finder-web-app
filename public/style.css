@@ -296,7 +296,7 @@ hr {
   z-index: 1;
   position: fixed;
   top: 3rem;
-  text-shadow: 1px 1px 3px rgb(0, 85, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);  font-size: 45px;
+  text-shadow: 1px 1px 3px rgb(0, 85, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 119);  font-size: 45px;
   color: rgba(248, 245, 245, 0.895);
 }
 
