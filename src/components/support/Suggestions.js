@@ -46,7 +46,7 @@ const Suggestions = () => {
         style={{height:"130px", width:"130px"}}
       />
       <h2 className="suggestions-header">We want to hear from you!</h2>
-      <div className="suggestions-msg">Suggestoins, questions, success stories, a hello.. Whatever it may be, we are always looking forward to hear from you!! </div>
+      <div className="suggestions-msg">Suggestions, questions, success stories, a hello.. Whatever it may be, we are always looking forward to hear from you!! </div>
       <form ref={form} onSubmit={sendEmail}>
         <input type="text" placeholder="Name" name="user_name" size={33}/>
         <input type="text" placeholder="Email" name="user_email" size={33}/>
