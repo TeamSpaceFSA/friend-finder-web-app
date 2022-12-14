@@ -106,7 +106,7 @@ const HomeMap = () => {
             <>
             <div className="home-popup">
             <h2>{selectedMarker.name}</h2>
-            <p>{selectedMarker.description}</p>
+            <p><em>{selectedMarker.description}</em></p>
             <button onClick={() => viewSingleEvent(selectedMarker)}>Full Event Details</button>
             </div>
             </>

@@ -71,7 +71,7 @@ const ProfileSetup = () => {
 
   return (
     <div className="create-profile">
-      <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
+      <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "50px", width: "50px" }} />
       <form>
       <h2>Create Profile</h2>
       <div className="create-profile-msg">Let your new friends know who you are. Include an image, bio, and interests to get started. Happy finding New Friends! &#128522;</div>

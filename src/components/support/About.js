@@ -19,12 +19,12 @@ const About = () => {
           </h1>
 
           <p className="aboutDescription">
-            New Friends began as an idea formulated by Andrea, known as Dre, in
+            New Friends+ began as an idea formulated by Andrea, known as Dre, in
             2022. Soon after, the social app idea was introduced to her team and
             fellow classmates, Jenny Wu, Jacob Saddler, and Harry Huang, during
             their studies as beginner software developers at Fullstack Academy
             for their final Capstone project. After voting and deliberating,
-            amongst 30+ ideas, New Friends was chosen out of the bunch. In the
+            amongst over 30 ideas, New Friends+ was chosen out of the bunch. In the
             2.5 week project deadline, the team made a MVP (minimal value
             product) verson of their new social media app using both known and
             new technologies. The project was then first shared with a select
@@ -52,7 +52,7 @@ const About = () => {
               </div>
               <br />
               <p>
-                "I see New Friends as a very useful, fun, and lucrative social
+                "I see New Friends+ as a very useful, fun, and lucrative social
                 mobile app. Imagine commuting to or visiting a new town... It
                 can be hard to make friends or simply meet people with common
                 interests. This app closes that gap! As next steps, along with
@@ -64,7 +64,7 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://i.ibb.co/7SJmWr3/1669088474114.jpg" alt="" />
               <div className="creatorContact">
                 <h2>Jenny Wu</h2>
                 <a href="https://www.linkedin.com/in/jennyzwu/">
@@ -76,7 +76,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is an app I hope people can use to connect with others with similar interests or maybe try something new."</p>
             </div>
 
             <div className="creator">
@@ -117,9 +117,9 @@ const About = () => {
       ) : (
         <div className="about">
           <img
-            src="https://cdn-icons-png.flaticon.com/512/93/93634.png"
+            src="https://cdn4.iconfinder.com/data/icons/navigation-40/24/back-1-1024.png"
             alt=""
-            style={{ height: "25px", width: "25px", margin: "3px" }}
+            style={{ height: "30px", width: "30px", margin: "3px" }}
             onClick={() => navigate(-1)}
           />
 
@@ -128,12 +128,12 @@ const About = () => {
           </h1>
 
           <p className="aboutDescription">
-            New Friends began as an idea formulated by Andrea, known as Dre, in
+            New Friends+ began as an idea formulated by Andrea, known as Dre, in
             2022. Soon after, the social app idea was introduced to her team and
             fellow classmates, Jenny Wu, Jacob Saddler, and Harry Huang, during
             their studies as beginner software developers at Fullstack Academy
             for their final Capstone project. After voting and deliberating,
-            amongst 30+ ideas, New Friends was chosen out of the bunch. In the
+            amongst over 30 ideas, New Friends+ was chosen out of the bunch. In the
             2.5 week project deadline, the team made a MVP (minimal value
             product) verson of their new social media app using both known and
             new technologies. The project was then first shared with a select
@@ -161,7 +161,7 @@ const About = () => {
               </div>
               <br />
               <p>
-                "I see New Friends as a very useful, fun, and lucrative social
+                "I see New Friends+ as a very useful, fun, and lucrative social
                 mobile app. Imagine commuting to or visiting a new town... It
                 can be hard to make friends or simply meet people with common
                 interests. This app closes that gap! As next steps, along with
@@ -173,7 +173,7 @@ const About = () => {
 
             <div className="creator">
               {/* IMAGE HERE */}
-              <img className="creator-img" src="" alt="" />
+              <img className="creator-img" src="https://i.ibb.co/7SJmWr3/1669088474114.jpg" alt="" />
               <div className="creatorContact">
                 <h2>Jenny Wu</h2>
                 <a href="https://www.linkedin.com/in/jennyzwu/">
@@ -185,7 +185,7 @@ const About = () => {
                 </a>
               </div>
               <br />
-              <p>"WRITE HERE"</p>
+              <p>"New Friends+ is an app I hope people can use to connect with others with similar interests or maybe try something new."</p>
             </div>
 
             <div className="creator">
@@ -232,6 +232,7 @@ const About = () => {
           </div>
         </div>
       )}
+    
     </>
   );
 };

@@ -157,7 +157,7 @@ const EventList = () => {
           style={{ height: "50px", width: "50px" }}
         />
         <h2 className="eventlist-h2">My Events</h2>
-        <div className="eventlist-msg">Click on an event title to make and edit.</div>
+        <div className="eventlist-msg">Click on an event title to make an edit.</div>
         {events.map((doc, index) => (
           <div
             className="eventlist-card"
@@ -179,7 +179,7 @@ const EventList = () => {
             )}
             <button onClick={() => deleteEvent(doc.id)}>Remove</button>
             <hr className="eventhr"></hr>
-            <div className="eventlist-msg">*accept/deny requests by clicking the check or 'X'*</div>
+            <div className="eventlist-requestMsg">*accept/deny requests by clicking the check or 'X'*</div>
 
             {/* <button onClick={() => fetchreqUsers(selectedEvent)}>Fetch Req Users</button> */}
             {/* Map out requesting users and put buttons next to them to accept/reject */}

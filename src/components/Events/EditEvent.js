@@ -145,7 +145,7 @@ const ageRange = [
     
     return(
         <div className="event-edit">
-                <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "33px", width: "33px" }} />
+                <img src="https://i.ibb.co/pKgd7BG/NFIcon.png" alt="" style={{ height: "50px", width: "50px" }} />
 
         <form key={id}><h2>Edit Event</h2>
         <div className="event-edit-msg">Be sure to fill in each field in order to edit your event.</div>

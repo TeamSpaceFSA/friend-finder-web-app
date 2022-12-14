@@ -3,15 +3,25 @@
   margin: 0;
   padding: 0;
   font-family: Optima, sans-serif;
+  /* cursor: pointer; */
 }
 
 /* CHOOSE FONT FOR ENTIRE APP or 1 FOR TITLE, 1 FOR TEXT */
 /* Didot, serif; */
 
 body {
-  max-width: 100%;
-  max-height: 667px;
+  /* max-width: 100%;
+  max-height: 100%; */
+  background-image: radial-gradient( rgba(255, 26, 91, 0.479), rgba(202, 31, 249, 0.284),rgba(0, 204, 255, 0.865));
+  background-repeat: repeat;
+  background-size: 100%;
 }
+
+.space {
+  width: 100%;
+  height: 4rem;
+}
+
 
 a:link {
   margin: 0%;
@@ -29,7 +39,7 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 15rem;
-  margin-top: 25%;
+  margin-top: 15%;
 }
 
 .logIn-logo {
@@ -37,7 +47,7 @@ ul {
 }
 
 .logIn input {
-  background-color: rgba(216, 215, 215, 0.424);
+  background-color: rgba(216, 215, 215, 0.729);
   padding: 5px;
   margin-bottom: 2px;
   border: none;
@@ -54,6 +64,16 @@ ul {
   justify-content: center;
   margin-left: 12px;
   margin-top: 2px;
+  border: none;
+  background-color:  rgba(0, 183, 255, 0.892);
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.logIn a{
+  color:  rgb(61, 0, 192);
+  font-weight: bold;
+  text-shadow: 2px 2px 2px  rgba(36, 176, 246, 0.701);
 }
 
 .logIn button img {
@@ -69,11 +89,12 @@ ul {
 .signIn-msg,
 .suggestions-msg,
 .create-profile-msg,
-.edit-profile-msg, .eventlist-msg, .event-edit-msg, .create-event-msg {
-  color: rgb(103, 102, 102);
+.edit-profile-msg, .event-edit-msg, .eventlist-msg, .create-event-msg, .help-msg {
+  color: rgb(104, 102, 102);
   font-size: 13px;
   line-height: normal;
   margin-bottom: 11px;
+  font-weight: bold;
 }
 
 .logIn-or {
@@ -111,11 +132,12 @@ ul {
   position: fixed;
   bottom: 0px;
   padding: 2px;
-  background-color: rgba(176, 175, 175, 0.474);
+  background-color: rgba(247, 32, 157, 0.474);
 }
 
 .newuser-footer a {
   padding: 0.25rem;
+  color: rgb(0, 140, 255);
 }
 
 .newuser-about {
@@ -136,27 +158,30 @@ ul {
 /* SETUP/CREATE PROFILE & PROFILE/EVENT EDIT*/
 .create-profile,
 .edit-profile,
-#CreateEventContainer, .event-edit, .friendslist, .help {
+#CreateEventContainer, .event-edit, .friendslist  {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 23rem;
   margin-top: 15%;
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
 
 .create-profile h2,
 .edit-profile h2,
 #CreateEventContainer h2,
-.friendslist h2, .event-edit h2, .eventlist-h2, .friendslist h2 {
+.friendslist h2, .event-edit h2, .eventlist-h2, .friendslist h2, .help h2, .suggestions h2, .event-single h2 {
   margin-top: -5px;
   padding-bottom: 11px;
+  color: white;
+  text-shadow: 1px 1px 3px rgb(0, 81, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);
+  font-size: 30px;
 }
 
 .create-profile form input,
 .edit-profile form input,
 #CreateEventContainer form input, .event-edit form input {
-  background-color: rgba(216, 215, 215, 0.424);
+  background-color: rgba(216, 215, 215, 0.579);
   padding: 5px;
   margin-bottom: 2px;
   border: none;
@@ -172,7 +197,7 @@ ul {
 .age-menu select, .activity-menu select {
   width: 99%;
   height: 25px;
-  background-color: rgba(216, 215, 215, 0.424);
+  background-color: rgba(216, 215, 215, 0.493);
   border: none;
   margin-bottom: 1px;
 }
@@ -200,36 +225,44 @@ ul {
   width: 23rem;
   margin-top: 15%;
   font-size: 15px;
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
 
 .profileView-user{
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px #0f7bd9f1;
 }
 
 .profileView-img p{
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .profileView-img img{
   border-radius: 50%;
-  box-shadow: 3px 3px 7px #050505ac;
+  box-shadow: 3px 3px 7px #034c8dac;
 }
 .profileView-name h3{
   margin-top: -15px;
 padding-bottom: 15px;
+color: white;
+text-shadow: 1px 1px 3px rgb(0, 81, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);
+
 }
 
 .profileView-name button {
   height: 1.5rem;
   width: 10rem;
   margin-bottom: 2px;
+  border: none;
+  background-color:  rgba(0, 183, 255, 0.892);
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 hr {
- 
   border-top: .5px solid rgba(128, 128, 128, 0.266);
   margin: 25px 0;
   width:100%;
@@ -239,6 +272,11 @@ hr {
 .profileView-activities {
   display: flex;
   justify-content: space-around;
+}
+
+.profileView-activities strong {
+  color: white;
+  text-shadow: .25px .25px 3px #0f7bd9f1;
 }
 
 .profileView .medialinks {
@@ -258,9 +296,8 @@ hr {
   z-index: 1;
   position: fixed;
   top: 3rem;
-  text-shadow: 0px 0px 10px rgb(255, 255, 255);
-  font-size: 45px;
-  color: rgba(0, 0, 0, 0.452);
+  text-shadow: 1px 1px 3px rgb(0, 85, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);  font-size: 45px;
+  color: rgba(248, 245, 245, 0.895);
 }
 
 .home-popup {
@@ -268,6 +305,14 @@ hr {
   margin-left: auto;
   margin-right: auto;
   width: 9rem;
+}
+
+.home-popup h2 {
+  color: rgb(24, 151, 248);
+  text-shadow: .5px .5px 3px rgb(248, 11, 86);
+  margin-bottom: 4px;
+  font-size: 18px;
+ 
 }
 
 .home-popup p {
@@ -324,7 +369,7 @@ table {
     margin-bottom: -8px;
     margin-top: -7px;
     border-radius: 50%;
-  box-shadow: 3px 3px 7px #050505ac;
+    box-shadow: 3px 3px 7px #034c8dac;
   }
 
 .center{
@@ -346,6 +391,10 @@ margin-bottom: -10px;
   height: 1.75rem;
   width: 25%;
   margin: 1.5rem 0;
+  border: none;
+  background-color:  rgba(0, 183, 255, 0.892);
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 .userFlashcard{
@@ -372,11 +421,20 @@ margin-bottom: -10px;
   margin-bottom: 4px;
 }
 
+.userInfoDiv img {
+  border-radius: 50%;
+  box-shadow: 3px 3px 7px #034c8dac;
+}
+
 .userInfoDiv h3 {
   padding: 0 15px;
   text-align: left;
   font-size: 15px;
   margin-bottom: 3px;
+}
+
+.userInfoDiv h4 {
+  font-size: 16px;
 }
 
 .interest {
@@ -401,7 +459,6 @@ margin-bottom: -10px;
   margin-right: auto;
   width: 23rem;
   margin-top: 15%;
-  padding-bottom: 3rem;
 }
 
 .eventlist-card {
@@ -424,10 +481,21 @@ margin-bottom: -10px;
   margin-bottom: 8px;
 }
 
+.eventlist-requestMsg {
+  color: rgb(104, 102, 102);
+  font-size: 13px;
+  line-height: normal;
+  margin-bottom: 11px;
+}
+
 .eventlist button {
   height: 1.5rem;
   width: 4.5rem;
   margin: 8px 2px 8px 0px;
+  border: none;
+  background-color:  rgba(0, 183, 255, 0.892);
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
 .eventhr {
@@ -464,7 +532,7 @@ margin-bottom: -10px;
   margin: 1.5rem 20%;
   padding: 1rem;
   background-color: rgba(249, 249, 249, 0.64);
-  box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
+  box-shadow: 3px 3px 7px #034c8dac;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
@@ -482,7 +550,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 43px;
-  background-color: rgba(255, 255, 255, 0.927);
+  background-image: linear-gradient(to right, rgb(255, 0, 89) , rgba(0, 170, 255, 0.746));
   margin-left: auto;
   margin-right: auto;
 }
@@ -531,6 +599,16 @@ section img {
   text-align: center;
 }
 
+.nav-dropdown button {
+  border: none;
+  background-color: rgba(17, 171, 248, 0.85);
+  border-radius: 50%;
+  /* font-weight: bold; */
+  box-shadow: 0px 0px 8px .5px rgb(255, 0, 76);
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
 .nav-dropdown::before {
   content: "";
   position: absolute;
@@ -567,14 +645,16 @@ h3 {
 
 h3 span {
   font-size: 15px;
-  color: var(--secondary-text-color);
-  font-weight: 400;
+ font-weight: bold;
+ color: rgb(24, 151, 248);
+ text-shadow: 1px 1px 2px rgb(248, 11, 86);
 }
 
 .nav-dropdown ul a{
     display: flex;
     flex-direction: column;
     text-decoration: none;
+    color: rgb(246, 18, 83);
   }
 
 .nav-dropdown ul li {
@@ -609,13 +689,12 @@ h3 span {
 }
 
 /* ABOUT VIEW */
-.about {
+.about{
   background-image: url("https://i.ibb.co/pKgd7BG/NFIcon.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 400px;
   background-attachment: fixed;
-  padding-bottom: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -625,7 +704,8 @@ h3 span {
   font-size: 45px;
   line-height: 200%;
   margin: 0 0.5px 35px;
-}
+  color: white;
+  text-shadow: 1px 1px 3px rgb(0, 81, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);}
 
 .aboutDescription {
   text-align: justify;
@@ -637,12 +717,16 @@ h3 span {
   text-align: center;
 }
 
+.creatorNotes h2 {
+  text-shadow: 1px 1px 3px rgb(0, 81, 255), 0 0 1em rgb(251, 44, 99), 0 0 0.5em rgb(255, 0, 221);
+  color: white;
+}
+
 .creator {
   margin: 1.5rem 18%;
   padding: 1rem;
   background-color: rgba(249, 249, 249, 0.64);
-  box-shadow: 0px 0px 20px rgba(29, 27, 26, 0.33);
-  margin-bottom: 3rem;
+  box-shadow: 0px 0px 30px rgb(0, 162, 255);
 }
 
 .creator-img {
@@ -650,7 +734,7 @@ h3 span {
   width: 100px;
   border-radius: 50%;
   float: left;
-  box-shadow: 3px 3px 7px #4744449a;
+  box-shadow: 3px 3px 7px rgba(0, 136, 255, 0.643);
 }
 
 .creatorContact {
@@ -660,15 +744,34 @@ h3 span {
   padding-top: 0.5rem;
 }
 
+.creatorContact h2 {
+  color: rgb(255, 0, 106);
+  text-shadow: 1px 1px 5px rgb(0, 136, 255)
+}
+
 /* HELP VIEW */
-/* .help {
+.help {
   height: 667px;
   background-image: url("https://i.ibb.co/pKgd7BG/NFIcon.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 400px;
   background-attachment: fixed;
-} */
+}
+
+.help-container {
+  margin-top: 10%;
+padding-bottom: 3rem;
+}
+
+.help h2, .help-msg {
+  text-align: center;
+}
+
+.help p{
+  padding-bottom: 5px;
+}
+
 
 /* SUGGESTIONS VIEWS */
 .suggestions {
@@ -717,9 +820,20 @@ h3 span {
 .suggestions button,
 .create-profile button,
 .edit-profile button,
-#CreateEventContainer button, .nav-dropdown button, .event-edit button {
+#CreateEventContainer button, .nav-dropdown button, .event-edit button, .home button, .userInfoDiv button {
   width: 98%;
   height: 1.75rem;
+  border: none;
+  background-color:  rgba(0, 183, 255, 0.892);
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.suggestions button input {
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  background-color:  rgba(0, 183, 255, 0.892);
 }
 
 /* ERROR VIEW */
@@ -727,7 +841,7 @@ h3 span {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50%;
+  margin-top: 20%;
 }
 
 .error img {

@@ -227,7 +227,7 @@ const SingleEventView = () => {
             </tr>
         </table>
         {host === user.uid ? null : (
-          <button onClick={() => handleRequestJoin()}>Join Event</button>
+          <button onClick={() => handleRequestJoin()}>Join Event!</button>
         )}
         <div className="event-single-map">
           <GoogleMap

@@ -52,14 +52,14 @@ const OneEventInList = () => {
 
     return (
         <>
-        <img src="https://vizionz.boydnetonline.com/wp-content/uploads/2019/07/kisspng-logo-organization-photography-brand-go-back-button-5b3f520fef8813.4474823615308764319811-1.png" alt="" style={{ height: "50px", width: "50px" }} onClick={() => navigate(-1)} />
+        <img src="https://cdn4.iconfinder.com/data/icons/navigation-40/24/back-1-1024.png" alt="" style={{ height: "40px", width: "40px" }} onClick={() => navigate(-1)} />
         <div className="userInfoDiv">
-            {visible ? <button onClick={friendReq}>Friend Request</button>:<button onClick={friendReq}>Friend Request Sent!</button>}
+            {visible ? <button onClick={friendReq}>Request to Join!</button>:<button onClick={friendReq}>Friend Request Sent!</button>}
             <h1>{profName}</h1>
             <img src={profimage} alt="" style={{ height: "100px", width: "100px"}}/>
                 <h4>{bio}</h4>
                 <h4>{age}</h4>
-                <h4>Favorites:</h4>
+                <h4>Favorites</h4>
                 {activities ? activities.map((activity) => (
                 <h4 key={activity}>{activity}</h4>
             )) : <p>No activities yet</p>}

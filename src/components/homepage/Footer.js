@@ -115,13 +115,13 @@ const Footer = () => {
               </h3>
               <ul>
                 {/* <DropdownItem text={"Notifications"} /> */}
-                <li>
+                {/* <li>
                   <Toggle
                     onChange={(evt) => console.log(evt)}
                     onClick={handleNotifications}
                     label="Notifications"
                   />
-                </li>
+                </li> */}
                 <Link to="/about">
                   <DropdownItem text={"About Us"} />
                 </Link>
