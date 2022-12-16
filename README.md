@@ -43,3 +43,14 @@ From the profile view, you can also click the "edit profile" button. This will b
 
 <img width="1512" alt="image" src="https://user-images.githubusercontent.com/59670286/208029726-078657f4-4994-4783-b8e3-8312a2c53b6f.png">
 
+## Settings and support
+
+The last item on the right of the nav bar is the settings gear. It expands to provide a link to an "about us" page, a suggestions page, and a help page with an FAQ. Critically, the logout button is also positioned here.
+
+<img width="465" alt="image" src="https://user-images.githubusercontent.com/59670286/208030641-239ac220-67e0-4c46-baea-4ee60b7f0653.png">
+
+## Tech Stack
+The application was written in javascript and CSS underneath a React framework. Firebase Firestore was used for authentication and storing/serving data. The Google Maps Platform API served a map view alongside place data. Toastify react widgets were also incorporated to give users notifications on completed actions. The application was designed in Figma. 
+
+## Upcoming features
+We hope to implement an option to change app color themes, such as dark mode. Also, marker clustering in the map view is in the works. 
