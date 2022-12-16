@@ -43,7 +43,3 @@ From the profile view, you can also click the "edit profile" button. This will b
 
 <img width="1512" alt="image" src="https://user-images.githubusercontent.com/59670286/208029726-078657f4-4994-4783-b8e3-8312a2c53b6f.png">
 
-
-<img width="1511" alt="image" src="https://user-images.githubusercontent.com/59670286/208029352-36d15d2e-8e0d-4729-b81b-193e6c493a59.png">
-
-
