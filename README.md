@@ -45,7 +45,7 @@ From the profile view, you can also click the "edit profile" button. This will b
 
 ## Settings and support
 
-The last item on the right of the nav bar is the settings gear. It expands to provide a link to an "about us" page, a suggestions page, and a help page with an FAQ. Critically, the logout button is also positioned here.
+The last item on the right of the nav bar is the settings gear. It expands to provide a link to an "about us" page, a suggestions page where you can directly send us suggestions about the app, and a help page with an FAQ. Critically, the logout button is also positioned here.
 
 <img width="465" alt="image" src="https://user-images.githubusercontent.com/59670286/208030641-239ac220-67e0-4c46-baea-4ee60b7f0653.png">
 
